@@ -41,6 +41,7 @@
     methods:{
       playerClick(index){
         this.currentIndex = index;
+<<<<<<< HEAD
         console.log(typeof this.currentIndex)
         this.$emit("infoClick",index)
         axios({
@@ -54,6 +55,20 @@
         }).catch(err=>{
           console.log(err)
         })
+=======
+        this.$emit("infoClick",index);
+        // axios({
+        //   url:"http://localhost:3001/test",
+        //   method:"post"
+        //   data:{
+        //     playerID:parseInt(this.currentIndex)
+        //   }
+        // }).then((res)=>{
+        //   console.log(res)
+        // }).catch((err)=>{
+        //   console.log(err)
+        // })
+>>>>>>> 8306f8c3fa6346749b28a8270b5e083fe33f15f2
       }
     },
     components: {

@@ -1,17 +1,21 @@
 <template>
   <center-info>
-    <center-top-item
+    <player-info
       v-if="players[currentPosition]!==undefined"
       slot="player-person-info"
       :players="players[currentPosition][playerIndex]"
       @click.native="aaa">
-    </center-top-item>
+    </player-info>
+    <player-data slot="player-person-data">
+
+    </player-data>
   </center-info>
 </template>
 
 <script>
   import CenterInfo from "../../../components/content/centerInfo/CenterInfo";
-  import CenterTopItem from "../../../components/content/centerInfo/centerItems/CenterTopItem";
+  import PlayerInfo from "../../../components/content/centerInfo/centerItems/PlayerInfo";
+  import PlayerData from "../../../components/content/centerInfo/centerItems/PlayerData";
   export default {
     name: "PlayersInfo",
     props:{
@@ -35,8 +39,9 @@
       }
     },
     components:{
+      PlayerData,
       CenterInfo,
-      CenterTopItem
+      PlayerInfo
     },
     beforeCreate() {
       this.$bus.$on("sendIndex",(currActivePlayer)=>{
@@ -44,12 +49,11 @@
         this.playerIndex = currActivePlayer.playerIndex;
         console.log(this.currentPosition);
         console.log(this.playerIndex);
+
       })
     },
     methods:{
-      aaa(){
-        console.log(this.$parent.currentPosition)
-      }
+
     }
   }
 </script>

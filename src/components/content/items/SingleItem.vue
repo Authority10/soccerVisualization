@@ -1,6 +1,9 @@
 <template>
    <div class="single-item">
-       <img src="@/assets/players/messi.jpg" alt="" class="item-img">
+       <div class="player-img">
+         <img src="@/assets/players/124712.jpg" alt="" class="item-img">
+       </div>
+
 
        <span class="item-name">{{players.shortName}}</span>
        <span class="item-number">{{players.number}}号</span>
@@ -51,18 +54,27 @@
        margin-left: 10px;
        width: 220px;
        height: 100px;
-       background-color: rgba(255,204,204,0.4);
+       background-color: #c8d6e5;
        border-radius: 6px;
+    }
+    .player-img {
+      position: relative;
+      width: 50px;
+      height: 53px;
+      /*background-color: red;*/
     }
     .item-img {
       position: absolute;
-      left:5px;
-      top: 5px;
+      left:3px;
+      top: 2px;
+      border:2px solid #ddd;
+      box-shadow:rgba(0,0,0,0.15) 0 0 8px;
       width: 40px;
+      height: 45px;
     }
     .item-name {
       position: absolute;
-      left:52px;
+      left:60px;
       top:10px;
       font-size: 18px;
     }
@@ -74,7 +86,7 @@
     .item-country {
       position: absolute;
       left: 5px;
-      top:45px;
+      top:52px;
     }
     .country-content {
       position: absolute;
@@ -82,13 +94,13 @@
       justify-content: center;
       width: 175px;
       left: 46px;
-      top:47px;
+      top:54px;
     }
     .country-content div {
       display: inline;
     }
     .country-img {
-      width: 20px;
+      height: 12px;
     }
     .country-text {
       font-size: 16px;
@@ -96,7 +108,7 @@
     .item-club {
       position: absolute;
       left:5px;
-      top:70px;
+      top:75px;
     }
     .club-content {
       position: absolute;
@@ -104,7 +116,7 @@
       justify-content: center;
       width: 175px;
       left: 46px;
-      top:74px;
+      top:78px;
     }
     .club-content div {
       display: flex;

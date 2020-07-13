@@ -27,7 +27,7 @@
     },
     created() {
       //通过球队ID获取球队信息
-      this.findTeam(9598)
+      this.findTeam(4418)
     },
     methods:{
       /**

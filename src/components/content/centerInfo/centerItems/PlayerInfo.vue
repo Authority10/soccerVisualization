@@ -1,5 +1,5 @@
 <template>
-  <div class="CenterTopItem">
+  <div class="player-info">
     <div class="name-item">
       <img src="@/assets/players/Lionel.jpg" alt="">
       <span class="name">{{players.shortName}}</span>
@@ -14,7 +14,7 @@
         <div class="passport-item">
           <span class="country">Passport Area</span>
           <img class="country-img" src="@/assets/country/argen.jpg" alt="">
-          <span class="country-text">{{players.passportArea.name}}</span>
+          <span class="country-text">{{players.currentNationalTeam}}</span>
         </div>
         <div class="birth-area-item">
           <span class="birth-area">Birth Area</span>
@@ -45,7 +45,7 @@
 
 <script>
   export default {
-    name: "CenterTopItem",
+    name: "PlayerInfo",
     props:{
       players:{
         type:Object,
@@ -74,7 +74,7 @@
 </script>
 
 <style scoped>
-  .CenterTopItem {
+  .player-info {
     position: relative;
     top:10px;
     left:20px;

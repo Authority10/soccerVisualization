@@ -12,6 +12,7 @@
 
 <script>
   import SingleItem from "./SingleItem";
+  import axios from "axios"
   export default {
     name: "items",
     data(){
@@ -40,7 +41,18 @@
     methods:{
       playerClick(index){
         this.currentIndex = index;
-        this.$emit("infoClick",index)
+        this.$emit("infoClick",index);
+        // axios({
+        //   url:"http://localhost:3001/test",
+        //   method:"post"
+        //   data:{
+        //     playerID:parseInt(this.currentIndex)
+        //   }
+        // }).then((res)=>{
+        //   console.log(res)
+        // }).catch((err)=>{
+        //   console.log(err)
+        // })
       }
     },
     components: {

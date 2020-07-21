@@ -1,17 +1,18 @@
 <template>
    <div class="single-item">
        <div class="player-img">
-         <img src="@/assets/players/124712.jpg" alt="" class="item-img">
+<!--         <img src="@/assets/players/abc.jpg" alt="" class="item-img">-->
+         <img :src="players.countryImg" alt="" class="item-img">
        </div>
 
 
        <span class="item-name">{{players.shortName}}</span>
-       <span class="item-number">{{players.number}}号</span>
+       <span class="item-number">{{parseInt(players.countryNumber)}}号</span>
 
        <span class="item-country">国籍:</span>
        <div  class="country-content">
          <div>
-           <img  class="country-img" :src="players.countryImg" alt="" >
+           <img  class="country-img" :src="players.countryLogo" alt="" >
            <span class="country-text">{{players.currentNationalTeam}}</span>
          </div>
        </div>
@@ -19,7 +20,7 @@
        <span class="item-club">球队:</span>
        <div class="club-content">
          <div>
-           <img  class="club-img" src="@/assets/club/Manchester.png" alt="" >
+           <img  class="club-img" :src="players.clubLogo" alt="" >
            <span class="club-text">{{players.currentTeam}}</span>
          </div>
        </div>
@@ -70,7 +71,7 @@
       border:2px solid #ddd;
       box-shadow:rgba(0,0,0,0.15) 0 0 8px;
       width: 40px;
-      height: 45px;
+      height: 50px;
     }
     .item-name {
       position: absolute;
@@ -81,7 +82,7 @@
     .item-number {
       position: absolute;
       top: 8px;
-      left: 200px;
+      left: 180px;
     }
     .item-country {
       position: absolute;

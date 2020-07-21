@@ -49,7 +49,6 @@
         this.playerIndex = currActivePlayer.playerIndex;
         console.log(this.currentPosition);
         console.log(this.playerIndex);
-
       })
     },
     methods:{

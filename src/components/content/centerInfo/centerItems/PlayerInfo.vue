@@ -1,7 +1,8 @@
 <template>
   <div class="player-info">
     <div class="name-item">
-      <img src="@/assets/players/Lionel.jpg" alt="">
+<!--      <img src="@/assets/players/Lionel.jpg" alt="">-->
+      <img :src="players.countryImg" alt="">
       <span class="name">{{players.shortName}}</span>
       <span class="club-text">{{players.currentTeam}}</span>
     </div>
@@ -13,12 +14,12 @@
         </div>
         <div class="passport-item">
           <span class="country">Passport Area</span>
-          <img class="country-img" src="@/assets/country/argen.jpg" alt="">
+          <img class="country-img" :src="players.countryLogo" alt="">
           <span class="country-text">{{players.currentNationalTeam}}</span>
         </div>
         <div class="birth-area-item">
           <span class="birth-area">Birth Area</span>
-          <img class="country-img" src="@/assets/country/argen.jpg" alt="">
+          <img class="country-img" :src="players.birthImg" alt="">
           <span class="birth-area-text">
             {{players.birthArea.name}}
           </span>

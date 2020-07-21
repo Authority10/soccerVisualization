@@ -4,7 +4,7 @@
 
     <tab-control
       slot="tab-control"
-      :titles="['前场','中场','后场','门将']"
+      :titles="['FW','MF','DF','GK']"
       @tabClick="tabClick"
     ></tab-control>
 

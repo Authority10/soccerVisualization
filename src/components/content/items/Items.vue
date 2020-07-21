@@ -42,6 +42,7 @@
     methods:{
       playerClick(index){
         this.currentIndex = index;
+<<<<<<< HEAD
         
         axios({
           url:"http://localhost:3001/test",
@@ -61,6 +62,9 @@
         // }
       this.$emit("infoClick",index)
       // this.$emit("infoClick",aa)
+=======
+        this.$emit("infoClick",index);
+>>>>>>> 093eb0adfa5a97e31a219c7b4f113496d0d45a04
       }
     },
     components: {

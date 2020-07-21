@@ -18,7 +18,8 @@
     data(){
       return{
         currentIndex:"",
-        message:""
+        message:"",
+        technical:[]
       }
     },
     watch: {
@@ -50,7 +51,10 @@
             }
           }).then((res)=>{
             console.log(res.data);
+            console.log(typeof res.data)
             this.message =res.data
+            this.technical = res.data.split(",")
+            console.log(this.technical)        
           }).catch(err=>{
             console.log(err)
           });

@@ -42,24 +42,24 @@
     methods:{
       playerClick(index){
         this.currentIndex = index;
-        axios({
-          url:"http://localhost:3001/test",
-          method:"post",
-          data:{
-             playerID:parseInt(this.currentIndex)
-          }
-        }).then((res)=>{
-          console.log(res.data)
-  this.message =res.data
-        }).catch(err=>{
-          console.log(err)
-        })
-        // var  aa = {
-        //    b:this.currentIndex,
-        //    c:this.message
-        // }
-      this.$emit("infoClick",index)
-      // this.$emit("infoClick",aa)
+          axios({
+            url:"http://localhost:3001/test",
+            method:"post",
+            data:{
+               playerID:parseInt(this.currentIndex)
+            }
+          }).then((res)=>{
+            console.log(res.data);
+            this.message =res.data
+          }).catch(err=>{
+            console.log(err)
+          });
+          // var  aa = {
+          //    b:this.currentIndex,
+          //    c:this.message
+          // }
+          this.$emit("infoClick",index)
+          // this.$emit("infoClick",aa)
       }
     },
     components: {

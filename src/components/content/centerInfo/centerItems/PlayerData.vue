@@ -1,12 +1,16 @@
 <template>
   <div class="player-data">
-     FDA
+    <heat-map></heat-map>
   </div>
 </template>
 
 <script>
+  import heatMap from "../../heatMap/heatMap";
   export default {
-    name: "PlayerData"
+    name: "PlayerData",
+    components:{
+      heatMap
+    }
   }
 </script>
 
@@ -16,7 +20,7 @@
     top:20px;
     left:20px;
     width: 650px;
-    height: 170px;
+    height: 300px;
     background-color:rgba(85,239,195,0.3);
     border-radius: 10px;
   }

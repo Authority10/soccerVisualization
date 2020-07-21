@@ -9,6 +9,7 @@
     <player-data slot="player-person-data">
 
     </player-data>
+
   </center-info>
 </template>
 

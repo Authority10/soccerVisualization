@@ -62,8 +62,21 @@
           //    b:this.currentIndex,
           //    c:this.message
           // }
+          var  tchnical = {
+             goal:10,
+             assist:3,
+             pass:20,
+             accuratePass:100,
+             keyPass:20,
+             smartPass:10,
+             shot:10,
+             shotOnTarget:9,
+             fouls:20,
+             yellowCard:1,
+             redCard:2
+          }
           this.$emit("infoClick",index)
-          // this.$emit("infoClick",aa)
+          this.$bus.$emit("sendTechnical",tchnical)
       }
     },
     components: {

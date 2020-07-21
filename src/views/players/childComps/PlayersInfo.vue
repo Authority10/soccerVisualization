@@ -6,7 +6,9 @@
       :players="players[currentPosition][playerIndex]"
       @click.native="aaa">
     </player-info>
-    <player-data slot="player-person-data">
+    <player-data
+      slot="player-person-data"
+      :technical="technical">
 
     </player-data>
 
@@ -30,7 +32,8 @@
     data(){
       return{
         currentPosition:"",
-        playerIndex:""
+        playerIndex:"",
+        technical:{}
       }
     },
     watch:{
@@ -50,6 +53,10 @@
         this.playerIndex = currActivePlayer.playerIndex;
         console.log(this.currentPosition);
         console.log(this.playerIndex);
+      })
+      this.$bus.$on("sendTechnical",(technical)=>{
+        this.technical = technical
+        console.log(this.technical)
       })
     },
     methods:{

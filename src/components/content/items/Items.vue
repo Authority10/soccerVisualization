@@ -42,23 +42,33 @@
     methods:{
       playerClick(index){
         this.currentIndex = index;
-          axios({
-            url:"http://localhost:3001/test",
-            method:"post",
-            data:{
-               playerID:parseInt(this.currentIndex)
-            }
-          }).then((res)=>{
-            console.log(res.data);
-            this.message =res.data
-          }).catch(err=>{
-            console.log(err)
-          });
-          // var  aa = {
-          //    b:this.currentIndex,
-          //    c:this.message
-          // }
+          // axios({
+          //   url:"http://localhost:3001/test",
+          //   method:"post",
+          //   data:{
+          //      playerID:parseInt(this.currentIndex)
+          //   }
+          // }).then((res)=>{
+          //   console.log(res.data);
+          //   // this.message =res.data
+          // }).catch(err=>{
+          //   console.log(err)
+          // });
+          var  tchnical = {
+             goal:10,
+             assist:3,
+             pass:20,
+             accuratePass:100,
+             keyPass:20,
+             smartPass:10,
+             shot:10,
+             shotOnTarget:9,
+             fouls:20,
+             yellowCard:1,
+             redCard:2
+          }
           this.$emit("infoClick",index)
+          this.$bus.$emit("sendTechnical",tchnical)
           // this.$emit("infoClick",aa)
       }
     },

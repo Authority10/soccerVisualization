@@ -2,7 +2,7 @@
   <div class="player-data">
     <span>技术统计</span>
 
-    <technical-table></technical-table>
+    <technical-table :technical="technical"></technical-table>
 
     <heat-map></heat-map>
 
@@ -14,6 +14,14 @@
   import heatMap from "../../heatMap/heatMap";
   export default {
     name: "PlayerData",
+    props:{
+      technical:{
+        type:Object,
+        default(){
+          return{}
+        }
+      },
+    },
     components:{
       technicalTable,
       heatMap

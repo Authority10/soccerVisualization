@@ -36,7 +36,8 @@
     data(){
       return{
         currentPosition:"ForWard",
-        currIndex:""
+        currIndex:"",
+        // currMessage:""
       }
     },
 
@@ -76,11 +77,14 @@
       },
       infoClick(index){
         this.currIndex = index;
+        // this.currMessage=aa.c
         //兄弟组件的传值，提前封装成对象
         var currActivePlayer = {
           currentPosition : this.currentPosition,
-          playerIndex : this.currIndex
+          playerIndex : this.currIndex,
+          // message:this.currMessage
         };
+        console.log(currActivePlayer)
         this.$bus.$emit("sendIndex",currActivePlayer)
       }
     }

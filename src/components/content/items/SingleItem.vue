@@ -117,7 +117,7 @@
       justify-content: center;
       width: 175px;
       left: 46px;
-      top:78px;
+      top:75px;
     }
     .club-content div {
       display: flex;

@@ -1,6 +1,8 @@
 <template>
   <div class="player-data">
+
     <heat-map></heat-map>
+
   </div>
 </template>
 

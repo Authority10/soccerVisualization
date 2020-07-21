@@ -1,6 +1,6 @@
 <template>
   <div class="player-data">
-     FDA
+    
   </div>
 </template>
 

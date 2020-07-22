@@ -18,7 +18,8 @@
     data(){
       return{
         currentIndex:"",
-        message:""
+        message:"",
+        technicalData:[]
       }
     },
     watch: {
@@ -42,35 +43,49 @@
     methods:{
       playerClick(index){
         this.currentIndex = index;
-          // axios({
-          //   url:"http://localhost:3001/test",
-          //   method:"post",
-          //   data:{
-          //      playerID:parseInt(this.currentIndex)
-          //   }
-          // }).then((res)=>{
-          //   console.log(res.data);
-          //   // this.message =res.data
-          // }).catch(err=>{
-          //   console.log(err)
-          // });
+          axios({
+            url:"http://localhost:3001/test",
+            method:"post",
+            data:{
+               playerID:parseInt(this.currentIndex)
+            }
+          }).then((res)=>{
+            console.log(res.data);
+            console.log(typeof res.data)
+            this.message =res.data;
+            this.technicalData = res.data.split(",")
+            console.log(this.technicalData)
+          }).catch(err=>{
+            console.log(err)
+          });
           var  tchnical = {
-             goal:10,
-             assist:3,
-             pass:20,
-             accuratePass:100,
-             keyPass:20,
-             smartPass:10,
-             shot:10,
-             shotOnTarget:9,
-             fouls:20,
-             yellowCard:1,
-             redCard:2
+             // goal:10,
+             // assist:3,
+             // pass:20,
+             // accuratePass:100,
+             // keyPass:20,
+             // smartPass:10,
+             // shot:10,
+             // shotOnTarget:9,
+             // fouls:20,
+             // yellowCard:1,
+             // redCard:2
+            goal:this.technicalData[0],
+            assist:this.technicalData[1],
+            pass:this.technicalData[2],
+            accuratePass:this.technicalData[3],
+            keyPass:this.technicalData[4],
+            smartPass:this.technicalData[5],
+            shot:this.technicalData[6],
+            shotOnTarget:this.technicalData[7],
+            fouls:this.technicalData[8],
+            yellowCard:this.technicalData[9],
+            redCard:this.technicalData[10]
           };
           this.$emit("infoClick",index);
           this.$bus.$emit("sendTechnical",tchnical)
-      }
-    },
+          }
+      },
     components: {
       SingleItem
     },

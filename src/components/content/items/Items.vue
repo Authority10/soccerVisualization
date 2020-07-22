@@ -66,10 +66,9 @@
              fouls:20,
              yellowCard:1,
              redCard:2
-          }
-          this.$emit("infoClick",index)
+          };
+          this.$emit("infoClick",index);
           this.$bus.$emit("sendTechnical",tchnical)
-          // this.$emit("infoClick",aa)
       }
     },
     components: {

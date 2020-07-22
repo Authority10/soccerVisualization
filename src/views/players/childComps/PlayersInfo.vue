@@ -4,12 +4,13 @@
       v-if="players[currentPosition]!==undefined"
       slot="player-person-info"
       :players="players[currentPosition][playerIndex]"
-      @click.native="aaa">
+      >
     </player-info>
     <player-data
+      v-if="players[currentPosition]!==undefined"
       slot="player-person-data"
-      :technical="technical">
-
+      :technical="technical"
+      :event-position="sendEventsPosition">
     </player-data>
 
   </center-info>
@@ -36,6 +37,11 @@
         technical:{}
       }
     },
+    computed:{
+      sendEventsPosition(){
+        return this.players[this.currentPosition][this.playerIndex]["Events"]["Simple pass"]["positions"]
+      }
+    },
     watch:{
       players(newVal, oldVal) {
         this.currentPosition = Object.keys(newVal)[0];
@@ -51,12 +57,10 @@
       this.$bus.$on("sendIndex",(currActivePlayer)=>{
         this.currentPosition = currActivePlayer.currentPosition;
         this.playerIndex = currActivePlayer.playerIndex;
-        console.log(this.currentPosition);
-        console.log(this.playerIndex);
-      })
+
+      });
       this.$bus.$on("sendTechnical",(technical)=>{
-        this.technical = technical
-        console.log(this.technical)
+        this.technical = technical;
       })
     },
     methods:{

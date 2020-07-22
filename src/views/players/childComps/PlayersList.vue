@@ -82,9 +82,8 @@
         var currActivePlayer = {
           currentPosition : this.currentPosition,
           playerIndex : this.currIndex,
-          // message:this.currMessage
         };
-        console.log(currActivePlayer)
+        console.log(currActivePlayer);
         this.$bus.$emit("sendIndex",currActivePlayer)
       }
     }

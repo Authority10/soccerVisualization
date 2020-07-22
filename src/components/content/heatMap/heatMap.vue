@@ -6,24 +6,28 @@
   import { DensityHeatmap } from '@antv/g2plot';
   export default {
     name: "heatMap",
+    props:{
+      eventPosition:{
+        type:Array,
+        default() {
+          return []
+        }
+      }
+    },
+    data(){
+      return{
+        chart:"",
+        newData:[]
+      }
+    },
+    watch: {
+      eventPosition(newVal, oldVal) {
+        this.newData = newVal;
+        this.chart.changeData(this.newData)
+      }
+    },
     mounted() {
-      const data = [
-        {"y": 96, "x": 37, "tmp": 110},
-        {"y": 98, "x": 34, "tmp": 110},
-        {"y": 89, "x": 65, "tmp": 110},
-        {"y": 96, "x": 79, "tmp": 110},
-        {"y": 97, "x": 62, "tmp": 110},
-        {"y": 91, "x": 69, "tmp": 110},
-        {"y": 93, "x": 81, "tmp": 110},
-        {"y": 86, "x": 77, "tmp": 110},
-        {"y": 76, "x": 78, "tmp": 110},
-        {"y": 97, "x": 66, "tmp": 110},
-        {"y": 98, "x": 86, "tmp": 110},
-        {"y": 85, "x": 88, "tmp": 110},
-        {"y": 82, "x": 33, "tmp": 50},
-        {"y": 81, "x": 32, "tmp": 110},
-        {"y": 89, "x": 56, "tmp": 110}
-      ];
+      const data = this.eventPosition;
       const heatMapPlot = new DensityHeatmap(document.getElementById('abc'), {
         data,
         width:336,
@@ -111,8 +115,13 @@
           // value: '#262626'
         },
       });
-      heatMapPlot.render();
+      this.chart = heatMapPlot;
+      this.chart.render();
     },
+    // updated() {
+    //   this.chart.changeData(this.newData)
+    //   this.chart.render();
+    // }
   }
 </script>
 
@@ -121,5 +130,6 @@
     position: absolute;
     left: 330px;
     top:50px;
+    width: 340px;
   }
 </style>

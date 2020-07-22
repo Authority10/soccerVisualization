@@ -4,7 +4,8 @@
 
     <technical-table :technical="technical"></technical-table>
 
-    <heat-map></heat-map>
+    <heat-map
+      :event-position="eventPosition"></heat-map>
 
   </div>
 </template>
@@ -18,9 +19,15 @@
       technical:{
         type:Object,
         default(){
-          return{}
+          return {}
         }
       },
+      eventPosition:{
+        type:Array,
+        default() {
+          return []
+        }
+      }
     },
     components:{
       technicalTable,

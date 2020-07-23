@@ -57,7 +57,8 @@
       playerClick(index){
         this.currentIndex = index;
           axios({
-            url:"http://localhost:3001/test",
+            //url:"http://localhost:3001/test",
+            url:"http://backend2.bsufootballvs.fun/test",
             method:"post",
             data:{
                playerID:parseInt(this.currentIndex)

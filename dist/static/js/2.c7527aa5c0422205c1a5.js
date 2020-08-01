@@ -1,0 +1,2 @@
+webpackJsonp([2],{"/EBL":function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var a={render:function(){var e=this.$createElement;return(this._self._c||e)("div")},staticRenderFns:[]};var r=n("VU/8")({name:"teams"},a,!1,function(e){n("t/7O")},"data-v-2010a50d",null);t.default=r.exports},"t/7O":function(e,t){}});
+//# sourceMappingURL=2.c7527aa5c0422205c1a5.js.map

@@ -3,6 +3,8 @@
     <slot name="content-name"></slot>
     <slot name="tab-control"></slot>
     <slot name="content-items"></slot>
+    <slot name="tab-control-sub"></slot>
+    <slot name="content-items-sub"></slot>
   </div>
 </template>
 
@@ -10,7 +12,6 @@
   import TabControl from "../../common/tabControl/TabControl";
   export default {
     name: "rightList",
-
     components: {
       TabControl
     },
@@ -26,10 +27,10 @@
     position: fixed;
     right: 0;
     top: 0;
-    width: 240px;
-    /*height: 1200px;*/
+    width: 230px;
+    height: 1200px;
     background-color: #fbfbfb;
-    border-left: 1px solid #dcdde1;
+    border-left: 2px solid #a9c9e2;
   }
 
 </style>

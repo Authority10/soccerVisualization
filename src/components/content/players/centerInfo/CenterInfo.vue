@@ -1,13 +1,10 @@
 <template>
-<!--  <div>-->
+
     <div class="center-info">
       <slot name="player-person-info"></slot>
       <slot name="player-person-data"></slot>
     </div>
-<!--    <div class="person-data">-->
-<!--      dfadf-->
-<!--    </div>-->
-<!--  </div>-->
+
 
 </template>
 

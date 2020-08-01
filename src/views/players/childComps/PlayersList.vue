@@ -21,7 +21,7 @@
 
   import RightList from "../../../components/content/rightList/RightList";
   import TabControl from "../../../components/common/tabControl/TabControl";
-  import Items from "../../../components/content/items/Items";
+  import Items from "../../../components/content/players/items/Items";
 
   export default {
     name: "PlayersList",
@@ -37,7 +37,6 @@
       return{
         currentPosition:"ForWard",
         currIndex:"",
-        // currMessage:""
       }
     },
 

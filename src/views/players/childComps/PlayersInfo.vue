@@ -12,14 +12,13 @@
       :technical="technical"
       :event-position="sendEventsPosition">
     </player-data>
-
   </center-info>
 </template>
 
 <script>
-  import CenterInfo from "../../../components/content/centerInfo/CenterInfo";
-  import PlayerInfo from "../../../components/content/centerInfo/centerItems/PlayerInfo";
-  import PlayerData from "../../../components/content/centerInfo/centerItems/PlayerData";
+  import CenterInfo from "../../../components/content/players/centerInfo/CenterInfo";
+  import PlayerInfo from "../../../components/content/players/centerInfo/centerItems/PlayerInfo";
+  import PlayerData from "../../../components/content/players/centerInfo/centerItems/PlayerData";
   export default {
     name: "PlayersInfo",
     props:{
@@ -39,7 +38,7 @@
     },
     computed:{
       sendEventsPosition(){
-        return this.players[this.currentPosition][this.playerIndex]["Events"]["Simple pass"]["positions"]
+        return this.players[this.currentPosition][this.playerIndex]["events"]["Pass"]["positions"]
       }
     },
     watch:{

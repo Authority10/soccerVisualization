@@ -5,7 +5,6 @@
          <img :src="players.countryImg" alt="" class="item-img">
        </div>
 
-
        <span class="item-name">{{players.shortName}}</span>
        <span class="item-number">{{parseInt(players.countryNumber)}}号</span>
 
@@ -52,7 +51,7 @@
     .single-item {
        position: relative;
        margin-top: 5px;
-       margin-left: 10px;
+       margin-left: 5px;
        width: 220px;
        height: 100px;
        background-color: #c8d6e5;

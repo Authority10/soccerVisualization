@@ -15,6 +15,14 @@
   import axios from "axios"
   export default {
     name: "items",
+    props:{
+      playerItems:{
+        type:Object,
+        default(){
+          return{}
+        }
+      }
+    },
     data(){
       return{
         currentIndex:"",
@@ -27,22 +35,12 @@
           this.currentIndex = Object.keys(newVal)[0];
         }
     },
-    // computed:{
-    //   defaultIndex(){
-    //     return Object.keys(this.playerItems)[0]
-    //   }
-    // },
-    props:{
-      playerItems:{
-        type:Object,
-        default(){
-          return{}
-        }
-      }
-    },
+
     methods:{
       playerClick(index){
         this.currentIndex = index;
+        this.$emit("infoClick",index);
+
           axios({
             url:"http://localhost:3001/test",
             method:"post",
@@ -51,25 +49,15 @@
             }
           }).then((res)=>{
             console.log(res.data);
-            console.log(typeof res.data)
+            console.log(typeof res.data);
             this.message =res.data;
-            this.technicalData = res.data.split(",")
+            this.technicalData = res.data.split(",");
             console.log(this.technicalData)
           }).catch(err=>{
             console.log(err)
           });
+
           var  tchnical = {
-             // goal:10,
-             // assist:3,
-             // pass:20,
-             // accuratePass:100,
-             // keyPass:20,
-             // smartPass:10,
-             // shot:10,
-             // shotOnTarget:9,
-             // fouls:20,
-             // yellowCard:1,
-             // redCard:2
             goal:this.technicalData[0],
             assist:this.technicalData[1],
             pass:this.technicalData[2],
@@ -82,7 +70,6 @@
             yellowCard:this.technicalData[9],
             redCard:this.technicalData[10]
           };
-          this.$emit("infoClick",index);
           this.$bus.$emit("sendTechnical",tchnical)
           }
       },

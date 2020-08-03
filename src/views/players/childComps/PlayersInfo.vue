@@ -1,10 +1,10 @@
 <template>
-  <center-info>
+  <players-center>
     <player-info
       v-if="players[currentPosition]!==undefined"
       slot="player-person-info"
       :players="players[currentPosition][playerIndex]"
-      >
+    >
     </player-info>
     <player-data
       v-if="players[currentPosition]!==undefined"
@@ -12,11 +12,11 @@
       :technical="technical"
       :event-position="sendEventsPosition">
     </player-data>
-  </center-info>
+  </players-center>
 </template>
 
 <script>
-  import CenterInfo from "../../../components/content/players/centerInfo/CenterInfo";
+  import PlayersCenter from "../../../components/content/players/centerInfo/PlayersCenter";
   import PlayerInfo from "../../../components/content/players/centerInfo/centerItems/PlayerInfo";
   import PlayerData from "../../../components/content/players/centerInfo/centerItems/PlayerData";
   export default {
@@ -49,14 +49,13 @@
     },
     components:{
       PlayerData,
-      CenterInfo,
+      PlayersCenter,
       PlayerInfo
     },
     beforeCreate() {
       this.$bus.$on("sendIndex",(currActivePlayer)=>{
         this.currentPosition = currActivePlayer.currentPosition;
         this.playerIndex = currActivePlayer.playerIndex;
-
       });
       this.$bus.$on("sendTechnical",(technical)=>{
         this.technical = technical;

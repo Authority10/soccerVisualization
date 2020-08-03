@@ -18,6 +18,7 @@
     name: "Players",
     data(){
       return{
+        teamID:null,
         players:{},
       }
     },
@@ -25,9 +26,16 @@
       PlayersInfo,
       PlayersList,
     },
+    beforeCreate() {
+
+    },
     created() {
-      //通过球队ID获取球队信息
-      this.findTeam(4418)
+      console.log(this.$route);
+      this.teamID = this.$route.params.teamID;
+      console.log(this.teamID);
+      // 通过球队ID获取球队信息
+      this.findTeam(parseInt(this.teamID))
+      // this.findTeam(4418)
     },
     methods:{
       /**

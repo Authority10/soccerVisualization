@@ -11,8 +11,8 @@
 </template>
 
 <script>
-  import technicalTable from "../../technicalTable/technicalTable";
-  import heatMap from "../../heatMap/heatMap";
+  import technicalTable from "../../technicalTable/TechnicalTable";
+  import heatMap from "../../heatMap/HeatMap";
   export default {
     name: "PlayerData",
     props:{

@@ -37,7 +37,7 @@
   import RightList from "../../../components/content/rightList/RightList";
   import TabControl from "../../../components/common/tabControl/TabControl";
   import Items from "../../../components/content/players/items/Items";
-  import groupItems from "../../../components/content/teams/groupItems/groupItems";
+  import groupItems from "../../../components/content/teams/groupItems/GroupItems";
   export default {
     name: "TeamsList",
     props:{

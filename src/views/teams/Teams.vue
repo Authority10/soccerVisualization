@@ -1,15 +1,20 @@
 <template>
-  <teams-list :team-list="teams"></teams-list>
+  <div>
+    <teams-list :team-list="teams"></teams-list>
+    <teams-info :team-info="teams"></teams-info>
+  </div>
 </template>
 
 <script>
   import TeamsList from "./childComps/TeamsList";
+  import TeamsInfo from "./childComps/TeamsInfo";
   import {showAllTeam} from "../../network/teams";
 
   export default {
     name: "teams",
     components: {
-      TeamsList
+      TeamsList,
+      TeamsInfo
     },
     data(){
       return{
@@ -30,7 +35,6 @@
         })
       }
     },
-
   }
 </script>
 

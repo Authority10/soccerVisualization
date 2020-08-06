@@ -18,7 +18,8 @@
     name: "Players",
     data(){
       return{
-        teamID:null,
+        // teamID:null,
+        realID:null,
         players:{},
       }
     },
@@ -26,16 +27,26 @@
       PlayersInfo,
       PlayersList,
     },
-    beforeCreate() {
+    created() {
+      if(this.$route.params.teamID===undefined){
+        this.realID = this.$store.state.teamID;
+      }else {
+        this.realID = this.$route.params.teamID;
+        this.$store.commit("changeTeamID",this.realID);
+      }
 
     },
-    created() {
-      console.log(this.$route);
-      this.teamID = this.$route.params.teamID;
-      console.log(this.teamID);
+    activated() {
+      // console.log(this.$store.state.teamID);
+      // console.log(this.$route);
+      // this.teamID = this.$route.params.teamID;
+      // console.log(this.teamID);
+      this.findTeam(this.realID)
+      // this.realID = this.teamID || 4418;
+      // console.log(this.realID);
       // 通过球队ID获取球队信息
-      this.findTeam(parseInt(this.teamID))
-      // this.findTeam(4418)
+      // this.findTeam(this.realID)
+
     },
     methods:{
       /**

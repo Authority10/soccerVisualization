@@ -16,7 +16,7 @@
     </group-items>
 
     <tab-control
-      style="top:400px"
+      class="tab-control-bottom"
       slot="tab-control-sub"
       :titles="['E组','F组','G组','H组']"
       @tabClick="groupClick"
@@ -24,8 +24,8 @@
 
     <group-items
       v-if="teamList['GroupBottom']!==undefined"
-      style="top:450px"
-      slot="content-items"
+      class="group-bottom"
+      slot="content-items-sub"
       :group-items="teamList['GroupBottom'][currentGroupBottom]">
     </group-items>
 
@@ -113,5 +113,8 @@
     color:#5a5a5a;
     font-size: 24px;
     font-weight: bold;
+  }
+  .group-bottom {
+    top:500px;
   }
 </style>

@@ -16,10 +16,11 @@
     },
     methods:{
       enterTeam(){
-        // console.log(this.activeCountry.teamID)
+        //根据activeCountry.teamID拿到球队ID，进行路由跳转
         this.$router.push("/players" + this.activeCountry.teamID)
       }
     },
+    //点击右侧球队之后传入当前活跃球队对象，拿到球队ID，方便路由跳转
     beforeCreate() {
       this.$bus.$on("sendCountry",(countryItems)=>{
         console.log(countryItems);

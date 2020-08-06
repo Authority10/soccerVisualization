@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
+import store from './store'
 
 import {Button,Search} from "vant";
 
@@ -13,5 +13,6 @@ Vue.use(Button).use(Search);
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App)
-})
+});

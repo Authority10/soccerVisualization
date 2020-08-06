@@ -63,5 +63,9 @@
     color:#0097e6;
     border-bottom: 3px solid #91d5ff;
   }
+  /*子组件在被下半区调用的时候需要绑定这个类来控制top*/
+  .tab-control-bottom {
+    top:413px
+  }
 
 </style>

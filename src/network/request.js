@@ -4,7 +4,7 @@ export function request(config){
   const instance = axios.create({
     baseURL:"http://localhost:3000",
     // baseURL:"http://backend1.bsufootballvs.fun/",
-    timeout:5000
+    timeout:7000
   });
   // 请求拦截器
   instance.interceptors.request.use(

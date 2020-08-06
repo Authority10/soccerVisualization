@@ -1,13 +1,5 @@
 <template>
   <div class="group-items">
-<!--    <single-country-->
-<!--      v-for="(countryItems,index) in groupItems"-->
-<!--      :key="countryItems.key"-->
-<!--      :single-items="countryItems"-->
-<!--      :class="{active:currentIndex===index}"-->
-<!--      @click.native="countryClick(index)"-->
-<!--      >-->
-<!--    </single-country>-->
         <single-country
           v-for="(countryItems) in groupItems"
           :key="countryItems.key"
@@ -46,12 +38,9 @@
     },
     methods:{
       countryClick(countryItems){
-        this.currentCountry = countryItems.countryName
-        this.$bus.$emit("sendCountry",countryItems)
+        this.currentCountry = countryItems.countryName;
+        this.$bus.$emit("sendCountry",countryItems);
       },
-      // countrySend(countryItems){
-      //   console.log(countryItems)
-      // }
     },
     created(){
       this.currentIndex = Object.keys(this.groupItems)[0];
@@ -71,6 +60,9 @@
    width: 240px;
    height: 650px;
  }
+  .group-bottom {
+    top:450px
+  }
 
 
 </style>

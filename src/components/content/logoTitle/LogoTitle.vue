@@ -37,11 +37,6 @@
      justify-content: space-between;
      align-items: center;
   }
-  /*.logo-text {*/
-  /*  display: flex;*/
-  /*  justify-content: space-between;*/
-  /*  align-items: center;*/
-  /*}*/
   .search {
     display: flex;
     justify-content: space-between;
@@ -53,9 +48,11 @@
   .school {
     color:#ffa3a7;
     font-weight: bold;
+    font-size: 18px;
   }
   .soccer {
     color:#9bd5ff;
     font-weight: bold;
+    font-size: 18px;
   }
 </style>

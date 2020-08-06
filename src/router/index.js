@@ -10,11 +10,15 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    redirect:"/teams"
+    redirect:"/players"
   },
   {
     // path: '/players',
     path:"/players:teamID",
+    component: Players
+  },
+  {
+    path:"/players",
     component: Players
   },
   {

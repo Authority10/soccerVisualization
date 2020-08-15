@@ -5,14 +5,16 @@
     <technical-table :technical="technical"></technical-table>
 
     <heat-map
-      :event-position="eventPosition"></heat-map>
+    v-if="eventPosition!==[]"
+    :event-position="eventPosition"
+    ></heat-map>
 
   </div>
 </template>
 
 <script>
   import technicalTable from "../../technicalTable/TechnicalTable";
-  import heatMap from "../../heatMap/HeatMap";
+  import heatMap from "../../g2plot/HeatMap";
   export default {
     name: "PlayerData",
     props:{

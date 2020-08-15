@@ -7,6 +7,8 @@
 </template>
 
 <script>
+  import Toast from "vant";
+
   export default {
     name: "CenterInfo",
     data(){
@@ -29,7 +31,6 @@
     },
   }
 </script>
-
 <style scoped>
   .center-info {
     position: fixed;

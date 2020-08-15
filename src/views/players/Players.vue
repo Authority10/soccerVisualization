@@ -1,9 +1,10 @@
 <template>
 <div>
-  <players-list :players="players"></players-list>
-  <players-info
-    :players="players"
-  ></players-info>
+    <players-list :players="players"></players-list>
+
+    <players-info
+      :players="players"
+    ></players-info>
 </div>
 
 </template>
@@ -18,8 +19,6 @@
     name: "Players",
     data(){
       return{
-        // teamID:null,
-        realID:null,
         players:{},
       }
     },
@@ -28,25 +27,18 @@
       PlayersList,
     },
     created() {
-      if(this.$route.params.teamID===undefined){
-        this.realID = this.$store.state.teamID;
-      }else {
-        this.realID = this.$route.params.teamID;
-        this.$store.commit("changeTeamID",this.realID);
-      }
-
+      this.findTeam(4418)
+      // this.findTeam(this.$route.params.teamID)
     },
-    activated() {
-      // console.log(this.$store.state.teamID);
-      // console.log(this.$route);
-      // this.teamID = this.$route.params.teamID;
-      // console.log(this.teamID);
-      this.findTeam(this.realID)
-      // this.realID = this.teamID || 4418;
-      // console.log(this.realID);
-      // 通过球队ID获取球队信息
-      // this.findTeam(this.realID)
-
+    beforeRouteEnter(to,from,next){
+      next(vm => {
+        console.log(to);
+        console.log(vm);
+        vm.findTeam(to.params.teamID)
+      })
+    },
+    activated(){
+      this.findTeam(this.$route.params.teamID)
     },
     methods:{
       /**
@@ -59,7 +51,8 @@
           this.players = new Players(res[0])
         })
       },
-    }
+    },
+
   }
 </script>
 

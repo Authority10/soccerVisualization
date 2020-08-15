@@ -122,14 +122,15 @@
   .players-table {
     position:absolute ;
     left:20px;
-    top:40px;
-    width: 300px;
+    top:45px;
+    width: 620px;
+    height:600px;
+    overflow: scroll;
   }
   table{
     border-collapse: collapse;
   }
   .head {
-
     color: #5a5a5a;
   }
   .head td {

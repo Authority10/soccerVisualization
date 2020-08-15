@@ -118,10 +118,6 @@
       this.chart = heatMapPlot;
       this.chart.render();
     },
-    // updated() {
-    //   this.chart.changeData(this.newData)
-    //   this.chart.render();
-    // }
   }
 </script>
 

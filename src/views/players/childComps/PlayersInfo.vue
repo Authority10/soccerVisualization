@@ -38,7 +38,11 @@
     },
     computed:{
       sendEventsPosition(){
-        return this.players[this.currentPosition][this.playerIndex]["events"]["Pass"]["positions"]
+        if(this.players[this.currentPosition][this.playerIndex]["events"]===undefined){
+          return []
+        }else {
+          return this.players[this.currentPosition][this.playerIndex]["events"]["Pass"]["positions"]
+        }
       }
     },
     watch:{

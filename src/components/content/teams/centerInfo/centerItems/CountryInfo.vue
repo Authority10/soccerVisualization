@@ -1,7 +1,7 @@
 <template>
   <div class="country-info">
     <div class="img-name">
-      <img src="@/assets/footass/310.jpg" alt="">
+      <img :src="activeCountry.img" alt="">
       <span>{{activeCountry.countryName}}</span>
     </div>
 

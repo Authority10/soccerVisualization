@@ -2,16 +2,16 @@
    <div class="single-item">
        <div class="player-img">
 <!--         <img src="@/assets/players/abc.jpg" alt="" class="item-img">-->
-         <img :src="players.countryImg" alt="" class="item-img">
+         <img :src="players.imgNumber.img.countryImg" alt="" class="item-img">
        </div>
 
        <span class="item-name">{{players.shortName}}</span>
-       <span class="item-number">{{parseInt(players.countryNumber)}}号</span>
+       <span class="item-number">{{parseInt(players.imgNumber.number.countryNumber)}}号</span>
 
        <span class="item-country">国籍:</span>
        <div  class="country-content">
          <div>
-           <img  class="country-img" :src="players.countryLogo" alt="" >
+           <img  class="country-img" :src="players.imgNumber.img.countryLogo" alt="" >
            <span class="country-text">{{players.currentNationalTeam}}</span>
          </div>
        </div>
@@ -19,7 +19,7 @@
        <span class="item-club">球队:</span>
        <div class="club-content">
          <div>
-           <img  class="club-img" :src="players.clubLogo" alt="" >
+           <img  class="club-img" :src="players.imgNumber.img.clubLogo" alt="" >
            <span class="club-text">{{players.currentTeam}}</span>
          </div>
        </div>

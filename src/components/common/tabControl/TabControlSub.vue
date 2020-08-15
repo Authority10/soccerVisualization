@@ -13,7 +13,7 @@
 
 <script>
   export default {
-    name: "TabControl",
+    name: "TabControlSub",
     props:{
       titles:{
         type:Array,
@@ -39,43 +39,32 @@
 
 <style scoped>
   .tab-control{
-    position: absolute;
-    width: 240px;
-    top: 70px;
+    position: fixed;
+    width: 650px;
+    top: 306px;
+    left: 117px;
     display: flex;
     text-align: center;
     font-size: 14px;
     line-height: 40px;
     height: 40px;
-    background-color: white;
+    /*background-color:black;*/
   }
   .tab-control-item{
     flex: 1;
   }
 
   .tab-control-item span{
-    color: #bfc4d5;
+    color:black;
+    /*font-weight: bold;*/
+    font-size: 20px;
     padding:5px ;
+    /*border: 3px solid black;*/
+    /*border-radius: 5px;*/
   }
-  .active span{
-    color:#0097e6;
-    border-bottom: 3px solid #91d5ff;
-  }
-  /*子组件在被下半区调用的时候需要绑定这个类来控制top*/
-  .tab-control-bottom {
-    top:413px
-  }
-  /*子组件在被countryData调用的时候需要绑定这个类来控制tabControl*/
-  .tab-control-sub {
-    position: fixed;
-    width: 600px;
-    top: 306px;
-    left: 135px;
-    display: flex;
-    text-align: center;
-    font-size: 14px;
-    line-height: 40px;
-    height: 40px;
-    background-color:red;
+  .active span {
+    color:#2980b9;
+    border-bottom: 3px solid #2980b9;
+    /*border-radius: 5px;*/
   }
 </style>

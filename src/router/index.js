@@ -13,17 +13,18 @@ const routes = [
     redirect:"/players"
   },
   {
-    // path: '/players',
-    path:"/players:teamID",
-    component: Players
+    path:"/players",
+    component: Players,
+
   },
   {
-    path:"/players",
-    component: Players
+    path:"/players:teamID",
+    component: Players,
+
   },
   {
     path: '/teams',
-    component: Teams
+    component: Teams,
   },
   {
     path: '/matches',

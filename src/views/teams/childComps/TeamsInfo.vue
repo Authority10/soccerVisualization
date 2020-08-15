@@ -1,13 +1,15 @@
 <template>
  <teams-center>
+
    <country-info
      slot="country-info"
      :activeCountry="activeCountry"
    ></country-info>
 
    <country-data
-     slot="country-data" :active-players="activeCountry.players"
+     slot="country-data" :active-players="activeCountry.playerTable"
    ></country-data>
+
  </teams-center>
 </template>
 

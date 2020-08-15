@@ -1,8 +1,10 @@
 <template>
   <div id="app">
+
     <keep-alive>
       <router-view/>
     </keep-alive>
+
     <logo-title></logo-title>
     <main-tab-bar></main-tab-bar>
 
@@ -17,6 +19,10 @@ export default {
   components: {
     MainTabBar,
     LogoTitle
+  },
+  created() {
+    console.log(window.screen.width);
+    console.log(window.screen.height);
   }
 }
 </script>

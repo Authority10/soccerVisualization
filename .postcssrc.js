@@ -7,8 +7,8 @@ module.exports = {
     // to edit target browsers: use "browserslist" field in package.json
     "autoprefixer": {},
     // 'postcss-px-to-viewport': {
-    //     viewportWidth: 1024,
-    //     viewportHeight: 768,
+    //     viewportWidth: 1536,
+    //     viewportHeight: 754,
     //     unitPrecision: 5,
     //     viewportUnit: 'vw',
     //     fontViewportUnit: 'vw',

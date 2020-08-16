@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
-
+import 'lib-flexible/flexible'
 import {Button,Search,Toast} from "vant";
 
 Vue.config.productionTip = false;

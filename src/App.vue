@@ -5,6 +5,8 @@
       <router-view/>
     </keep-alive>
 
+    <img src="../src/assets/logo/logo.jpg" alt="" class="logo">
+
     <logo-title></logo-title>
     <main-tab-bar></main-tab-bar>
 
@@ -21,12 +23,17 @@ export default {
     LogoTitle
   },
   created() {
-    console.log(window.screen.width);
-    console.log(window.screen.height);
+
   }
 }
 </script>
 
 <style>
-
+  .logo {
+    position: fixed;
+    width: 110px;
+    top:2px;
+    left: 3px;
+    z-index: 999;
+  }
 </style>

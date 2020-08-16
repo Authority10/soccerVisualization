@@ -50,12 +50,12 @@
 <style scoped>
     .single-item {
        position: relative;
-       margin-top: 5px;
+       margin-top: 10px;
        margin-left: 5px;
-       width: 220px;
-       height: 100px;
+       width: 270px;
+       height: 120px;
        background-color: #c8d6e5;
-       border-radius: 6px;
+       border-radius: 10px;
     }
     .player-img {
       position: relative;

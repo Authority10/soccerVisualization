@@ -8,7 +8,7 @@
 <script>
   import TeamsList from "./childComps/TeamsList";
   import TeamsInfo from "./childComps/TeamsInfo";
-  import {showAllTeam} from "../../network/teams";
+  import {showAllTeam,Top,Bottom} from "../../network/teams";
 
   export default {
     name: "teams",
@@ -18,7 +18,10 @@
     },
     data(){
       return{
-        teams:{}
+        teams:{
+          GroupTop:{},
+          GroupBottom:{}
+        }
       }
     },
     created(){
@@ -29,7 +32,13 @@
         showAllTeam()
           .then((res)=>{
           console.log(res);
-          this.teams = res[0]
+          // console.log(res.slice(0,4));
+          // console.log(res.slice(4,8));
+          //按照上下半区切割数组，放入提前定义好的类
+          // 数组对象转化成纯对象
+          this.teams.GroupTop=new Top(res.slice(0,4));
+          this.teams.GroupBottom=new Bottom(res.slice(4,8));
+          console.log(this.teams)
         }).catch((err)=>{
           console.log(err)
         })

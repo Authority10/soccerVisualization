@@ -45,7 +45,7 @@
   img {
     position: fixed;
     width: 56px;
-    right:260px;
+    right:500px;
     bottom:26px;
   }
 </style>

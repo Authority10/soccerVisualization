@@ -9,6 +9,7 @@ export function findTeam(teamID) {
   })
 }
 
+//类名Players 注意p的大小写
 export class Players{
   constructor(players) {
     this.ForWard = players.ForWard;

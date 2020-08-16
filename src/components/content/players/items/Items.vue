@@ -51,6 +51,8 @@
 
     methods:{
       playerClick(index){
+
+
         this.currentIndex = index;
         this.$emit("infoClick",index);
 
@@ -120,14 +122,15 @@
 <style scoped>
    .items {
       /*display: flex;*/
-      overflow: scroll;
+      overflow: auto;
       /*flex-direction: column;*/
       /*align-items: center;*/
       /*justify-content: flex-start;*/
       position: absolute;
-      top:110px;
-      width: 240px;
-      height: 650px;
+      top:150px;
+      left:20px;
+      width: 300px;
+      height: 760px;
    }
 
 </style>

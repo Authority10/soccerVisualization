@@ -23,9 +23,9 @@
        :key="index"
      >
        <td>
-         <img :src="players.playerImg" alt="">
+         <img :src="players.imgNumber.img.countryImg" alt="">
        </td>
-       <td>{{parseInt(players.countryNumber)}}</td>
+       <td>{{parseInt(players.imgNumber.number.countryNumber)}}</td>
        <td>{{players.Name.replace(/\s*/g,"")}}</td>
        <td>Back</td>
        <td>{{players.Age}}</td>
@@ -47,9 +47,9 @@
         :key="index"
       >
         <td>
-          <img :src="players.playerImg" alt="">
+          <img :src="players.imgNumber.img.countryImg" alt="">
         </td>
-        <td>{{parseInt(players.countryNumber)}}</td>
+        <td>{{parseInt(players.imgNumber.number.countryNumber)}}</td>
         <td>{{players.Name.replace(/\s*/g,"")}}</td>
         <td>Center</td>
         <td>{{players.Age}}</td>
@@ -71,9 +71,9 @@
         :key="index"
       >
         <td>
-          <img :src="players.playerImg" alt="">
+          <img :src="players.imgNumber.img.countryImg" alt="">
         </td>
-        <td>{{parseInt(players.countryNumber)}}</td>
+        <td>{{parseInt(players.imgNumber.number.countryNumber)}}</td>
         <td>{{players.Name.replace(/\s*/g,"")}}</td>
         <td>ForWard</td>
         <td>{{players.Age}}</td>
@@ -113,7 +113,10 @@
     computed:{
        isRight(){
         return this.players.foot === "right"
-       }
+       },
+      countryImg(){
+        // return this.players.imgNumber.img.countryImg
+      }
     }
   }
 </script>

@@ -1,7 +1,6 @@
 <template>
   <right-list>
-
-    <span slot="content-name">球队列表</span>
+    <div class="list-name" slot="content-name">球队列表</div>
 
     <tab-control
       slot="tab-control"
@@ -10,9 +9,9 @@
     ></tab-control>
 
     <group-items
-    v-if="teamList['GroupTop']!==undefined"
-    slot="content-items"
-    :group-items="teamList['GroupTop'][currentGroupTop]">
+      v-if="teamList['GroupTop']!==undefined"
+      slot="content-items"
+      :group-items="teamList['GroupTop'][currentGroupTop]">
     </group-items>
 
     <tab-control
@@ -47,6 +46,12 @@
           return{}
         }
       }
+      // teamList:{
+      //   type:Array,
+      //   default(){
+      //     return[]
+      //   }
+      // }
     },
     data(){
       return{
@@ -106,12 +111,17 @@
 </script>
 
 <style scoped>
-  span {
+  .list-name {
     position: absolute;
+    width: 137px;
+    height: 52px;
     left: 25px;
     top:  32px;
-    color:#5a5a5a;
-    font-size: 24px;
+    color:#EAEAEA;
+    background-color:#1E2E45;
+    font-size: 28px;
+    text-align: center;
+    line-height: 52px;
     font-weight: bold;
   }
   .group-bottom {

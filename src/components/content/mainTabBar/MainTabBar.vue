@@ -1,18 +1,18 @@
 <template>
   <tab-bar>
 <!--    动态传入color-->
-      <tab-bar-item path="/players" color="rgba(18,149,219,0.4)">
-           <img slot="item-img" src="../../../assets/nav/player.png" alt="">
+      <tab-bar-item path="/players" color="#537091">
+           <img slot="item-img" src="../../../assets/nav/playerSub.svg" alt="">
            <span slot="item-text">球员</span>
       </tab-bar-item>
 
-      <tab-bar-item path="/teams"   color="rgba(72,211,169,0.4)">
-          <img slot="item-img" src="../../../assets/nav/team.png" alt="">
+      <tab-bar-item path="/teams"   color="#F7BA52">
+          <img slot="item-img" src="../../../assets/nav/teamSub.svg" alt="">
           <span slot="item-text">球队</span>
       </tab-bar-item>
 
-      <tab-bar-item path="/matches" color="rgba(216,30,6,0.4)">
-          <img slot="item-img" src="../../../assets/nav/match.png" alt="">
+      <tab-bar-item path="/matches" color="#D57666">
+          <img slot="item-img" src="../../../assets/nav/matchesSub.svg" alt="">
           <span slot="item-text">比赛</span>
       </tab-bar-item>
 

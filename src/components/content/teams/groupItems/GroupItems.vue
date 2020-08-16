@@ -38,6 +38,8 @@
     },
     methods:{
       countryClick(countryItems){
+        console.log(window.screen.width);
+        console.log(window.screen.height);
         this.currentCountry = countryItems.countryName;
         this.$bus.$emit("sendCountry",countryItems);
       },
@@ -51,17 +53,16 @@
 <style scoped>
  .group-items {
    /*display: flex;*/
-   overflow: scroll;
    /*flex-direction: column;*/
    /*align-items: center;*/
    /*justify-content: flex-start;*/
    position: absolute;
-   top:110px;
-   width: 240px;
+   top:130px;
+   width: 300px;
    height: 650px;
  }
   .group-bottom {
-    top:450px
+    top:500px
   }
 
 

@@ -22,9 +22,9 @@
 <style scoped>
   .single-country {
     position: relative;
-    margin-top: 5px;
-    margin-left: 5px;
-    width: 220px;
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 270px;
     height: 70px;
     background-color: #c8d6e5;
     border-radius: 6px;

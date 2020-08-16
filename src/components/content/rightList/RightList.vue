@@ -25,12 +25,13 @@
 
   .content-box {
     position: fixed;
+    /*overflow: scroll;*/
     right: 0;
     top: 0;
-    width: 230px;
-    height: 1200px;
+    width: 324px;
+    height: 1082px;
     background-color: #fbfbfb;
-    border-left: 2px solid #a9c9e2;
+    border-left:1px solid rgba(187, 187, 187, 0.5);
   }
 
 </style>

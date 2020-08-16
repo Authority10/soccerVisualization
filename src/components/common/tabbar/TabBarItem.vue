@@ -28,7 +28,7 @@
       //动态决定样式，判断是否是活跃路由赋予对应的颜色
       isActiveColor(){
         return this.isActive ?
-          {backgroundColor:this.color,width:8+"px",height:64+"px",display:"inline-block"}
+          {backgroundColor:this.color,width:6+"px",height:57+"px",display:"inline-block"}
           :{}
       }
     },
@@ -50,10 +50,10 @@
      height:64px
    }
    .item-img {
-     width: 64px;
-     height: 64px;
+     width: 57px;
+     height: 57px;
    }
    .item-text {
-    margin-left: 28px;
+    margin-left: 30px;
    }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <right-list>
-    <span slot="content-name">球员列表</span>
+    <div class="list-name" slot="content-name">球员列表</div>
 
     <tab-control
       slot="tab-control"
@@ -90,12 +90,17 @@
 </script>
 
 <style scoped>
-  span {
+  .list-name {
     position: absolute;
+    width: 137px;
+    height: 52px;
     left: 25px;
     top:  32px;
-    color:#5a5a5a;
-    font-size: 24px;
+    color:#EAEAEA;
+    background-color:#1E2E45;
+    font-size: 28px;
+    text-align: center;
+    line-height: 52px;
     font-weight: bold;
   }
 

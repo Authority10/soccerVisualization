@@ -2,7 +2,7 @@
 
   <div class="tab-control">
     <div v-for="(item,index) in titles"
-         class="tab-control-item "
+         class="tab-control-item"
          :class="{active:index===currentIndex}"
          @click="itemClick(index)">
       <span>{{item}}</span>
@@ -40,8 +40,8 @@
 <style scoped>
   .tab-control{
     position: absolute;
-    width: 240px;
-    top: 70px;
+    width: 324px;
+    top: 100px;
     display: flex;
     text-align: center;
     font-size: 14px;
@@ -63,7 +63,7 @@
   }
   /*子组件在被下半区调用的时候需要绑定这个类来控制top*/
   .tab-control-bottom {
-    top:413px
+    top:450px
   }
   /*子组件在被countryData调用的时候需要绑定这个类来控制tabControl*/
   .tab-control-sub {

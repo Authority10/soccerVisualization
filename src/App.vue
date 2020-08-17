@@ -5,8 +5,8 @@
       <router-view/>
     </keep-alive>
 
-    <img src="../src/assets/logo/logo.jpg" alt="" class="logo">
-
+    <img src="../src/assets/logo/soccerLogo.png" alt="" class="logo">
+    <div class="hr-line"></div>
     <logo-title></logo-title>
     <main-tab-bar></main-tab-bar>
 
@@ -31,9 +31,17 @@ export default {
 <style>
   .logo {
     position: fixed;
-    width: 110px;
+    width: 105px;
     top:2px;
     left: 3px;
     z-index: 999;
+  }
+  .hr-line {
+    position: fixed;
+    left: 116px;
+    top: 100px;
+    width: 1478px;
+    height: 8px;
+    background-color:#8395a7;
   }
 </style>

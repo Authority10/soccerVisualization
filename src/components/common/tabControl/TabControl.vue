@@ -44,7 +44,7 @@
     top: 100px;
     display: flex;
     text-align: center;
-    font-size: 14px;
+    font-size: 20px;
     line-height: 40px;
     height: 40px;
     background-color: white;
@@ -54,16 +54,16 @@
   }
 
   .tab-control-item span{
-    color: #bfc4d5;
+    color: #848282;
     padding:5px ;
   }
   .active span{
-    color:#0097e6;
-    border-bottom: 3px solid #91d5ff;
+    color:#F7BA52;
+    border-bottom: 5px solid #F7BA52;
   }
   /*子组件在被下半区调用的时候需要绑定这个类来控制top*/
   .tab-control-bottom {
-    top:450px
+    top:510px
   }
   /*子组件在被countryData调用的时候需要绑定这个类来控制tabControl*/
   .tab-control-sub {

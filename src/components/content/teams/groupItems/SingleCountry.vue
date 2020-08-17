@@ -25,24 +25,26 @@
     margin-top: 10px;
     margin-left: 20px;
     width: 270px;
-    height: 70px;
-    background-color: #c8d6e5;
+    height: 80px;
+    background-color: #F7BA52;
     border-radius: 6px;
   }
   .national-img {
     position: absolute;
     left: 5px;
     top: 10px;
-    width: 80px;
-    height: 50px;
+    width: 96px;
+    height: 60px;
   }
   span {
     position: absolute;
-    left:90px;
-    top:15px;
-    font-size: 22px;
+    left:110px;
+    /*行高等于父元素高度可以居中*/
+    line-height: 80px;
+    font-size: 27px;
+    color:#FDFDFD
   }
   .active {
-    background-color: rgba(255,204,204,1);
+    background-color: #1E2E45;
   }
 </style>

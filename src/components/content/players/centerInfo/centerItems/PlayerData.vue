@@ -40,13 +40,13 @@
 
 <style scoped>
   .player-data {
-    position: relative;
-    top:20px;
-    left:20px;
-    width: 650px;
-    height: 300px;
+    position: absolute;
+    top:60px;
+    left:700px;
+    width: 700px;
+    height: 730px;
     background-color:rgba(85,239,195,0.3);
-    border-radius: 10px;
+    /*border-radius: 10px;*/
   }
   span {
     position: absolute;

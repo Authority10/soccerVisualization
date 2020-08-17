@@ -124,8 +124,8 @@
 <style scoped>
   #abc{
     position: absolute;
-    left: 330px;
-    top:50px;
+    left: 30px;
+    top:  300px;
     width: 340px;
   }
 </style>

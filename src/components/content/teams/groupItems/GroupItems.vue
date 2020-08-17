@@ -57,12 +57,12 @@
    /*align-items: center;*/
    /*justify-content: flex-start;*/
    position: absolute;
-   top:130px;
+   top:140px;
    width: 300px;
    height: 650px;
  }
   .group-bottom {
-    top:500px
+    top:550px
   }
 
 

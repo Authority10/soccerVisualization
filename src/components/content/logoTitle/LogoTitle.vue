@@ -28,9 +28,6 @@
      left:116px ;
      width: 1478px;
      height: 100px;
-     /*display: flex;*/
-     /*justify-content: space-between;*/
-     /*align-items: center;*/
      background-color: #1E2E45;
   }
   .logo-text {

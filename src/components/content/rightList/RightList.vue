@@ -30,7 +30,7 @@
     top: 0;
     width: 324px;
     height: 1082px;
-    background-color: #fbfbfb;
+    background-color: #F2F2F2;
     border-left:1px solid rgba(187, 187, 187, 0.5);
   }
 

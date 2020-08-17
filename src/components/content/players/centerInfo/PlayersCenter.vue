@@ -17,12 +17,12 @@
 <style scoped>
    .center-info {
      position: fixed;
-     width: 690px;
-     height: 640px;
-     top:  110px;
-     left: 90px;
-     background-color:#74b9ff;
+     width: 1478px;
+     height: 835px;
+     top:  108px;
+     left: 115px;
+     background-color:#1E2E45;
      border: 1px solid #dcdde1;
-     border-radius: 10px;
+     /*border-radius: 10px;*/
    }
 </style>

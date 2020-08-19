@@ -25,6 +25,7 @@
 <style scoped>
   .top-title {
      position: fixed;
+     top:0;
      left:116px ;
      width: 1478px;
      height: 100px;

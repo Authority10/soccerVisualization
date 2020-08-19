@@ -42,18 +42,21 @@
 
 <style scoped>
    .tar-bar-item {
+     position: relative;
      margin-bottom: 5px;
    }
    .item-box {
      display: inline-block;
      width: 8px;
-     height:64px
+     height:72px;
    }
    .item-img {
      width: 57px;
      height: 57px;
    }
    .item-text {
-    margin-left: 30px;
+    margin-left: 40px;
+    font-size: 20px;
+    font-weight: bold;
    }
 </style>

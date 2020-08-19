@@ -2,9 +2,13 @@
 
     <div class="center-info">
       <span class="info-span">球员资料</span>
+
       <slot name="player-person-info"></slot>
+
       <div class="hr-line"></div>
+
       <span class="data-span">技术统计</span>
+
       <slot name="player-person-data"></slot>
     </div>
 
@@ -13,7 +17,7 @@
 
 <script>
   export default {
-    name: "CenterInfo"
+    name: "PlayersCenter"
   }
 </script>
 
@@ -30,7 +34,7 @@
   .info-span {
     position: absolute;
     top:17px;
-    left: 50px;
+    left: 80px;
     color:#FDFDFD;
     font-size: 28px;
     border-bottom: 6px solid #F7BA52;

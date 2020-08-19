@@ -1,24 +1,31 @@
 <template>
-  <players-center>
-    <player-info
-      v-if="players[currentPosition]!==undefined"
-      slot="player-person-info"
-      :players="players[currentPosition][playerIndex]"
-    >
-    </player-info>
-    <player-data
-      v-if="players[currentPosition]!==undefined"
-      slot="player-person-data"
-      :technical="technical"
-      :event-position="sendEventsPosition">
-    </player-data>
-  </players-center>
+  <div>
+    <players-basic>
+      <player-info
+        v-if="players[currentPosition]!==undefined"
+        slot="player-person-info"
+        :players="players[currentPosition][playerIndex]"
+      >
+      </player-info>
+      <player-data
+        v-if="players[currentPosition]!==undefined"
+        slot="player-person-data"
+        :technical="technical"
+        :event-position="sendEventsPosition">
+      </player-data>
+    </players-basic>
+    <players-matches v-if="isShow"></players-matches>
+    <img class="left-arrow" src="@/assets/common/left-arrow.png" alt=""  @click="change">
+    <img class="right-arrow" src="@/assets/common/right-arrow.png" alt="" @click="change">
+  </div>
+
 </template>
 
 <script>
-  import PlayersCenter from "../../../components/content/players/centerInfo/PlayersCenter";
+  import PlayersBasic from "../../../components/content/players/centerInfo/PlayersBasic";
   import PlayerInfo from "../../../components/content/players/centerInfo/centerItems/PlayerInfo";
   import PlayerData from "../../../components/content/players/centerInfo/centerItems/PlayerData";
+  import PlayersMatches from "../../../components/content/players/centerInfo/PlayersMatches";
   export default {
     name: "PlayersInfo",
     props:{
@@ -33,7 +40,8 @@
       return{
         currentPosition:"",
         playerIndex:"",
-        technical:{}
+        technical:{},
+        isShow:false
       }
     },
     computed:{
@@ -53,8 +61,9 @@
     },
     components:{
       PlayerData,
-      PlayersCenter,
-      PlayerInfo
+      PlayersBasic,
+      PlayerInfo,
+      PlayersMatches
     },
     beforeCreate() {
       this.$bus.$on("sendIndex",(currActivePlayer)=>{
@@ -66,11 +75,17 @@
       })
     },
     methods:{
-
+      change(){
+        this.isShow = true
+      }
     }
   }
 </script>
 
 <style scoped>
-
+  .right-arrow {
+    position: fixed;
+    top: 450px;
+    right: 330px;
+  }
 </style>

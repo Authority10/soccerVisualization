@@ -8,12 +8,12 @@
       </tab-control-sub>
 
       <players-table
-        :playersTable="activePlayers"
+        :playersTable="activeCountry.playerTable"
         ref="playersTable"
         v-if="playersTable">
       </players-table>
-      <country-attack  v-if="CountryAttack"></country-attack>
-      <country-defense v-if="CountryDefense"></country-defense>
+      <country-attack  v-if="CountryAttack"  :radar="activeCountry.Radar.attack"></country-attack>
+      <country-defense v-if="CountryDefense" :radar="activeCountry.Radar.defense"></country-defense>
   </div>
 </template>
 
@@ -25,7 +25,7 @@
   export default {
     name: "CountryData",
     props:{
-      activePlayers:{
+      activeCountry:{
         type:Object,
         default(){
           return {}

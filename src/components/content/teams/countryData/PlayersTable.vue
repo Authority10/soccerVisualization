@@ -13,15 +13,13 @@
         <td>Matches</td>
         <td>Total minutes</td>
         <td>Average minutes</td>
-<!--        <td>Goal</td>-->
-<!--        <td>Assists</td>-->
         <td>Cards</td>
         <td>Sub in/out</td>
       </tr>
       <tr
        v-for="(players,index) in playersTable.Back"
        :key="index"
-     >
+      >
        <td>
          <img :src="players.imgNumber.img.countryImg" alt="">
        </td>
@@ -30,15 +28,13 @@
        <td>Back</td>
        <td>{{players.Age}}</td>
        <td>
-         <img v-if="true" src="@/assets/foot/right-foot.png" alt="">
+         <img v-if="players.foot==='right'" src="@/assets/foot/right-foot.png" alt="">
          <img v-else src="@/assets/foot/left-foot.png" alt="">
        </td>
        <td>{{players.Height}}</td>
        <td>{{players.Match}}</td>
        <td>{{players.Time}}</td>
        <td>{{parseInt(players.AverageMinutes)}}</td>
-<!--       <td>{{players.goals}}</td>-->
-<!--       <td>{{players.assists}}</td>-->
        <td>{{players.Cards}}</td>
        <td>{{players.Sub}}</td>
      </tr>
@@ -54,15 +50,13 @@
         <td>Center</td>
         <td>{{players.Age}}</td>
         <td>
-          <img v-if="true" src="@/assets/foot/right-foot.png" alt="">
+          <img v-if="players.foot==='right'" src="@/assets/foot/right-foot.png" alt="">
           <img v-else src="@/assets/foot/left-foot.png" alt="">
         </td>
         <td>{{players.Height}}</td>
         <td>{{players.Match}}</td>
         <td>{{players.Time}}</td>
         <td>{{parseInt(players.AverageMinutes)}}</td>
-        <!--       <td>{{players.goals}}</td>-->
-        <!--       <td>{{players.assists}}</td>-->
         <td>{{players.Cards}}</td>
         <td>{{players.Sub}}</td>
       </tr>
@@ -78,15 +72,35 @@
         <td>ForWard</td>
         <td>{{players.Age}}</td>
         <td>
-          <img v-if="true" src="@/assets/foot/right-foot.png" alt="">
+          <img v-if="players.foot==='right'" src="@/assets/foot/right-foot.png" alt="">
           <img v-else src="@/assets/foot/left-foot.png" alt="">
         </td>
         <td>{{players.Height}}</td>
         <td>{{players.Match}}</td>
         <td>{{players.Time}}</td>
         <td>{{parseInt(players.AverageMinutes)}}</td>
-        <!--       <td>{{players.goals}}</td>-->
-        <!--       <td>{{players.assists}}</td>-->
+        <td>{{players.Cards}}</td>
+        <td>{{players.Sub}}</td>
+      </tr>
+      <tr
+        v-for="(players,index) in playersTable.GoalKeeper"
+        :key="index"
+      >
+        <td>
+          <img :src="players.imgNumber.img.countryImg" alt="">
+        </td>
+        <td>{{parseInt(players.imgNumber.number.countryNumber)}}</td>
+        <td>{{players.Name.replace(/\s*/g,"")}}</td>
+        <td>GoalKeeper</td>
+        <td>{{players.Age}}</td>
+        <td>
+          <img v-if="players.foot==='right'" src="@/assets/foot/right-foot.png" alt="">
+          <img v-else src="@/assets/foot/left-foot.png" alt="">
+        </td>
+        <td>{{players.Height}}</td>
+        <td>{{players.Match}}</td>
+        <td>{{players.Time}}</td>
+        <td>{{parseInt(players.AverageMinutes)}}</td>
         <td>{{players.Cards}}</td>
         <td>{{players.Sub}}</td>
       </tr>
@@ -111,9 +125,9 @@
       }
     },
     computed:{
-       isRight(){
-        return this.players.foot === "right"
-       },
+       // backFoot(){
+       //  return this.players.foot === "right"
+       // },
       countryImg(){
         // return this.players.imgNumber.img.countryImg
       }
@@ -151,8 +165,8 @@
     color: #EAEAEA;
     height: 20px;
   }
-
   img {
     width: 30px;
+    height: 42px;
   }
 </style>

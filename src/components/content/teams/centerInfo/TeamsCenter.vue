@@ -4,7 +4,7 @@
     <!--    <slot name="country-data"></slot>-->
     <country-info :activeCountry="activeCountry"></country-info>
     <country-data
-      :active-players="activeCountry.playerTable"
+      :activeCountry="activeCountry"
       :fixed="fixed"></country-data>
     <img src="@/assets/common/enter.png" alt="" @click="enterTeam">
   </div>
@@ -14,7 +14,7 @@
   import CountryData from "./centerItems/CountryData";
   import CountryInfo from "./centerItems/CountryInfo";
   export default {
-    name: "CenterInfo",
+    name: "TeamsCenter",
     props:{
       currCountry:{
         type:Object,
@@ -22,7 +22,6 @@
           return{}
         }
       },
-
     },
     data(){
       return{

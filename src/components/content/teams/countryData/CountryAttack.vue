@@ -1,14 +1,19 @@
 <template>
-  <Radar></Radar>
-<!--  <div>-->
-<!--    <span>进攻</span>-->
-<!--  </div>-->
+  <Radar :radar-data="radar"></Radar>
 </template>
 
 <script>
   import Radar from "../../players/g2plot/Radar";
   export default {
     name: "CountryAttack",
+    props:{
+      radar:{
+        type:Object,
+        default(){
+          return {}
+        }
+      }
+    },
     components:{
       Radar
     }

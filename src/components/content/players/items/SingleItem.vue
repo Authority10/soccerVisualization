@@ -89,7 +89,7 @@
     .item-img {
       position: absolute;
       left:3px;
-      top: 2px;
+      top: 5px;
       border:2px solid #ddd;
       border-radius: 10px;
       box-shadow:rgba(0,0,0,0.15) 0 0 8px;
@@ -133,7 +133,7 @@
     }
     .item-club {
       position: absolute;
-      left:60px;
+      left:70px;
       top:90px;
     }
     .club-content {

@@ -1,8 +1,9 @@
 <template>
   <div class="player-data">
-    <span>技术统计</span>
 
-    <technical-table :technical="technical"></technical-table>
+    <div class="technical-box">
+      <technical-table :technical="technical"></technical-table>
+    </div>
 
     <heat-map
     v-if="eventPosition!==[]"
@@ -13,7 +14,7 @@
 </template>
 
 <script>
-  import technicalTable from "../../technicalTable/TechnicalTable";
+  import technicalTable from "../../table/TechnicalTable";
   import heatMap from "../../g2plot/HeatMap";
   export default {
     name: "PlayerData",
@@ -42,11 +43,11 @@
   .player-data {
     position: absolute;
     top:60px;
-    left:700px;
+    left:720px;
     width: 700px;
     height: 730px;
-    background-color:rgba(85,239,195,0.3);
-    /*border-radius: 10px;*/
+    /*background-color:rgba(85,239,195,0.3);*/
+    background-color:#1E2E45;
   }
   span {
     position: absolute;
@@ -54,5 +55,10 @@
     font-size: 22px;
     top:30px;
     left:20px;
+  }
+  .technical-box {
+    width: 697px;
+    height: 300px;
+    background-color: #495F78;
   }
 </style>

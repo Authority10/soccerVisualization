@@ -1,14 +1,12 @@
 <template>
-
-  <div class="tab-control">
-    <div v-for="(item,index) in titles"
-         class="tab-control-item "
-         :class="{active:index===currentIndex}"
-         @click="itemClick(index)">
-      <span>{{item}}</span>
+    <div class="tab-control" :class="{fixed:fixed}">
+      <div v-for="(item,index) in titles"
+           class="tab-control-item "
+           :class="{active:index===currentIndex}"
+           @click="itemClick(index)">
+        <span>{{item}}</span>
+      </div>
     </div>
-  </div>
-
 </template>
 
 <script>
@@ -20,11 +18,12 @@
         default(){
           return[]
         }
-      }
+      },
+      fixed:false
     },
     data(){
       return{
-        currentIndex : 0
+        currentIndex:0,
       }
     },
     methods:{
@@ -32,39 +31,45 @@
         // console.log(index);
         this.currentIndex = index;
         this.$emit("tabClick",index)
-      }
-    }
+      },
+    },
   }
 </script>
 
 <style scoped>
   .tab-control{
-    position: fixed;
-    width: 650px;
-    top: 306px;
-    left: 117px;
+    position: absolute;
+    width: 1200px;
+    height: 50px;
+    top: 0;
+    left: 0;
     display: flex;
     text-align: center;
     font-size: 14px;
     line-height: 40px;
-    height: 40px;
-    /*background-color:black;*/
+    background-color: #495F78;
+    /*background-color: #1E2E45;*/
   }
   .tab-control-item{
     flex: 1;
   }
-
   .tab-control-item span{
-    color:black;
-    /*font-weight: bold;*/
-    font-size: 20px;
+    color:#EAEAEA;
+    font-size: 25px;
+    font-weight: bold;
     padding:5px ;
-    /*border: 3px solid black;*/
-    /*border-radius: 5px;*/
   }
   .active span {
-    color:#2980b9;
-    border-bottom: 3px solid #2980b9;
-    /*border-radius: 5px;*/
+    color:#F7BA52;
+    border-bottom: 6px solid #F7BA52;
+  }
+  .fixed {
+    position: fixed;
+    top: 107px;
+    left: 255px;
+    /*固定定位之后会覆盖掉playersTable导致吸顶效果之后无法点击*/
+    /*增大层级实现遮盖效果即可点击*/
+    z-index: 999;
+    /*background-color: red;*/
   }
 </style>

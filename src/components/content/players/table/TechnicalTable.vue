@@ -79,30 +79,41 @@
   .technical-index {
     position:absolute ;
     left:20px;
-    top:70px;
-    width: 300px;
-    display: flex;
+    top:20px;
+    width: 660px;
+    display:flex;
     justify-content: space-between;
+    /*background-color: red;*/
   }
   table{
     /*外边框设置*/
     /*border-top: 3px solid black;*/
     /*边框合并*/
     border-collapse: collapse;
+    /*background-color: red;*/
     /*居中显示*/
     /*margin: 100px auto;*/
   }
   td{
-    border-top: 3px solid #7f8fa6;
-    border-bottom: 3px solid #7f8fa6;
-    padding: 5px;
+    border-top: 3px solid #BBBBBB;
+    border-bottom: 3px solid #BBBBBB;
+    padding: 10px;
     text-align: center;
   }
   td:nth-of-type(1){
-    background-color: #f7f1e3;
+    width: 100px;
+    font-weight: bold;
+    background-color: #CACCD1;
   }
   td:nth-of-type(2){
+    background-color: #455567;
+    color: #BBBBBB;
     width: 80px;
-    height: 10px;
+    height: 30px;
+  }
+  td:nth-of-type(3){
+    background-color: white;
+    width: 80px;
+    height: 30px;
   }
 </style>

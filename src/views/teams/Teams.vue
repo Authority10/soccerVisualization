@@ -27,6 +27,7 @@
     created(){
       this.showAllTeam()
     },
+
     methods:{
       showAllTeam(){
         showAllTeam()

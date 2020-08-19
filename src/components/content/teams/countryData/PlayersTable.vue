@@ -124,11 +124,12 @@
 <style scoped>
   .players-table {
     position:absolute ;
-    left:20px;
-    top:45px;
-    width: 620px;
+    /*background-color: blue;*/
+    left:0;
+    top:60px;
+    width: 1200px;
     height:600px;
-    overflow: scroll;
+    /*overflow: scroll;*/
   }
   table{
     border-collapse: collapse;
@@ -137,19 +138,21 @@
     color: #5a5a5a;
   }
   .head td {
+    /*background-color: #F7BA52;*/
     font-size: 16px;
     /*padding: 0;*/
     border-top: none;
   }
   td{
-    border-bottom: 3px solid #7f8fa6;
-    /*padding-right: 3px;*/
+    border-bottom: 1px solid #7f8fa6;
+    padding: 15px 20px;
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
+    color: #EAEAEA;
     height: 20px;
   }
 
   img {
-    width: 13px;
+    width: 30px;
   }
 </style>

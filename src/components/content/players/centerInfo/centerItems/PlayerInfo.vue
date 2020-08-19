@@ -1,31 +1,6 @@
 <template>
   <div class="player-info">
-    <table class="info-table">
-      <tbody>
-      <tr >
-        <td style="height:168px" colspan="3">
-          <img :src="players.imgNumber.img.countryImg" alt="" class="info-img">
-        </td>
-        <td style="height:168px" colspan="7">{{players.shortName}}</td>
-      </tr>
-      <tr>
-        <td colspan="5">club</td>
-        <td colspan="5">strong foot</td>
-      </tr>
-      <tr>
-        <td colspan="5">birthDate</td>
-        <td colspan="5">Age</td>
-      </tr>
-      <tr>
-        <td colspan="5">passport</td>
-        <td colspan="5">birthArea</td>
-      </tr>
-      <tr>
-        <td colspan="5">Height</td>
-        <td colspan="5">Weight</td>
-      </tr>
-      </tbody>
-    </table>
+    <InfoTable :players="players"></InfoTable>
 <!--    <div class="name-item">-->
 <!--      <img :src="players.imgNumber.img.countryImg" alt="">-->
 <!--      <span class="name">{{players.shortName}}</span>-->
@@ -70,6 +45,7 @@
 </template>
 
 <script>
+  import InfoTable from "../../table/InfoTable";
   export default {
     name: "PlayerInfo",
     props:{
@@ -79,6 +55,9 @@
           return{}
         }
       },
+    },
+    components:{
+      InfoTable
     },
     data(){
       return{
@@ -163,25 +142,7 @@
   }
 
 
-  .info-table {
-    position: absolute;
-    top: 70px;
-    left: 25px;
-    width: 450px;
-    height: 630px;
-    table-layout: fixed;
-    border-collapse: collapse;
-    border: 1px solid #7f8fa6
-  }
-  .info-img {
-    width: 132px;
-    height: 210px;
-  }
-  .info-table td {
-    border: 1px solid #7f8fa6;
-    /*width: 250px;*/
-    /*text-align:center;*/
-  }
+
 
 
 </style>

@@ -1,17 +1,19 @@
 <template>
   <div class="country-data">
-    <tab-control-sub
+      <tab-control-sub
+      ref="tab"
       :titles="['球队阵容','球队进攻','球队防守','球队其他','球队其他']"
+      :fixed="fixed"
       @tabClick="tabClick">
-    </tab-control-sub>
+      </tab-control-sub>
 
-    <players-table
-      :playersTable="activePlayers"
-      v-if="playersTable">
-    </players-table>
-
-    <country-attack  v-if="CountryAttack"></country-attack>
-    <country-defense v-if="CountryDefense"></country-defense>
+      <players-table
+        :playersTable="activePlayers"
+        ref="playersTable"
+        v-if="playersTable">
+      </players-table>
+      <country-attack  v-if="CountryAttack"></country-attack>
+      <country-defense v-if="CountryDefense"></country-defense>
   </div>
 </template>
 
@@ -28,13 +30,14 @@
         default(){
           return {}
         }
-      }
+      },
+      fixed:false
     },
     data(){
       return{
         playersTable: true,
         CountryAttack:false,
-        CountryDefense:false
+        CountryDefense:false,
       }
     },
     components:{
@@ -65,21 +68,24 @@
             this.currentPosition = "GoalKeeper";
             break
         }
-      }
+      },
+    },
+    mounted() {
+      console.log(this.$refs.tab)
+      // console.log(this.$refs.playersTable)
     }
   }
 </script>
 
 <style scoped>
   .country-data {
-    position: relative;
-    overflow: scroll;
-    top:20px;
-    left:20px;
-    width: 650px;
-    height: 400px;
-    background-color:rgba(85,239,195,0.3);
-    border-radius: 10px;
+    position: absolute;
+    /*overflow: scroll;*/
+    top:270px;
+    left:140px;
+    width: 1200px;
+    height: 500px;
+    /*background-color:red;*/
   }
   span {
     position: absolute;
@@ -87,5 +93,11 @@
     font-size: 22px;
     top:10px;
     left:20px;
+  }
+  .FixedTab {
+    position: fixed;
+    background-color: red;
+    top: 500px;
+    left: 4px;
   }
 </style>

@@ -26,7 +26,7 @@
     margin-left: 20px;
     width: 270px;
     height: 80px;
-    background-color: #F7BA52;
+    background-color: #1E2E45;
     border-radius: 6px;
   }
   .national-img {
@@ -45,6 +45,6 @@
     color:#FDFDFD
   }
   .active {
-    background-color: #1E2E45;
+    background-color: #F7BA52;
   }
 </style>

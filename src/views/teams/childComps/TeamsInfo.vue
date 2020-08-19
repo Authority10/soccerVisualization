@@ -1,14 +1,14 @@
 <template>
- <teams-center>
+ <teams-center :currCountry="activeCountry">
 
-   <country-info
-     slot="country-info"
-     :activeCountry="activeCountry"
-   ></country-info>
+<!--   <country-info-->
+<!--     slot="country-info"-->
+<!--     :activeCountry="activeCountry"-->
+<!--   ></country-info>-->
 
-   <country-data
-     slot="country-data" :active-players="activeCountry.playerTable"
-   ></country-data>
+<!--   <country-data-->
+<!--     slot="country-data" :active-players="activeCountry.playerTable"-->
+<!--   ></country-data>-->
 
  </teams-center>
 </template>

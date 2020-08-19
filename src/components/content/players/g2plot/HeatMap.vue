@@ -30,10 +30,10 @@
       const data = this.eventPosition;
       const heatMapPlot = new DensityHeatmap(document.getElementById('abc'), {
         data,
-        width:336,
-        // width:614,
-        height:217,
-        // height:450,
+        // width:336,
+        width:605,
+        // height:217,
+        height:390,
         xField: 'x',
         yField: 'y',
         colorField: 'tmp',
@@ -111,7 +111,7 @@
         background: {
           visible: true,
           type: 'image',
-          src: 'https://outin-6a24895c919711eab60900163e1c8dba.oss-cn-shanghai.aliyuncs.com/image/default/1E50334EC6CE43DABBA1AA5544C59FD3-6-2.png',
+          src: 'https://outin-6a24895c919711eab60900163e1c8dba.oss-cn-shanghai.aliyuncs.com/image/default/77892CC700494FF98856C1FD0F8D2DDF-6-2.jpg',
           // value: '#262626'
         },
       });
@@ -124,8 +124,7 @@
 <style scoped>
   #abc{
     position: absolute;
-    left: 30px;
-    top:  300px;
-    width: 340px;
+    top: 0;
+    left: -30px;
   }
 </style>

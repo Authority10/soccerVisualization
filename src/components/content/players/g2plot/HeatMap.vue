@@ -30,10 +30,11 @@
       const data = this.eventPosition;
       const heatMapPlot = new DensityHeatmap(document.getElementById('abc'), {
         data,
+        forceFit:true,
         // width:336,
-        width:605,
+        //width:605,
         // height:217,
-        height:390,
+        //height:390,
         xField: 'x',
         yField: 'y',
         colorField: 'tmp',
@@ -123,6 +124,8 @@
 
 <style scoped>
   #abc{
+    width:756px;
+    height:488px;
     position: absolute;
     top: 0;
     left: -30px;

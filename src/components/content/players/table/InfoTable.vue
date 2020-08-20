@@ -7,7 +7,7 @@
           <img v-else :src="players.imgNumber.img.countryImg" alt="" class="avatar-img">
 
       </td>
-      <td style="height:100px" colspan="7">
+      <td style="height:0.65rem" colspan="7">
         <div class="name-title">Name</div>
         <div class="name-content">
           <div class="concrete-name">{{players.firstName}}</div>
@@ -16,14 +16,14 @@
       </td>
     </tr>
     <tr>
-      <td style="height:100px" colspan="5">
+      <td style="height:0.65rem" colspan="5">
         <div class="item-title">Club</div>
         <div class="item-content flex-div">
           <img :src="players.imgNumber.img.clubLogo" alt="" class="club-img">
           <span class="img-span">{{players.currentTeam}}</span>
         </div>
       </td>
-      <td style="height:100px" colspan="5">
+      <td style="height:0.65rem" colspan="5">
         <div class="item-title">Strong Foot</div>
         <div class="item-content flex-div">
           <img v-if="isRight" src="@/assets/foot/right-foot.png" alt="ddd" class="foot-img">
@@ -33,13 +33,13 @@
       </td>
     </tr>
     <tr>
-      <td style="height:100px" colspan="5">
+      <td style="height:0.65rem" colspan="5">
         <div class="item-title">BirthDate</div>
         <div class="item-content">
           <span>{{players.birthDate}}</span>
         </div>
       </td>
-      <td style="height:100px" colspan="5">
+      <td style="height:0.65rem" colspan="5">
         <div class="item-title">Age</div>
         <div class="item-content">
           <span>{{getAge}}</span>
@@ -47,14 +47,14 @@
       </td>
     </tr>
     <tr>
-      <td style="height:100px" colspan="5">
+      <td style="height:0.65rem" colspan="5">
         <div class="item-title">Passport Area</div>
         <div class="item-content flex-div">
           <img :src="players.imgNumber.img.countryLogo" alt="" class="flag-img">
           <span class="img-span">{{players.currentNationalTeam}}</span>
         </div>
       </td>
-      <td style="height:100px" colspan="5">
+      <td style="height:0.65rem" colspan="5">
         <div class="item-title">Birth Area</div>
         <div class="item-content flex-div">
           <img :src="players.imgNumber.img.birthImg" alt="" class="flag-img">
@@ -63,13 +63,13 @@
       </td>
     </tr>
     <tr>
-      <td style="height:100px" colspan="5">
+      <td style="height:0.65rem" colspan="5">
         <div class="item-title">Height</div>
         <div class="item-content">
           <span>{{players.height}}cm</span>
         </div>
       </td>
-      <td style="height:100px" colspan="5">
+      <td style="height:0.65rem" colspan="5">
         <div class="item-title">Weight</div>
         <div class="item-content">
           <span>{{players.weight}}kg</span>

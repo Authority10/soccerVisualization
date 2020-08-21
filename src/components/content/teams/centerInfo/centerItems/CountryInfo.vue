@@ -35,7 +35,7 @@
 </template>
 
 <script>
-  import countryTable from "../../../players/table/countryTable";
+  import countryTable from "../../../players/table/CountryTable";
   export default {
     name: "CountryInfo",
     props:{

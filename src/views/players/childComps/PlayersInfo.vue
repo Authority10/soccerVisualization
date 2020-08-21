@@ -1,6 +1,6 @@
 <template>
   <div>
-    <players-basic>
+    <players-basic v-if="currentPage===1">
       <player-info
         v-if="players[currentPosition]!==undefined"
         slot="player-person-info"
@@ -14,11 +14,10 @@
         :event-position="sendEventsPosition">
       </player-data>
     </players-basic>
-    <players-matches v-if="isShow"></players-matches>
-    <img class="left-arrow" src="@/assets/common/left-arrow.png" alt=""  @click="change">
-    <img class="right-arrow" src="@/assets/common/right-arrow.png" alt="" @click="change">
+    <players-matches v-if="currentPage===2"></players-matches>
+    <img class="left-arrow" src="@/assets/common/left-arrow.png" alt=""  @click="lastPage">
+    <img class="right-arrow" src="@/assets/common/right-arrow.png" alt="" @click="nextPage">
   </div>
-
 </template>
 
 <script>
@@ -41,7 +40,7 @@
         currentPosition:"",
         playerIndex:"",
         technical:{},
-        isShow:false
+        currentPage:1,
       }
     },
     computed:{
@@ -75,17 +74,28 @@
       })
     },
     methods:{
-      change(){
-        this.isShow = true
+      lastPage(){
+        this.currentPage--
+      },
+      nextPage(){
+        this.currentPage++
       }
     }
   }
 </script>
 
 <style scoped>
+  .left-arrow {
+    position: fixed;
+    top: 450px;
+    left: 130px;
+    width: 64px;
+  }
   .right-arrow {
     position: fixed;
     top: 450px;
-    right: 330px;
+    right: 340px;
+    width: 64px;
   }
+
 </style>

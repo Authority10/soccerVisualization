@@ -11,10 +11,10 @@ export function findTeam(teamID) {
 
 //类名Players 注意p的大小写
 export class Players{
-  constructor(players) {
-    this.ForWard = players.ForWard;
-    this.Center  = players.Center;
-    this.Back = players.Back;
-    this.GoalKeeper = players.GoalKeeper;
+  constructor(currentPlayers) {
+    this.ForWard = currentPlayers.ForWard;
+    this.Center  = currentPlayers.Center;
+    this.Back = currentPlayers.Back;
+    this.GoalKeeper = currentPlayers.GoalKeeper;
   }
 }

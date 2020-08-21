@@ -7,7 +7,7 @@
       </tab-bar-item>
 
       <tab-bar-item path="/teams"   color="#F7BA52">
-          <img slot="item-img" src="../../../assets/nav/teamSub.svg" alt="">
+          <img slot="item-img" src="../../../assets/nav/team.svg" alt="">
           <span slot="item-text" class="teams-text">球队</span>
       </tab-bar-item>
 
@@ -40,6 +40,8 @@ export default {
   img {
     position: absolute;
     left: 25px;
+    width: 68px;
+    height: 68px;
   }
   .players-text {
     color:#537091;

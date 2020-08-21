@@ -1,16 +1,17 @@
 <template>
 <div>
-    <players-list :players="players"></players-list>
+    <players-list
+      :players="getPlayers"
+    ></players-list>
 
     <players-info
-      :players="players"
+      :players="getPlayers"
     ></players-info>
 </div>
 
 </template>
 
 <script>
-
   import PlayersList from "./childComps/PlayersList";
   import PlayersInfo from "./childComps/PlayersInfo";
   import {findTeam, Players} from "../../network/players";
@@ -19,7 +20,7 @@
     name: "Players",
     data(){
       return{
-        players:{},
+        getPlayers:{},
       }
     },
     components: {
@@ -32,8 +33,8 @@
     },
     beforeRouteEnter(to,from,next){
       next(vm => {
-        console.log(to);
-        console.log(vm);
+        // console.log(to);
+        // console.log(vm);
         vm.findTeam(to.params.teamID)
       })
     },
@@ -48,7 +49,8 @@
         findTeam(teamID).then(res=>{
           console.log(res);
           //利用封装好的类来接受球队里的球员信息
-          this.players = new Players(res[0])
+          var abc = res[0]
+          this.getPlayers = new Players(abc)
         })
       },
     },

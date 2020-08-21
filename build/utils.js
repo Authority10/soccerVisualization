@@ -25,7 +25,8 @@ exports.cssLoaders = function (options) {
   const px2remLoader = {
     loader: 'px2rem-loader',
     options: {
-      remUnit: 192
+      remUnit: 192,
+      remPrecision: 5
     }
   }
 

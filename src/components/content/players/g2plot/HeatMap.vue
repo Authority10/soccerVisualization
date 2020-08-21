@@ -30,10 +30,13 @@
       const data = this.eventPosition;
       const heatMapPlot = new DensityHeatmap(document.getElementById('abc'), {
         data,
+        //表格自适应画布的大小，高度宽度失效
+        forceFit:true,
+        // renderer:"svg",
         // width:336,
-        width:605,
+        // width:775,
         // height:217,
-        height:390,
+        // height:500,
         xField: 'x',
         yField: 'y',
         colorField: 'tmp',
@@ -108,7 +111,7 @@
         radius: 4,
         pixelRatio:3,
         intensity: 2,
-        background: {
+        background:{
           visible: true,
           type: 'image',
           src: 'https://outin-6a24895c919711eab60900163e1c8dba.oss-cn-shanghai.aliyuncs.com/image/default/77892CC700494FF98856C1FD0F8D2DDF-6-2.jpg',
@@ -117,12 +120,19 @@
       });
       this.chart = heatMapPlot;
       this.chart.render();
+      // window.addEventListener("resize",function () {
+      //     setTimeout(function () {
+      //       heatMapPlot.repaint()
+      //     },5000)
+      // })
     },
   }
 </script>
 
 <style scoped>
   #abc{
+    width:756px;
+    height:488px;
     position: absolute;
     top: 0;
     left: -30px;

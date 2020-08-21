@@ -1,5 +1,5 @@
 <template>
-  <Radar :radar-data="radar"></Radar>
+  <Radar :radar-data="radar" status="Defense"></Radar>
 </template>
 
 <script>
@@ -8,10 +8,15 @@
     name: "CountryDefense",
     props:{
       radar:{
-        type:Object,
+        type:Array,
         default(){
-          return {}
+          return[]
         }
+      }
+    },
+    data(){
+      return{
+
       }
     },
     components:{

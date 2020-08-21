@@ -1,12 +1,17 @@
 <template>
   <div class="players-matches">
-    出场表格
+    <span>出场记录</span>
+    <match-table></match-table>
   </div>
 </template>
 
 <script>
+  import MatchTable from "../table/MatchTable";
   export default {
-    name: "PlayersMatches"
+    name: "PlayersMatches",
+    components:{
+      MatchTable
+    }
   }
 </script>
 
@@ -20,4 +25,12 @@
    background-color:#1E2E45;
    border: 1px solid #dcdde1;
  }
+  span {
+    position: absolute;
+    top:17px;
+    left: 80px;
+    color:#FDFDFD;
+    font-size: 28px;
+    border-bottom: 6px solid #F7BA52;
+  }
 </style>

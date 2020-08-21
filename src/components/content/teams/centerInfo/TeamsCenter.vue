@@ -36,6 +36,7 @@
         this.$router.push("/players" + this.activeCountry.teamID)
       },
       //监听滚动事件
+      //210其实不能写死，必须动态获取该组件的距离上方的偏移量
       scrollEvent(event){
         this.scrollTop=event.srcElement.scrollTop; // 滚动条偏移量
         // console.log(this.scrollTop);

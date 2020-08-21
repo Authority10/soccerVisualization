@@ -44,7 +44,7 @@
     top:60px;
     left:80px;
     width: 500px;
-    height: 730px;
+    height: 757px;
     background-color:#495F78;
   }
 </style>

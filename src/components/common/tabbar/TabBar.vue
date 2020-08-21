@@ -14,7 +14,7 @@
   #tab-bar {
     display: flex;
     width: 116px;
-    height:1080px;
+    height:943px;
     justify-content: center;
     background-color:#F2F2F2;
     flex-direction:column;

@@ -2,7 +2,7 @@
   <div class="tar-bar-item" @click="itemClick">
     <div :style="isActiveColor" v-if="isActive"></div>
     <div class="item-box" v-else></div>
-    <slot name="item-img"  class="item-img"></slot>
+    <slot name="item-img" class="item-img"></slot>
     <div class="item-text">
       <slot name="item-text"></slot>
     </div>
@@ -26,9 +26,10 @@
         return this.$route.path.indexOf(this.path) !== -1
       },
       //动态决定样式，判断是否是活跃路由赋予对应的颜色
+      //6px 57px 转化成rem
       isActiveColor(){
         return this.isActive ?
-          {backgroundColor:this.color,width:6+"px",height:57+"px",display:"inline-block"}
+          {backgroundColor:this.color,width:0.03125+"rem",height:0.29688+"rem",display:"inline-block"}
           :{}
       }
     },
@@ -48,14 +49,11 @@
    .item-box {
      display: inline-block;
      width: 8px;
-     height:72px;
-   }
-   .item-img {
-     width: 57px;
-     height: 57px;
+     height:57px;
    }
    .item-text {
     margin-left: 40px;
+    margin-top: 5px;
     font-size: 20px;
     font-weight: bold;
    }

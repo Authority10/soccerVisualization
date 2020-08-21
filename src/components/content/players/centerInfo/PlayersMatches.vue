@@ -1,7 +1,7 @@
 <template>
   <div class="players-matches">
     <span>出场记录</span>
-    <match-table></match-table>
+    <match-table :players-matches="playersMatches"></match-table>
   </div>
 </template>
 
@@ -9,6 +9,14 @@
   import MatchTable from "../table/MatchTable";
   export default {
     name: "PlayersMatches",
+    props:{
+      playersMatches:{
+        type:Array,
+        default(){
+          return[]
+        }
+      }
+    },
     components:{
       MatchTable
     }

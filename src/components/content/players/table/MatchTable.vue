@@ -13,86 +13,19 @@
         <td>Pass/accurate</td>
         <td>Duels/won</td>
       </tr>
-<!--      <tr-->
-<!--        v-for="(players,index) in playersTable.Back"-->
-<!--        :key="index"-->
-<!--      >-->
-      <tr>
-        <td>Argentina - Croatia 2-4</td>
-        <td>90</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>57/21 53%</td>
-        <td>2/1 50%</td>
-        <td>27/22 81%</td>
-        <td>23/5 22%</td>
-      </tr>
-      <tr>
-        <td>Argentina - Croatia 2-4</td>
-        <td>90</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>57/21 53%</td>
-        <td>2/1 50%</td>
-        <td>27/22 81%</td>
-        <td>23/5 22%</td>
-      </tr>
-      <tr>
-        <td>Argentina - Croatia 2-4</td>
-        <td>90</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>57/21 53%</td>
-        <td>2/1 50%</td>
-        <td>27/22 81%</td>
-        <td>23/5 22%</td>
-      </tr>
-      <tr>
-        <td>Argentina - Croatia 2-4</td>
-        <td>90</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>57/21 53%</td>
-        <td>2/1 50%</td>
-        <td>27/22 81%</td>
-        <td>23/5 22%</td>
-      </tr>
-      <tr>
-        <td>Argentina - Croatia 2-4</td>
-        <td>90</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>57/21 53%</td>
-        <td>2/1 50%</td>
-        <td>27/22 81%</td>
-        <td>23/5 22%</td>
-      </tr>
-      <tr>
-        <td>Argentina - Croatia 2-4</td>
-        <td>90</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>57/21 53%</td>
-        <td>2/1 50%</td>
-        <td>27/22 81%</td>
-        <td>23/5 22%</td>
-      </tr>
-      <tr>
-        <td>Argentina - Croatia 2-4</td>
-        <td>90</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>57/21 53%</td>
-        <td>2/1 50%</td>
-        <td>27/22 81%</td>
-        <td>23/5 22%</td>
+      <tr
+        v-for="(matches,index) in playersMatches"
+        :key="index"
+      >
+          <td>{{matches.MatchLabel.replace(/,/g, "")}}</td>
+          <td>{{matches.Time}}</td>
+          <td>{{matches.Goal}}</td>
+          <td>0</td>
+          <td>{{matches.Assist}}</td>
+          <td>{{matches.TotalAcction}}/{{matches.TotalAccuracy}} {{parseInt((matches.TotalPercentage)*100)}}%</td>
+          <td>{{matches.Shot}}/{{matches.ShotStraight}} {{(matches.ShotPercentage)*100}}%</td>
+          <td>{{matches.Pass}}/{{matches.PassAccuracy}} {{(matches.PassPercentage)*100}}%</td>
+          <td>{{matches.Duel}}/{{matches.DuelWin}} {{parseInt((matches.DuelPercentage)*100)}}%</td>
       </tr>
       </tbody>
     </table>
@@ -101,7 +34,20 @@
 
 <script>
   export default {
-    name: "MatchTable"
+    name: "MatchTable",
+    props:{
+      playersMatches:{
+        type:Array,
+        default(){
+          return[]
+        }
+      }
+    },
+    computed:{
+    },
+    methods:{
+    }
+
   }
 </script>
 

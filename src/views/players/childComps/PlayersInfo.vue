@@ -14,7 +14,7 @@
         :event-position="sendEventsPosition">
       </player-data>
     </players-basic>
-    <players-matches v-if="currentPage===2"></players-matches>
+    <players-matches v-if="currentPage===2" :players-matches="players[currentPosition][playerIndex]['MatchTable']"></players-matches>
     <img class="left-arrow" src="@/assets/common/left-arrow.png" alt=""  @click="lastPage">
     <img class="right-arrow" src="@/assets/common/right-arrow.png" alt="" @click="nextPage">
   </div>

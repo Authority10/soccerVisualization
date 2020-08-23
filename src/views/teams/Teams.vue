@@ -1,7 +1,7 @@
 <template>
   <div>
     <teams-list :team-list="teams"></teams-list>
-    <teams-info :team-info="teams"></teams-info>
+    <teams-info :team-info="defaultTeam"></teams-info>
   </div>
 </template>
 
@@ -21,7 +21,8 @@
         teams:{
           GroupTop:{},
           GroupBottom:{}
-        }
+        },
+        defaultTeam:{}
       }
     },
     created(){
@@ -36,6 +37,7 @@
           // 数组对象转化成纯对象
           this.teams.GroupTop=new Top(res.slice(0,4));
           this.teams.GroupBottom=new Bottom(res.slice(4,8));
+          this.defaultTeam = res[0].GroupA.Russia
           console.log(this.teams)
         }).catch((err)=>{
           console.log(err)

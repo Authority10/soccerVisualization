@@ -25,7 +25,7 @@
     },
     data(){
       return{
-        currentCountry:""
+        currentCountry:"Russia"
       }
     },
     watch:{
@@ -38,8 +38,8 @@
     },
     methods:{
       countryClick(countryItems){
-        console.log(window.screen.width);
-        console.log(window.screen.height);
+        // console.log(window.screen.width);
+        // console.log(window.screen.height);
         this.currentCountry = countryItems.countryName;
         this.$bus.$emit("sendCountry",countryItems);
       },
@@ -52,10 +52,6 @@
 
 <style scoped>
  .group-items {
-   /*display: flex;*/
-   /*flex-direction: column;*/
-   /*align-items: center;*/
-   /*justify-content: flex-start;*/
    position: absolute;
    top:140px;
    width: 300px;
@@ -64,6 +60,4 @@
   .group-bottom {
     top:550px
   }
-
-
 </style>

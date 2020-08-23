@@ -53,7 +53,7 @@
       }
     },
     watch:{
-      players(newVal, oldVal) {
+      players(newVal,oldVal) {
         this.currentPosition = Object.keys(newVal)[0];
         this.playerIndex= Object.keys(newVal["ForWard"])[0];
       }

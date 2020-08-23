@@ -6,7 +6,6 @@
       :fixed="fixed"
       @tabClick="tabClick">
       </tab-control-sub>
-
       <players-table
         :playersTable="activeCountry.playerTable"
         ref="playersTable"
@@ -71,7 +70,8 @@
       },
     },
     mounted() {
-      console.log(this.$refs.tab)
+      console.log(this.$refs.tab.$el.offsetTop)
+      // console.log(this.$refs.tab)
       // console.log(this.$refs.playersTable)
     }
   }

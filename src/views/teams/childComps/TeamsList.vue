@@ -46,12 +46,6 @@
           return{}
         }
       }
-      // teamList:{
-      //   type:Array,
-      //   default(){
-      //     return[]
-      //   }
-      // }
     },
     data(){
       return{
@@ -60,12 +54,6 @@
       }
     },
     computed:{
-      // showGroupTop(){
-      //   return this.groupItems["GroupTop"][this.currentGroupTop]
-      // },
-      // showGroupBottom(){
-      //   return this.groupItems["GroupBottom"][this.currentGroupBottom]
-      // },
     },
     components: {
       RightList,

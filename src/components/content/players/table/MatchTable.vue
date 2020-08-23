@@ -23,8 +23,8 @@
           <td>0</td>
           <td>{{matches.Assist}}</td>
           <td>{{matches.TotalAcction}}/{{matches.TotalAccuracy}} {{parseInt((matches.TotalPercentage)*100)}}%</td>
-          <td>{{matches.Shot}}/{{matches.ShotStraight}} {{(matches.ShotPercentage)*100}}%</td>
-          <td>{{matches.Pass}}/{{matches.PassAccuracy}} {{(matches.PassPercentage)*100}}%</td>
+          <td>{{matches.Shot}}/{{matches.ShotStraight}} {{parseInt((matches.ShotPercentage)*100)}}%</td>
+          <td>{{matches.Pass}}/{{matches.PassAccuracy}} {{parseInt((matches.PassPercentage)*100)}}%</td>
           <td>{{matches.Duel}}/{{matches.DuelWin}} {{parseInt((matches.DuelPercentage)*100)}}%</td>
       </tr>
       </tbody>

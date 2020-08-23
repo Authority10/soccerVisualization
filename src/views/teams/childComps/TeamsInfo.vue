@@ -1,15 +1,7 @@
 <template>
- <teams-center :currCountry="activeCountry">
-
-<!--   <country-info-->
-<!--     slot="country-info"-->
-<!--     :activeCountry="activeCountry"-->
-<!--   ></country-info>-->
-
-<!--   <country-data-->
-<!--     slot="country-data" :active-players="activeCountry.playerTable"-->
-<!--   ></country-data>-->
-
+ <teams-center
+    :currCountry="teamInfo"
+ >
  </teams-center>
 </template>
 
@@ -29,20 +21,22 @@
     },
     data(){
       return{
-        activeCountry:{}
       }
+    },
+    watch:{
+
     },
     components: {
       CountryData,
       TeamsCenter,
       CountryInfo
     },
-    beforeCreate() {
-      this.$bus.$on("sendCountry",(countryItems)=>{
-        console.log(countryItems);
-        this.activeCountry = countryItems
-      });
-    },
+    // beforeCreate() {
+    //   this.$bus.$on("sendCountry",(countryItems)=>{
+    //     console.log(countryItems);
+    //     this.activeCountry = countryItems
+    //   });
+    // },
   }
 </script>
 

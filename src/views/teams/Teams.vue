@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="teams">
+    <basic-public></basic-public>
     <teams-list :team-list="teams"></teams-list>
     <teams-info :team-info="defaultTeam"></teams-info>
   </div>
@@ -8,13 +9,15 @@
 <script>
   import TeamsList from "./childComps/TeamsList";
   import TeamsInfo from "./childComps/TeamsInfo";
+  import BasicPublic from "../../components/content/basicPublic/BasicPublic";
   import {showAllTeam,Top,Bottom} from "../../network/teams";
 
   export default {
     name: "teams",
     components: {
       TeamsList,
-      TeamsInfo
+      TeamsInfo,
+      BasicPublic
     },
     data(){
       return{
@@ -49,5 +52,7 @@
 </script>
 
 <style scoped>
-
+ .teams {
+   position: relative;
+ }
 </style>

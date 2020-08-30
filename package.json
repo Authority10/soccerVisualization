@@ -15,7 +15,7 @@
     "@antv/g2plot": "^1.1.13",
     "axios": "^0.19.2",
     "better-scroll": "^1.15.2",
-    "vant": "^2.8.7",
+    "element-ui": "^2.13.2",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.5.1"
@@ -25,6 +25,7 @@
     "babel-core": "^6.22.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^7.1.1",
+    "babel-plugin-component": "^1.1.1",
     "babel-plugin-import": "^1.13.0",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-runtime": "^6.22.0",

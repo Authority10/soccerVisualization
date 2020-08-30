@@ -39,7 +39,7 @@
 <style scoped>
   .tab-control{
     position: absolute;
-    width: 1200px;
+    width: 1210px;
     height: 50px;
     top: 0;
     left: 0;

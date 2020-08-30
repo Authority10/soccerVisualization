@@ -5,8 +5,16 @@
        <span class="soccer">足球大数据系统</span>
      </div>
      <div class="search">
-       <van-search v-model="value"  placeholder="请输入球员/球队/国家"/>
-       <van-button round type="info" color="#69c0ff" size="small">搜索</van-button>
+       <div>
+         <el-input
+           v-model="input"
+           placeholder="请输入球员/国家"
+           size="large"></el-input>
+       </div>
+       <div>
+         <el-button type="primary">搜索</el-button>
+       </div>
+
      </div>
   </div>
 </template>
@@ -16,7 +24,7 @@
     name: "LogoTitle",
     data(){
       return{
-        value:""
+        input:""
       }
     }
   }
@@ -38,11 +46,11 @@
   }
   .search {
     position: absolute;
-    width:300px;
-    top: 25px;
+    width:350px;
+    height: 100px;
     left: 1000px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   }
   .school {

@@ -1,8 +1,6 @@
 <template>
   <div class="show-team">
     <div class="center-info" @scroll="scrollEvent">
-      <!--    <slot name="country-info"></slot>-->
-      <!--    <slot name="country-data"></slot>-->
       <country-info
         :activeCountry="activeCountry">
       </country-info>

@@ -1,5 +1,6 @@
 <template>
-<div>
+<div class="players">
+    <basic-public></basic-public>
     <players-list
       :players="getPlayers"
     ></players-list>
@@ -14,8 +15,8 @@
 <script>
   import PlayersList from "./childComps/PlayersList";
   import PlayersInfo from "./childComps/PlayersInfo";
+  import BasicPublic from "../../components/content/basicPublic/BasicPublic";
   import {findTeam, Players} from "../../network/players";
-
   export default {
     name: "Players",
     data(){
@@ -26,6 +27,7 @@
     components: {
       PlayersInfo,
       PlayersList,
+      BasicPublic
     },
     created() {
       this.findTeam(4418)
@@ -59,5 +61,7 @@
 </script>
 
 <style scoped>
-
+ .players {
+   position: relative;
+ }
 </style>

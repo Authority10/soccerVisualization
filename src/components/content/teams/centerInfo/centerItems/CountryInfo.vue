@@ -5,32 +5,6 @@
       <span class="country-name">{{activeCountry.countryName}}</span>
     </div>
     <country-table></country-table>
-
-<!--    <div class="coach">-->
-<!--      <span>主教练</span>-->
-<!--      <span>达利奇特</span>-->
-<!--    </div>-->
-
-<!--    <div class="age">-->
-<!--      <span>平均年龄</span>-->
-<!--      <span>29.7</span>-->
-<!--    </div>-->
-
-<!--    <div class="foundation-date">-->
-<!--      <span>成立时间</span>-->
-<!--      <span>1930/7/31</span>-->
-<!--    </div>-->
-
-<!--    <div class="times">-->
-<!--      <span>参赛次数</span>-->
-<!--      <span>17</span>-->
-<!--    </div>-->
-
-<!--    <div class="glory">-->
-<!--      <span>球队荣誉</span>-->
-<!--      <span>1940冠军</span>-->
-<!--    </div>-->
-
   </div>
 </template>
 
@@ -64,7 +38,7 @@
     position: relative;
     top:40px;
     left:139px;
-    width: 1200px;
+    width: 1210px;
     height: 200px;
     background-color:#495F78;
   }

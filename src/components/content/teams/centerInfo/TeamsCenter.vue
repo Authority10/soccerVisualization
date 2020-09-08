@@ -10,7 +10,7 @@
         :fixed="fixed">
       </country-data>
     </div>
-    <img src="@/assets/common/enter.png" alt="" @click="enterTeam">
+    <img src="@/assets/image/common/enter.png" alt="" @click="enterTeam">
   </div>
 </template>
 
@@ -86,11 +86,11 @@
     overflow: auto;
     width: 1478px;
     height: 835px;
-    top:  107px;
+    top:  101px;
     left: 115px;
-    background-color: #1E2E45;
+    background-color: #404040;
     /*background-color: red;*/
-    border: 1px solid #dcdde1;
+    /*border: 1px solid #dcdde1;*/
   }
   img {
     position: absolute;

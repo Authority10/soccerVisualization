@@ -5,7 +5,7 @@ export function request(config){
     baseURL:"http://localhost:3000",
     // baseURL:"http://backend1.bsufootballvs.fun/",
     //服务器太垃圾
-    timeout:10000000
+    timeout:5000
   });
   // 请求拦截器
   instance.interceptors.request.use(

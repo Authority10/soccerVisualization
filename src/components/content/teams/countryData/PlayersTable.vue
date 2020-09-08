@@ -28,8 +28,8 @@
        <td>Back</td>
        <td>{{players.Age}}</td>
        <td>
-         <img v-if="players.foot==='right'" src="@/assets/foot/right-foot.png" alt="">
-         <img v-else src="@/assets/foot/left-foot.png" alt="">
+         <img v-if="players.foot==='right'" src="../../../../assets/image/foot/right-foot.png" alt="">
+         <img v-else src="../../../../assets/image/foot/right-foot.png" alt="">
        </td>
        <td>{{players.Height}}</td>
        <td>{{players.Match}}</td>
@@ -50,8 +50,8 @@
         <td>Center</td>
         <td>{{players.Age}}</td>
         <td>
-          <img v-if="players.foot==='right'" src="@/assets/foot/right-foot.png" alt="">
-          <img v-else src="@/assets/foot/left-foot.png" alt="">
+          <img v-if="players.foot==='right'" src="../../../../assets/image/foot/right-foot.png" alt="">
+          <img v-else src="../../../../assets/image/foot/left-foot.png" alt="">
         </td>
         <td>{{players.Height}}</td>
         <td>{{players.Match}}</td>
@@ -72,8 +72,8 @@
         <td>ForWard</td>
         <td>{{players.Age}}</td>
         <td>
-          <img v-if="players.foot==='right'" src="@/assets/foot/right-foot.png" alt="">
-          <img v-else src="@/assets/foot/left-foot.png" alt="">
+          <img v-if="players.foot==='right'" src="../../../../assets/image/foot/right-foot.png" alt="">
+          <img v-else src="../../../../assets/image/foot/left-foot.png" alt="">
         </td>
         <td>{{players.Height}}</td>
         <td>{{players.Match}}</td>
@@ -94,8 +94,8 @@
         <td>GoalKeeper</td>
         <td>{{players.Age}}</td>
         <td>
-          <img v-if="players.foot==='right'" src="@/assets/foot/right-foot.png" alt="">
-          <img v-else src="@/assets/foot/left-foot.png" alt="">
+          <img v-if="players.foot==='right'" src="../../../../assets/image/foot/right-foot.png" alt="">
+          <img v-else src="../../../../assets/image/foot/left-foot.png" alt="">
         </td>
         <td>{{players.Height}}</td>
         <td>{{players.Match}}</td>

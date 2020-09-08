@@ -2,17 +2,17 @@
   <tab-bar>
 <!--    动态传入color-->
       <tab-bar-item path="/players" color="#537091">
-           <img slot="item-img" src="../../../assets/nav/playerSub.svg" alt="">
+           <img slot="item-img" src="../../../assets/image/nav/playerSub.svg" alt="">
            <span slot="item-text" class="players-text">球员</span>
       </tab-bar-item>
 
       <tab-bar-item path="/teams"   color="#F7BA52">
-          <img slot="item-img" src="../../../assets/nav/team.svg" alt="">
+          <img slot="item-img" src="../../../assets/image/nav/team.svg" alt="">
           <span slot="item-text" class="teams-text">球队</span>
       </tab-bar-item>
 
       <tab-bar-item path="/matches" color="#D57666">
-          <img slot="item-img" src="../../../assets/nav/matchesSub.svg" alt="">
+          <img slot="item-img" src="../../../assets/image/nav/matchesSub.svg" alt="">
           <span slot="item-text" class="matches-text">比赛</span>
       </tab-bar-item>
 

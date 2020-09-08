@@ -3,21 +3,21 @@
     <div class="welcome">
       <div class="login">
         <img
-          src="../../../src/assets/welcome/login.png"
+          src="../../assets/image/welcome/login.png"
           alt=""
           class="welcome-img"
           @click="login">
       </div>
       <div class="register">
         <img
-          src="../../../src/assets/welcome/register.jpg"
+          src="../../assets/image/welcome/register.jpg"
           alt=""
           class="welcome-img"
           @click="register">
       </div>
     </div>
     <div class="logo">
-      <img src="../../../src/assets/welcome/bsu.jpg" alt="" class="logo-img">
+      <img src="../../assets/image/welcome/bsu.jpg" alt="" class="bsu-img">
     </div>
   </div>
 
@@ -72,7 +72,7 @@
     bottom: 50px;
     left: 806px;
   }
-  .logo-img {
+  .bsu-img {
     width: 308px;
     height: 106px;
     opacity: 0.62;

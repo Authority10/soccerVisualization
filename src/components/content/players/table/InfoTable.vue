@@ -3,7 +3,7 @@
     <tbody>
     <tr>
       <td  colspan="3">
-          <img v-if="isCountryImg" src="@/assets/players/avatar_img.jpg" alt="" class="avatar-img">
+          <img v-if="isCountryImg" src="../../../../assets/image/players/avatar_img.jpg" alt="" class="avatar-img">
           <img v-else :src="players.imgNumber.img.countryImg" alt="" class="avatar-img">
 
       </td>
@@ -26,8 +26,8 @@
       <td style="height:0.65rem" colspan="5">
         <div class="item-title">Strong Foot</div>
         <div class="item-content flex-div">
-          <img v-if="isRight" src="@/assets/foot/right-foot.png" alt="ddd" class="foot-img">
-          <img v-else src="@/assets/foot/left-foot.png" alt="" class="foot-img">
+          <img v-if="isRight" src="../../../../assets/image/foot/right-foot.png" alt="ddd" class="foot-img">
+          <img v-else src="../../../../assets/image/foot/right-foot.png" alt="" class="foot-img">
           <span class="img-span">{{players.foot}}</span>
         </div>
       </td>

@@ -26,10 +26,10 @@
      position: fixed;
      width: 1478px;
      height: 835px;
-     top:  107px;
+     top:  101px;
      left: 115px;
      background-color:#1E2E45;
-     border: 1px solid #dcdde1;
+     /*border: 1px solid #dcdde1;*/
    }
   .info-span {
     position: absolute;

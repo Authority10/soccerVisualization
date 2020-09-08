@@ -16,7 +16,7 @@
     width: 116px;
     height:943px;
     justify-content: center;
-    background-color:#F2F2F2;
+    background-color:#4b4b4b;
     flex-direction:column;
     position:fixed;
     top: 0;

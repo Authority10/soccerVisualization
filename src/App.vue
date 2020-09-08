@@ -1,16 +1,8 @@
 <template>
   <div id="app">
-
     <keep-alive>
       <router-view/>
     </keep-alive>
-
-
-<!--    <img src="../src/assets/logo/soccerLogo.png" alt="" class="logo">-->
-<!--    <div class="hr-line"></div>-->
-<!--    <logo-title></logo-title>-->
-<!--    <main-tab-bar></main-tab-bar>-->
-
   </div>
 </template>
 
@@ -19,6 +11,23 @@ export default {
   name: 'App',
   components: {
   },
+  data(){
+    return{
+      screenWidth: 0,     // 屏幕宽
+      screeHeight: 0,    // 屏幕高
+    }
+  },
+  mounted(){
+    const that = this;
+    window.onresize = () => {
+      return (() => {
+        window.screenWidth = document.body.clientWidth
+        that.screenWidth = window.screenWidth
+        console.log(that.screenWidth)
+      })()
+
+    }
+  }
 }
 </script>
 

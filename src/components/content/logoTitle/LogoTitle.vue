@@ -14,7 +14,6 @@
        <div class="my-button">
          <el-button type="primary">搜索</el-button>
        </div>
-
      </div>
   </div>
 </template>
@@ -34,8 +33,8 @@
   .top-title {
      position: fixed;
      top:0;
-     left:116px ;
-     width: 1478px;
+     left:112px;
+     width: 1484px;
      height: 100px;
      background-color: #404040;
   }

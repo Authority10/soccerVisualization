@@ -7,20 +7,16 @@
        <span class="item-name">{{shortName}}</span>
        <span class="item-number">{{parseInt(countryNumber)}}号</span>
 
-       <span class="item-country">国籍:</span>
+<!--       <span class="item-country">国籍:</span>-->
        <div  class="country-content">
-         <div>
            <img  class="country-img" :src="countryLogo" alt="" >
-           <span class="country-text">{{currentNationalTeam}}</span>
-         </div>
+           <div class="country-text">{{currentNationalTeam}}</div>
        </div>
 
-       <span class="item-club">球队:</span>
+<!--       <span class="item-club">球队:</span>-->
        <div class="club-content">
-         <div>
            <img  class="club-img" :src="clubLogo" alt="" >
-           <span class="club-text">{{currentTeam}}</span>
-         </div>
+           <div class="club-text">{{currentTeam}}</div>
        </div>
    </div>
 </template>
@@ -73,40 +69,46 @@
     .single-item {
        position: relative;
        color:#FDFDFD;
-       margin-top: 10px;
-       margin-left: 5px;
-       width: 270px;
-       height: 120px;
-       background-color: #1E2E45;
+       margin-bottom: 10px;
+       /*margin-left: 2px;*/
+       width: 290px;
+       height: 100px;
+       background-color:#565656;
        border-radius: 10px;
+       border: 2px solid #565656;
+       overflow:hidden;
     }
     .player-img {
-      position: relative;
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 75px;
       height: 80px;
-      border-radius: 10px;
+      /*border-radius: 10px;*/
     }
     .item-img {
-      position: absolute;
-      left:3px;
-      top: 5px;
-      border:2px solid #ddd;
-      border-radius: 10px;
-      box-shadow:rgba(0,0,0,0.15) 0 0 8px;
-      width:  60px;
-      height: 75px;
+      /*position: absolute;*/
+      /*left:3px;*/
+      /*top: 5px;*/
+      /*border:2px solid #ddd;*/
+      /*border-radius: 10px;*/
+      /*box-shadow:rgba(0,0,0,0.15) 0 0 8px;*/
+      /*width:  60px;*/
+      /*height: 75px;*/
+      width:  80px;
+      height: 100px;
 
     }
     .item-name {
       position: absolute;
-      left:75px;
-      top:10px;
+      left:100px;
+      top:8px;
       font-size: 22px;
     }
     .item-number {
       position: absolute;
       top: 10px;
-      left: 222px;
+      right: 5px;
       font-size: 20px;
     }
     .item-country {
@@ -117,18 +119,21 @@
     .country-content {
       position: absolute;
       display: flex;
-      justify-content: center;
-      width: 175px;
-      left: 80px;
-      top:  65px;
+      /*background-color: red;*/
+      justify-content: space-between;
+      align-items: center;
+      width: 100px;
+      left: 100px;
+      top:  45px;
     }
     .country-content div {
       display: inline;
     }
     .country-img {
-      height: 12px;
+      height: 16px;
     }
     .country-text {
+      line-height: 16px;
       font-size: 16px;
     }
     .item-club {
@@ -139,24 +144,28 @@
     .club-content {
       position: absolute;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
+      /*background-color: red;*/
+      align-items: center;
       width: 175px;
-      left: 90px;
-      top:  90px;
+      left: 100px;
+      top:  70px;
     }
     .club-content div {
       display: flex;
       align-items: center;
     }
     .club-img {
-      width: 20px;
+      height: 24px;
     }
     .club-text {
+
       font-size: 16px;
     }
     .active {
-      background-color: white;
-      color:#F7BA52;
-      font-weight: bold;
+      /*background-color: white;*/
+      /*color:#F7BA52;*/
+      /*font-weight: bold;*/
+      border-color:#69c0ff;
     }
 </style>

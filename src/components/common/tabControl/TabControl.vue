@@ -1,14 +1,11 @@
 <template>
-
   <div class="tab-control">
     <div v-for="(item,index) in titles"
          class="tab-control-item"
-         :class="{active:index===currentIndex}"
          @click="itemClick(index)">
-      <span>{{item}}</span>
+      <span :style="index===currentIndex?personal:unPersonal">{{item}}</span>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -20,12 +17,26 @@
         default(){
           return[]
         }
-      }
+      },
+      color:String
     },
     data(){
       return{
-        currentIndex : 0
+        currentIndex : 0,
+        //动态传入颜色
+        personal:{
+          "color":this.color,
+          "borderBottom":"2px solid "+this.color,
+          "opacity":1
+        },
+        unPersonal:{
+          "color":this.color,
+          "opacity":0.5
+        },
       }
+    },
+    computed:{
+
     },
     methods:{
       itemClick(index){
@@ -47,20 +58,24 @@
     font-size: 20px;
     line-height: 40px;
     height: 40px;
-    background-color: white;
+    background-color:#4b4b4b;
   }
   .tab-control-item{
     flex: 1;
   }
 
-  .tab-control-item span{
-    color: #848282;
-    padding:5px ;
-  }
-  .active span{
-    color:#F7BA52;
-    border-bottom: 5px solid #F7BA52;
-  }
+  /*.tab-control-item span{*/
+  /*  !*color: #FF7875;*!*/
+  /*  padding:5px ;*/
+  /*  !*设置透明度*!*/
+  /*  opacity: 0.5;*/
+  /*}*/
+  /*.active span{*/
+  /*  color:#FF7875;*/
+  /*  border-bottom: 5px solid #FF7875;*/
+  /*  !*设置透明度*!*/
+  /*  opacity: 1;*/
+  /*}*/
   /*子组件在被下半区调用的时候需要绑定这个类来控制top*/
   .tab-control-bottom {
     top:510px

@@ -7,8 +7,8 @@
 
 <script>
   import TeamsCenter from "../../../components/content/teams/centerInfo/TeamsCenter";
-  import CountryInfo from "../../../components/content/teams/centerInfo/centerItems/CountryInfo"
-  import CountryData from "../../../components/content/teams/centerInfo/centerItems/CountryData";
+  import CountryInfo from "../../../components/content/teams/centerInfo/centerItems/TeamInfo"
+  import CountryData from "../../../components/content/teams/centerInfo/centerItems/TeamData";
   export default {
     name: "TeamsInfo",
     props:{

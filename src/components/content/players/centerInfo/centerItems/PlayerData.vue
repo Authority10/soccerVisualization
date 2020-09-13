@@ -1,14 +1,22 @@
 <template>
   <div class="player-data">
-
-    <div class="technical-box">
+    <div class="box-title">
+      <div class="data-status">
+        <img src="../../../../../assets/image/players/playerData.png" alt="">
+        <span>技术统计</span>
+      </div>
+    </div>
+<!--    <div class="technical-box">-->
       <technical-table :technical="technical"></technical-table>
+<!--    </div>-->
+
+    <div class="heat-map">
+      <heat-map
+        v-if="eventPosition!==[]"
+        :event-position="eventPosition"
+      ></heat-map>
     </div>
 
-    <heat-map
-    v-if="eventPosition!==[]"
-    :event-position="eventPosition"
-    ></heat-map>
 
   </div>
 </template>
@@ -42,23 +50,41 @@
 <style scoped>
   .player-data {
     position: absolute;
-    top:60px;
-    left:720px;
-    width: 700px;
-    height: 730px;
-    /*background-color:rgba(85,239,195,0.3);*/
-    background-color:#1E2E45;
+    top:20px;
+    right:10px;
+    width: 862px;
+    height: 929px;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color:#4f4f4f;
+  }
+  .box-title {
+    position: relative;
+    width: 862px;
+    height: 62px;
+    background-color: #4b4b4b;
+  }
+  .data-status {
+    position: absolute;
+    left: 20px;
+    width: 140px;
+    height: 62px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   span {
-    position: absolute;
-    font-weight: bold;
+    color: #69c0ff;
     font-size: 22px;
-    top:30px;
-    left:20px;
   }
-  .technical-box {
-    width: 697px;
-    height: 300px;
-    background-color: #495F78;
+  img {
+    width: 30px;
+  }
+  .heat-map {
+    width: 815px;
+    height: 374px;
+    border-radius: 15px;
+    background-color: #525252;
+    margin: 0 auto;
   }
 </style>

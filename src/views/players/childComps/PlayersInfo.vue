@@ -1,6 +1,7 @@
 <template>
   <div>
-    <players-basic v-if="currentPage===1">
+<!--    <players-basic v-if="currentPage===1">-->
+    <players-center>
       <player-info
         v-if="players[currentPosition]!==undefined"
         slot="player-person-info"
@@ -13,15 +14,15 @@
         :technical="technical"
         :event-position="sendEventsPosition">
       </player-data>
-    </players-basic>
-    <players-matches v-if="currentPage===2" :players-matches="players[currentPosition][playerIndex]['MatchTable']"></players-matches>
-    <img class="left-arrow" src="../../../assets/image/common/left-arrow.png" alt=""  @click="lastPage">
-    <img class="right-arrow" src="../../../assets/image/common/right-arrow.png" alt="" @click="nextPage">
+    </players-center>
+<!--    <players-matches v-if="currentPage===2" :players-matches="players[currentPosition][playerIndex]['MatchTable']"></players-matches>-->
+<!--    <img class="left-arrow" src="../../../assets/image/common/left-arrow.png" alt=""  @click="lastPage">-->
+<!--    <img class="right-arrow" src="../../../assets/image/common/right-arrow.png" alt="" @click="nextPage">-->
   </div>
 </template>
 
 <script>
-  import PlayersBasic from "../../../components/content/players/centerInfo/PlayersBasic";
+  import PlayersCenter from "../../../components/content/players/centerInfo/PlayersCenter";
   import PlayerInfo from "../../../components/content/players/centerInfo/centerItems/PlayerInfo";
   import PlayerData from "../../../components/content/players/centerInfo/centerItems/PlayerData";
   import PlayersMatches from "../../../components/content/players/centerInfo/PlayersMatches";
@@ -40,7 +41,7 @@
         currentPosition:"",
         playerIndex:"",
         technical:{},
-        currentPage:1,
+        // currentPage:1,
       }
     },
     computed:{
@@ -60,7 +61,7 @@
     },
     components:{
       PlayerData,
-      PlayersBasic,
+      PlayersCenter,
       PlayerInfo,
       PlayersMatches
     },

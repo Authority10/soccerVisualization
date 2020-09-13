@@ -6,6 +6,7 @@
       slot="tab-control"
       :titles="['A组','B组','C组','D组']"
       @tabClick="tabClick"
+      color="#fff566"
     ></tab-control>
 
     <group-items
@@ -19,6 +20,7 @@
       slot="tab-control-sub"
       :titles="['E组','F组','G组','H组']"
       @tabClick="groupClick"
+      color="#fff566"
     ></tab-control>
 
     <group-items
@@ -105,8 +107,8 @@
     height: 52px;
     left: 25px;
     top:  32px;
-    color:#EAEAEA;
-    background-color:#1E2E45;
+    color:#FFF566;
+    background-color:#4b4b4b;
     font-size: 28px;
     text-align: center;
     line-height: 52px;

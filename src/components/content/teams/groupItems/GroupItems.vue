@@ -4,6 +4,7 @@
           v-for="(countryItems) in groupItems"
           :key="countryItems.key"
           :single-items="countryItems"
+          :currentCountry="currentCountry"
           :class="{active:currentCountry===countryItems.countryName}"
           @click.native="countryClick(countryItems)"
           >
@@ -54,6 +55,8 @@
  .group-items {
    position: absolute;
    top:140px;
+   left: 12px;
+   /*background-color: red;*/
    width: 300px;
    height: 650px;
  }

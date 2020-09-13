@@ -32,6 +32,8 @@
         data,
         //表格自适应画布的大小，高度宽度失效
         forceFit:true,
+        // width:815,
+        // height:390,
         // renderer:"svg",
         // width:336,
         // width:775,
@@ -114,7 +116,7 @@
         background:{
           visible: true,
           type: 'image',
-          src: 'https://outin-6a24895c919711eab60900163e1c8dba.oss-cn-shanghai.aliyuncs.com/image/default/77892CC700494FF98856C1FD0F8D2DDF-6-2.jpg',
+          src: 'https://outin-6a24895c919711eab60900163e1c8dba.oss-cn-shanghai.aliyuncs.com/image/default/9BA55CA952C943EBB2B22BF2E6290E15-6-2.jpg',
           // value: '#262626'
         },
       });
@@ -131,10 +133,13 @@
 
 <style scoped>
   #abc{
-    width:756px;
-    height:488px;
+    width:815px;
+    /*width:764px;*/
+    height:420px;
+    /*height:337px;*/
     position: absolute;
-    top: 0;
-    left: -30px;
+    top: -20px;
+    /*left: -30px;*/
+    left: 0;
   }
 </style>

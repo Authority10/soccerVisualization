@@ -126,11 +126,12 @@
       /*flex-direction: column;*/
       /*align-items: center;*/
       /*justify-content: flex-start;*/
+      /*background-color: red;*/
       position: absolute;
-      top:150px;
-      left:20px;
-      width: 300px;
-      height: 760px;
+      top:155px;
+      left:10px;
+      width: 324px;
+      height: 790px;
    }
 
 </style>

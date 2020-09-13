@@ -11,7 +11,7 @@ Vue.prototype.$message = Message;
 
 Vue.use(Button).use(Input).use(Tabs).use(TabPane).use(Form).use(FormItem);
 
-/* eslint-disable no-new */
+/* eslint-disable no-foot */
 new Vue({
   el: '#app',
   router,

@@ -1,18 +1,8 @@
 <template>
-
     <div class="center-info">
-      <span class="info-span">球员资料</span>
-
       <slot name="player-person-info"></slot>
-
-      <div class="hr-line"></div>
-
-      <span class="data-span">技术统计</span>
-
       <slot name="player-person-data"></slot>
     </div>
-
-
 </template>
 
 <script>
@@ -24,20 +14,21 @@
 <style scoped>
    .center-info {
      position: fixed;
-     width: 1478px;
-     height: 835px;
+     width: 1484px;
+     height: 842px;
      top:  101px;
-     left: 115px;
-     background-color:#1E2E45;
+     left: 112px;
+     background-color:#404040;
+     overflow: auto;
      /*border: 1px solid #dcdde1;*/
    }
   .info-span {
     position: absolute;
     top:17px;
     left: 80px;
-    color:#FDFDFD;
+    color:#FF7875;
     font-size: 28px;
-    border-bottom: 6px solid #F7BA52;
+    /*border-bottom: 6px solid #F7BA52;*/
   }
   .hr-line {
     position:absolute;

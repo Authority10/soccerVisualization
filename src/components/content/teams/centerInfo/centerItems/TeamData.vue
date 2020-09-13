@@ -1,18 +1,26 @@
 <template>
   <div class="country-data">
-      <tab-control-sub
-      ref="tab"
-      :titles="['球队阵容','球队进攻','球队防守','球队其他','球队其他']"
-      :fixed="fixed"
-      @tabClick="tabClick">
-      </tab-control-sub>
-      <players-table
-        :playersTable="activeCountry.playerTable"
-        ref="playersTable"
-        v-if="playersTable">
-      </players-table>
-      <country-attack  v-if="CountryAttack"  :radar="activeCountry.Radar.attack"></country-attack>
-      <country-defense v-if="CountryDefense" :radar="activeCountry.Radar.defense"></country-defense>
+    <div class="box-title">
+      <div class="data-status">
+        <img src="../../../../../assets/image/teams/teamData.png" alt="" class="">
+        <span>球队统计</span>
+      </div>
+    </div>
+    <tab-control-sub
+    ref="tab"
+    :titles="['球队阵容','球队进攻','球队防守','球队其他','球队其他']"
+    :fixed="fixed"
+    @tabClick="tabClick"
+    color="#FFF566">
+    </tab-control-sub>
+
+    <players-table
+      :playersTable="activeCountry.playerTable"
+      ref="playersTable"
+      v-if="playersTable">
+    </players-table>
+<!--      <country-attack  v-if="CountryAttack"  :radar="activeCountry.Radar.attack"></country-attack>-->
+<!--      <country-defense v-if="CountryDefense" :radar="activeCountry.Radar.defense"></country-defense>-->
   </div>
 </template>
 
@@ -81,23 +89,39 @@
   .country-data {
     position: absolute;
     /*overflow: scroll;*/
-    top:270px;
-    left:140px;
-    width: 1200px;
-    height: 500px;
-    /*background-color:red;*/
+    top:260px;
+    left:20px;
+    width: 1433px;
+    height: 2100px;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color:#4f4f4f;
+  }
+  .box-title {
+    width: 1433px;
+    height: 62px;
+    background-color:#4b4b4b;
+  }
+  .data-status {
+    position: absolute;
+    left: 20px;
+    width: 140px;
+    height: 62px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   span {
-    position: absolute;
-    font-weight: bold;
+    color: #FFF566;
     font-size: 22px;
-    top:10px;
-    left:20px;
   }
-  .FixedTab {
-    position: fixed;
-    background-color: red;
-    top: 500px;
-    left: 4px;
+  img {
+    width: 30px;
   }
+  /*.FixedTab {*/
+  /*  position: fixed;*/
+  /*  background-color: red;*/
+  /*  top: 500px;*/
+  /*  left: 4px;*/
+  /*}*/
 </style>

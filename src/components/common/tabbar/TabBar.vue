@@ -13,7 +13,7 @@
 <style scoped>
   #tab-bar {
     display: flex;
-    width: 116px;
+    width: 112px;
     height:943px;
     justify-content: center;
     background-color:#4b4b4b;

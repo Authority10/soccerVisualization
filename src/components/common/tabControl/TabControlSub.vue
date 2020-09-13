@@ -1,8 +1,8 @@
 <template>
     <div class="tab-control" :class="{fixed:fixed}">
       <div v-for="(item,index) in titles"
-           class="tab-control-item "
-           :class="{active:index===currentIndex}"
+           class="tab-control-item"
+           :style="index===currentIndex?personal:unPersonal"
            @click="itemClick(index)">
         <span>{{item}}</span>
       </div>
@@ -19,11 +19,22 @@
           return[]
         }
       },
-      fixed:false
+      fixed:false,
+      color:String
     },
     data(){
       return{
         currentIndex:0,
+        personal:{
+          "color":this.color,
+          "border":"1px solid "+this.color,
+          "opacity":1
+        },
+        unPersonal:{
+          "color":this.color,
+          "border":"1px solid #5a5a5a",
+          "opacity":1
+        },
       }
     },
     methods:{
@@ -39,34 +50,46 @@
 <style scoped>
   .tab-control{
     position: absolute;
-    width: 1210px;
-    height: 50px;
-    top: 0;
-    left: 0;
-    display: flex;
-    text-align: center;
+    width: 1371px;
+    height: 80px;
+    top: 80px;
+    left: 31px;
     font-size: 14px;
-    line-height: 40px;
-    background-color: #495F78;
+    border-radius: 15px;
+    background-color:#555555;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     /*background-color: #1E2E45;*/
   }
   .tab-control-item{
-    flex: 1;
+    border-radius: 15px;
+    text-align: center;
+    line-height: 50px;
+    background-color:#5a5a5a;
+    width: 150px;
+    height: 50px;
+    border: 1px solid #5a5a5a;
+    /*flex: 1;*/
   }
   .tab-control-item span{
-    color:#EAEAEA;
     font-size: 25px;
-    font-weight: bold;
+    /*font-weight: bold;*/
     padding:5px ;
   }
-  .active span {
-    color:#F7BA52;
-    border-bottom: 6px solid #F7BA52;
-  }
+  /*.active {*/
+  /*  border: 1px solid #FFF566;*/
+  /*}*/
+  /*.active span {*/
+  /*  color:#F7BA52;*/
+  /*  border: 6px solid #F7BA52;*/
+  /*}*/
+
   .fixed {
     position: fixed;
-    top: 107px;
-    left: 255px;
+    top: 100px;
+    left: 163px;
+    /*background-color: black;*/
     /*固定定位之后会覆盖掉playersTable导致吸顶效果之后无法点击*/
     /*增大层级实现遮盖效果即可点击*/
     z-index: 999;

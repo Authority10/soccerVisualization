@@ -6,6 +6,7 @@
       slot="tab-control"
       :titles="['FW','MF','DF','GK']"
       @tabClick="tabClick"
+      color="#69c0ff"
     ></tab-control>
 
     <items
@@ -96,8 +97,8 @@
     height: 52px;
     left: 25px;
     top:  32px;
-    color:#EAEAEA;
-    background-color:#1E2E45;
+    color:#69c0ff;
+    background-color:#4b4b4b;
     font-size: 28px;
     text-align: center;
     line-height: 52px;

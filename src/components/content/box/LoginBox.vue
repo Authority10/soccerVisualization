@@ -97,7 +97,7 @@
     height: 200px;
     /*background-color: red;*/
     top: 300px;
-    left: 1440px;
+    left: 1400px;
   }
   /*修改element-ui默认样式*/
   /*在需要修改的ui组件外层包裹div，设置类名之后，

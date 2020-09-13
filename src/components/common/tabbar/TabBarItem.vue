@@ -3,9 +3,9 @@
     <div :style="isActiveColor" v-if="isActive"></div>
     <div class="item-box" v-else></div>
     <slot name="item-img" class="item-img"></slot>
-    <div class="item-text">
-      <slot name="item-text"></slot>
-    </div>
+<!--    <div class="item-text">-->
+<!--      <slot name="item-text"></slot>-->
+<!--    </div>-->
   </div>
 </template>
 
@@ -27,9 +27,10 @@
       },
       //动态决定样式，判断是否是活跃路由赋予对应的颜色
       //6px 57px 转化成rem
+      //8px 68px 0.04167   0.35412
       isActiveColor(){
         return this.isActive ?
-          {backgroundColor:this.color,width:0.03125+"rem",height:0.29688+"rem",display:"inline-block"}
+          {backgroundColor:this.color,width:0.04166+"rem",height:0.35412+"rem",display:"inline-block"}
           :{}
       }
     },
@@ -44,12 +45,12 @@
 <style scoped>
    .tar-bar-item {
      position: relative;
-     margin-bottom: 5px;
+     /*margin-bottom: 5px;*/
    }
    .item-box {
      display: inline-block;
      width: 8px;
-     height:57px;
+     height:68px;
    }
    .item-text {
     margin-left: 40px;

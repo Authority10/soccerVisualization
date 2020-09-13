@@ -1,22 +1,22 @@
 <template>
   <div class="show-team">
     <div class="center-info" @scroll="scrollEvent">
-      <country-info
+      <team-info
         :activeCountry="activeCountry">
-      </country-info>
-      <country-data
-        ref="countryData"
+      </team-info>
+      <team-data
+        ref="teamData"
         :activeCountry="activeCountry"
         :fixed="fixed">
-      </country-data>
+      </team-data>
     </div>
     <img src="@/assets/image/common/enter.png" alt="" @click="enterTeam">
   </div>
 </template>
 
 <script>
-  import CountryData from "./centerItems/CountryData";
-  import CountryInfo from "./centerItems/CountryInfo";
+  import TeamData from "./centerItems/TeamData";
+  import TeamInfo from "./centerItems/TeamInfo";
   export default {
     name: "TeamsCenter",
     props:{
@@ -57,8 +57,8 @@
       }
     },
     components:{
-      CountryData,
-      CountryInfo
+      TeamData,
+      TeamInfo
     },
     //路由跳转之后，将固定定位取消
     // 否则重新进入路由之后会出现滚动条在顶部但出现吸顶效果的bug
@@ -72,8 +72,10 @@
       });
     },
     mounted() {
-      console.log(this.$refs.countryData.$el.offsetTop);
-      this.tabControlSubTop = this.$refs.countryData.$el.offsetTop
+      console.log(this.$refs.teamData.$el.offsetTop);
+      //滚动条极限距离=countryData距离顶部的高度+tabControlSub距离父组件的高度
+      this.tabControlSubTop = this.$refs.teamData.$el.offsetTop +80
+      console.log(this.tabControlSubTop)
     }
   }
 </script>
@@ -84,10 +86,10 @@
   .center-info {
     position: fixed;
     overflow: auto;
-    width: 1478px;
-    height: 835px;
+    width: 1484px;
+    height: 842px;
     top:  101px;
-    left: 115px;
+    left: 112px;
     background-color: #404040;
     /*background-color: red;*/
     /*border: 1px solid #dcdde1;*/
@@ -96,7 +98,7 @@
     position: absolute;
     width: 56px;
     right: 360px;
-    top: 890px;
+    top: 880px;
     z-index: 999;
   }
 </style>

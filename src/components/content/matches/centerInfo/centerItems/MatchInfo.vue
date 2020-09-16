@@ -6,16 +6,20 @@
         <span>比赛信息</span>
       </div>
     </div>
-    <country-table></country-table>
+    <team-table
+    color="#FF7875"
+    :titles="['比赛轮次','比赛时间','比赛城市','比赛场馆']"
+    :content="['小组赛第1轮','2018-6-14','Rostov-on-Don','Rostov Arena']">
+    </team-table>
   </div>
 </template>
 
 <script>
-  import CountryTable from "../../../players/table/CountryTable";
+  import TeamTable from "../../../table/TeamTable";
   export default {
     name: "MatchesInfo",
     components:{
-      CountryTable
+      TeamTable
     }
   }
 </script>

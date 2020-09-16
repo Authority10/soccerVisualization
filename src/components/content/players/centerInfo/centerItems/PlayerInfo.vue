@@ -6,12 +6,14 @@
         <span>球员资料</span>
       </div>
     </div>
-    <InfoTable :players="players"></InfoTable>
+    <player-table
+      :players="players"
+    ></player-table>
   </div>
 </template>
 
 <script>
-  import InfoTable from "../../table/InfoTable";
+  import playerTable from "../../../table/PlayerTable";
   export default {
     name: "PlayerInfo",
     props:{
@@ -23,7 +25,7 @@
       },
     },
     components:{
-      InfoTable
+      playerTable
     },
     data(){
       return{

@@ -121,17 +121,13 @@
 
 <style scoped>
    .items {
-      /*display: flex;*/
       overflow: auto;
-      /*flex-direction: column;*/
-      /*align-items: center;*/
-      /*justify-content: flex-start;*/
-      /*background-color: red;*/
       position: absolute;
-      top:155px;
-      left:10px;
+      top:45px;
+      left:12px;
       width: 324px;
       height: 790px;
+     /*background-color: red;*/
    }
 
 </style>

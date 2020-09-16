@@ -34,7 +34,7 @@
 
 <script>
   export default {
-    name: "MatchTable",
+    name: "AppearTable",
     props:{
       playersMatches:{
         type:Array,

@@ -102,118 +102,12 @@
       <div>{{players.Cards}}</div>
       <div>{{players.Sub}}</div>
     </div>
-<!--    <table>-->
-<!--      <tbody>-->
-<!--      <tr class="head">-->
-<!--        <td></td>-->
-<!--        <td>Number</td>-->
-<!--        <td>Name</td>-->
-<!--        <td>Position</td>-->
-<!--        <td>Age</td>-->
-<!--        <td>Foot</td>-->
-<!--        <td>Height</td>-->
-<!--        <td>Matches</td>-->
-<!--        <td>Total minutes</td>-->
-<!--        <td>Average minutes</td>-->
-<!--        <td>Cards</td>-->
-<!--        <td>Sub in/out</td>-->
-<!--      </tr>-->
-<!--      <tr-->
-<!--       v-for="(players,index) in playersTable.Back"-->
-<!--       :key="index"-->
-<!--      >-->
-<!--       <td>-->
-<!--         <img :src="players.imgNumber.img.countryImg" alt="">-->
-<!--       </td>-->
-<!--       <td>{{parseInt(players.imgNumber.number.countryNumber)}}</td>-->
-<!--       <td>{{players.Name.replace(/\s*/g,"")}}</td>-->
-<!--       <td>Back</td>-->
-<!--       <td>{{players.Age}}</td>-->
-<!--       <td>-->
-<!--         <img v-if="players.foot==='right'" src="../../../../assets/image/foot/right-foot.png" alt="">-->
-<!--         <img v-else src="../../../../assets/image/foot/right-foot.png" alt="">-->
-<!--       </td>-->
-<!--       <td>{{players.Height}}</td>-->
-<!--       <td>{{players.Match}}</td>-->
-<!--       <td>{{players.Time}}</td>-->
-<!--       <td>{{parseInt(players.AverageMinutes)}}</td>-->
-<!--       <td>{{players.Cards}}</td>-->
-<!--       <td>{{players.Sub}}</td>-->
-<!--     </tr>-->
-<!--      <tr-->
-<!--        v-for="(players,index) in playersTable.Center"-->
-<!--        :key="index"-->
-<!--      >-->
-<!--        <td>-->
-<!--          <img :src="players.imgNumber.img.countryImg" alt="">-->
-<!--        </td>-->
-<!--        <td>{{parseInt(players.imgNumber.number.countryNumber)}}</td>-->
-<!--        <td>{{players.Name.replace(/\s*/g,"")}}</td>-->
-<!--        <td>Center</td>-->
-<!--        <td>{{players.Age}}</td>-->
-<!--        <td>-->
-<!--          <img v-if="players.foot==='right'" src="../../../../assets/image/foot/right-foot.png" alt="">-->
-<!--          <img v-else src="../../../../assets/image/foot/left-foot.png" alt="">-->
-<!--        </td>-->
-<!--        <td>{{players.Height}}</td>-->
-<!--        <td>{{players.Match}}</td>-->
-<!--        <td>{{players.Time}}</td>-->
-<!--        <td>{{parseInt(players.AverageMinutes)}}</td>-->
-<!--        <td>{{players.Cards}}</td>-->
-<!--        <td>{{players.Sub}}</td>-->
-<!--      </tr>-->
-<!--      <tr-->
-<!--        v-for="(players,index) in playersTable.ForWard"-->
-<!--        :key="index"-->
-<!--      >-->
-<!--        <td>-->
-<!--          <img :src="players.imgNumber.img.countryImg" alt="">-->
-<!--        </td>-->
-<!--        <td>{{parseInt(players.imgNumber.number.countryNumber)}}</td>-->
-<!--        <td>{{players.Name.replace(/\s*/g,"")}}</td>-->
-<!--        <td>ForWard</td>-->
-<!--        <td>{{players.Age}}</td>-->
-<!--        <td>-->
-<!--          <img v-if="players.foot==='right'" src="../../../../assets/image/foot/right-foot.png" alt="">-->
-<!--          <img v-else src="../../../../assets/image/foot/left-foot.png" alt="">-->
-<!--        </td>-->
-<!--        <td>{{players.Height}}</td>-->
-<!--        <td>{{players.Match}}</td>-->
-<!--        <td>{{players.Time}}</td>-->
-<!--        <td>{{parseInt(players.AverageMinutes)}}</td>-->
-<!--        <td>{{players.Cards}}</td>-->
-<!--        <td>{{players.Sub}}</td>-->
-<!--      </tr>-->
-<!--      <tr-->
-<!--        v-for="(players,index) in playersTable.GoalKeeper"-->
-<!--        :key="index"-->
-<!--      >-->
-<!--        <td>-->
-<!--          <img :src="players.imgNumber.img.countryImg" alt="">-->
-<!--        </td>-->
-<!--        <td>{{parseInt(players.imgNumber.number.countryNumber)}}</td>-->
-<!--        <td>{{players.Name.replace(/\s*/g,"")}}</td>-->
-<!--        <td>GoalKeeper</td>-->
-<!--        <td>{{players.Age}}</td>-->
-<!--        <td>-->
-<!--          <img v-if="players.foot==='right'" src="../../../../assets/image/foot/right-foot.png" alt="">-->
-<!--          <img v-else src="../../../../assets/image/foot/left-foot.png" alt="">-->
-<!--        </td>-->
-<!--        <td>{{players.Height}}</td>-->
-<!--        <td>{{players.Match}}</td>-->
-<!--        <td>{{players.Time}}</td>-->
-<!--        <td>{{parseInt(players.AverageMinutes)}}</td>-->
-<!--        <td>{{players.Cards}}</td>-->
-<!--        <td>{{players.Sub}}</td>-->
-<!--      </tr>-->
-<!--      </tbody>-->
-<!--    </table>-->
   </div>
 </template>
 
 <script>
   export default {
-    name: "PlayersTable",
+    name: "SquadTable",
     props:{
       playersTable:{
         type:Object,

@@ -114,65 +114,6 @@
         </div>
       </div>
     </div>
-
-<!--    <table>-->
-<!--      <tbody>-->
-<!--        <tr>-->
-<!--          <td>01</td>-->
-<!--          <td>进球</td>-->
-<!--          <td>{{technical.goal}}</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--          <td>02</td>-->
-<!--          <td>助攻</td>-->
-<!--          <td>{{technical.assist}}</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--          <td>03</td>-->
-<!--          <td>传球</td>-->
-<!--          <td>{{technical.accuratePass}}</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--          <td>04</td>-->
-<!--          <td>精准传球</td>-->
-<!--          <td>{{technical.keyPass}}</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--          <td>05</td>-->
-<!--          <td>威胁传球</td>-->
-<!--          <td>{{technical.keyPass}}</td>-->
-<!--        </tr>-->
-<!--      </tbody>-->
-<!--    </table>-->
-<!--    <table>-->
-<!--      <tbody>-->
-<!--      <tr>-->
-<!--        <td>06</td>-->
-<!--        <td>直塞</td>-->
-<!--        <td>{{technical.smartPass}}</td>-->
-<!--      </tr>-->
-<!--      <tr>-->
-<!--        <td>07</td>-->
-<!--        <td>射门</td>-->
-<!--        <td>{{technical.shot}}</td>-->
-<!--      </tr>-->
-<!--      <tr>-->
-<!--        <td>08</td>-->
-<!--        <td>射正</td>-->
-<!--        <td>{{technical.shotOnTarget}}</td>-->
-<!--      </tr>-->
-<!--      <tr>-->
-<!--        <td>09</td>-->
-<!--        <td>黄牌</td>-->
-<!--        <td>{{technical.yellowCard}}</td>-->
-<!--      </tr>-->
-<!--      <tr>-->
-<!--        <td>10</td>-->
-<!--        <td>红牌</td>-->
-<!--        <td>{{technical.redCard}}</td>-->
-<!--      </tr>-->
-<!--      </tbody>-->
-<!--    </table>-->
   </div>
 </template>
 

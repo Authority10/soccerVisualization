@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import MatchTable from "../table/MatchTable";
+  import MatchTable from "../../table/AppearTable";
   export default {
     name: "PlayersMatches",
     props:{

@@ -1,36 +1,35 @@
 <template>
-  <right-list>
+  <div class="content-box">
     <div class="list-name" slot="content-name">球队列表</div>
-
-    <tab-control
-      slot="tab-control"
-      :titles="['A组','B组','C组','D组']"
-      @tabClick="tabClick"
-      color="#fff566"
-    ></tab-control>
-
-    <group-items
-      v-if="teamList['GroupTop']!==undefined"
-      slot="content-items"
-      :group-items="teamList['GroupTop'][currentGroupTop]">
-    </group-items>
-
-    <tab-control
-      class="tab-control-bottom"
-      slot="tab-control-sub"
-      :titles="['E组','F组','G组','H组']"
-      @tabClick="groupClick"
-      color="#fff566"
-    ></tab-control>
-
-    <group-items
-      v-if="teamList['GroupBottom']!==undefined"
-      class="group-bottom"
-      slot="content-items-sub"
-      :group-items="teamList['GroupBottom'][currentGroupBottom]">
-    </group-items>
-
-  </right-list>
+    <div class="scroll-box">
+      <tab-control
+        slot="tab-control-first"
+        :titles="['A组','B组','C组','D组']"
+        @tabClick="tabClick"
+        color="#fff566"
+      >
+      </tab-control>
+      <group-items
+        v-if="teamList['GroupTop']!==undefined"
+        slot="content-items-first"
+        :group-items="teamList['GroupTop'][currentGroupTop]">
+      </group-items>
+      <tab-control
+        class="team-tab-bottom"
+        slot="tab-control-second"
+        :titles="['E组','F组','G组','H组']"
+        @tabClick="groupClick"
+        color="#fff566"
+      >
+      </tab-control>
+      <group-items
+        v-if="teamList['GroupBottom']!==undefined"
+        class="group-bottom"
+        slot="content-items-second"
+        :group-items="teamList['GroupBottom'][currentGroupBottom]">
+      </group-items>
+    </div>
+  </div>
 </template>
 
 
@@ -101,6 +100,17 @@
 </script>
 
 <style scoped>
+  .content-box {
+    position: fixed;
+    /*overflow: auto;*/
+    right: 0;
+    top: 0;
+    width: 324px;
+    height: 943px;
+    background-color: #4b4b4b;
+    /*background-color: red;*/
+    /*border-left:1px solid rgba(187, 187, 187, 0.5);*/
+  }
   .list-name {
     position: absolute;
     width: 137px;
@@ -116,5 +126,12 @@
   }
   .group-bottom {
     top:500px;
+  }
+  .scroll-box {
+    position: absolute;
+    top: 100px;
+    width: 324px;
+    height: 835px;
+    /*background-color: blue;*/
   }
 </style>

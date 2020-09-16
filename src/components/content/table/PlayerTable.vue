@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="players-name">
-      <img v-if="isCountryImg" src="../../../../assets/image/players/avatar_img.jpg" alt="" class="avatar-img">
+      <img v-if="isCountryImg" src="../../../assets/image/players/avatar_img.jpg" alt="" class="avatar-img">
       <img v-else :src="players.imgNumber.img.countryImg" alt="" class="avatar-img">
       <!--    <div class="name-title">-->
       <!--    </div>-->
@@ -29,8 +29,8 @@
           </div>
           <div class="content">
             <div>
-              <img v-if="isRight" src="../../../../assets/image/foot/right-foot.png" alt="ddd" class="foot-img">
-              <img v-else src="../../../../assets/image/foot/left-foot.png" alt="" class="foot-img">
+              <img v-if="isRight" src="../../../assets/image/foot/right-foot.png" alt="ddd" class="foot-img">
+              <img v-else src="../../../assets/image/foot/left-foot.png" alt="" class="foot-img">
             </div>
             <div>
               {{players.foot}}
@@ -105,12 +105,11 @@
         </div>
     </div>
   </div>
-
 </template>
 
 <script>
   export default {
-    name: "InfoTable",
+    name: "PlayerTable",
     props:{
       players:{
         type:Object,

@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-control">
+  <div class="tab-control" :class="{secondFixed:secondFixed}">
     <div v-for="(item,index) in titles"
          class="tab-control-item"
          @click="itemClick(index)">
@@ -18,6 +18,7 @@
           return[]
         }
       },
+      secondFixed:Boolean,
       color:String
     },
     data(){
@@ -52,7 +53,7 @@
   .tab-control{
     position: absolute;
     width: 324px;
-    top: 100px;
+    top: 0;
     display: flex;
     text-align: center;
     font-size: 20px;
@@ -76,9 +77,23 @@
   /*  !*设置透明度*!*/
   /*  opacity: 1;*/
   /*}*/
-  /*子组件在被下半区调用的时候需要绑定这个类来控制top*/
-  .tab-control-bottom {
-    top:510px
+
+  /*子组件在被team界面右侧下半区调用的时候需要绑定这个类来控制top*/
+  .team-tab-bottom {
+    top:420px
+  }
+  .match-tab-first {
+    position: fixed;
+    top:100px;
+    z-index:999
+  }
+  /*子组件在被match界面右侧下半区调用的时候需要绑定这个类来控制top*/
+  .match-tab-second {
+    top: 600px;
+    /*background-color: red;*/
+  }
+  .match-tab-third {
+    top: 1200px;
   }
   /*子组件在被countryData调用的时候需要绑定这个类来控制tabControl*/
   .tab-control-sub {
@@ -92,5 +107,10 @@
     line-height: 40px;
     height: 40px;
     background-color:red;
+  }
+  .secondFixed {
+    position: fixed;
+    top:140px;
+    z-index: 999;
   }
 </style>

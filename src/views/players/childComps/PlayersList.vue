@@ -1,21 +1,19 @@
 <template>
-  <right-list>
+  <div class="content-box">
     <div class="list-name" slot="content-name">球员列表</div>
-
-    <tab-control
-      slot="tab-control"
-      :titles="['FW','MF','DF','GK']"
-      @tabClick="tabClick"
-      color="#69c0ff"
-    ></tab-control>
-
-    <items
-      slot="content-items"
-      :playerItems="this.showPlayers"
-      @infoClick="infoClick">
-    </items>
-
-  </right-list>
+    <div class="scroll-box">
+      <tab-control
+        :titles="['FW','MF','DF','GK']"
+        @tabClick="tabClick"
+        color="#69c0ff"
+      >
+      </tab-control>
+      <items
+        :playerItems="this.showPlayers"
+        @infoClick="infoClick">
+      </items>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -91,6 +89,17 @@
 </script>
 
 <style scoped>
+  .content-box {
+    position: fixed;
+    /*overflow: auto;*/
+    right: 0;
+    top: 0;
+    width: 324px;
+    height: 943px;
+    background-color: #4b4b4b;
+    /*background-color: red;*/
+    /*border-left:1px solid rgba(187, 187, 187, 0.5);*/
+  }
   .list-name {
     position: absolute;
     width: 137px;
@@ -104,5 +113,11 @@
     line-height: 52px;
     font-weight: bold;
   }
-
+  .scroll-box {
+    position: absolute;
+    top: 100px;
+    width: 324px;
+    height: 835px;
+    /*background-color: blue;*/
+  }
 </style>

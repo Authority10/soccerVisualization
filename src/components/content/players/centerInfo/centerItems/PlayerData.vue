@@ -22,7 +22,7 @@
 </template>
 
 <script>
-  import technicalTable from "../../table/TechnicalTable";
+  import technicalTable from "../../../table/TechnicalTable";
   import heatMap from "../../g2plot/HeatMap";
   export default {
     name: "PlayerData",

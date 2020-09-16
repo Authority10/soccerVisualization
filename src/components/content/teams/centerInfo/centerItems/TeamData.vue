@@ -14,11 +14,11 @@
     color="#FFF566">
     </tab-control-sub>
 
-    <players-table
+    <squad-table
       :playersTable="activeCountry.playerTable"
       ref="playersTable"
       v-if="playersTable">
-    </players-table>
+    </squad-table>
 <!--      <country-attack  v-if="CountryAttack"  :radar="activeCountry.Radar.attack"></country-attack>-->
 <!--      <country-defense v-if="CountryDefense" :radar="activeCountry.Radar.defense"></country-defense>-->
   </div>
@@ -26,7 +26,7 @@
 
 <script>
   import TabControlSub from "../../../../common/tabControl/TabControlSub";
-  import PlayersTable from "../../countryData/PlayersTable";
+  import SquadTable from "../../countryData/SquadTable";
   import CountryAttack from "../../countryData/CountryAttack";
   import CountryDefense from "../../countryData/CountryDefense";
   export default {
@@ -49,7 +49,7 @@
     },
     components:{
       TabControlSub,
-      PlayersTable,
+      SquadTable,
       CountryAttack,
       CountryDefense
     },

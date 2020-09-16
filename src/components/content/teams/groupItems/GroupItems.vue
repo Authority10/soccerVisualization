@@ -54,13 +54,13 @@
 <style scoped>
  .group-items {
    position: absolute;
-   top:140px;
+   top:40px;
    left: 12px;
    /*background-color: red;*/
    width: 300px;
-   height: 650px;
+   height: 380px;
  }
   .group-bottom {
-    top:550px
+    top:460px
   }
 </style>

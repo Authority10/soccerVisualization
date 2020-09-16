@@ -19,7 +19,7 @@
           return[]
         }
       },
-      fixed:false,
+      fixed:Boolean,
       color:String
     },
     data(){

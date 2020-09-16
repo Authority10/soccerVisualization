@@ -6,7 +6,11 @@
           <span>球队信息</span>
         </div>
     </div>
-    <country-table></country-table>
+    <team-table
+    color="#FFF566"
+    :titles="['国家','主教练','成立时间','平均年龄','参赛次数','主要荣誉']"
+    :content="['俄罗斯','克洛普','1996-10-04','24','20','冠军']">
+    </team-table>
 <!--    <div class="img-name">-->
 <!--      <img :src="activeCountry.img" alt="">-->
 <!--      <span class="country-name">{{activeCountry.countryName}}</span>-->
@@ -16,7 +20,7 @@
 </template>
 
 <script>
-  import countryTable from "../../../players/table/CountryTable";
+  import TeamTable from "../../../table/TeamTable";
   export default {
     name: "CountryInfo",
     props:{
@@ -33,7 +37,7 @@
       }
     },
     components:{
-      countryTable
+      TeamTable
     },
     methods:{
     }

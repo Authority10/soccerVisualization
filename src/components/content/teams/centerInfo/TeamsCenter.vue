@@ -72,9 +72,12 @@
       });
     },
     mounted() {
-      console.log(this.$refs.teamData.$el.offsetTop);
-      //滚动条极限距离=countryData距离顶部的高度+tabControlSub距离父组件的高度
-      this.tabControlSubTop = this.$refs.teamData.$el.offsetTop +80
+      //teamData距离父元素的高度
+      var teamDataTop = this.$refs.teamData.$el.offsetTop
+      //tab距离父元素（tab的父元素就是teamData）的高度
+      var tabTop = this.$refs.teamData.$refs.tab.$el.offsetTop
+      //滚动条极限距离=teamData距离顶部的高度+tabControlSub距离父组件的高度
+      this.tabControlSubTop = teamDataTop + tabTop
       console.log(this.tabControlSubTop)
     }
   }

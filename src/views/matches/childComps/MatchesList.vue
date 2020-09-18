@@ -134,17 +134,12 @@
         console.log(this.scrollTop);
         //根据偏移量决定是否固定（三元运算符）
         this.secondFixed = this.scrollTop > this.secondTop;
-        // this.thirdFixed = this.scrollTop > this.thirdTop;
       }
     },
     mounted() {
       console.log(this.$refs.battleItems.$el.clientHeight)
-      // console.log(this.$refs.secondTab.$el.offsetTop);
-      // console.log(this.$refs.thirdTab.$el.offsetTop);
       //滚动条极限距离=secondTab距离顶部的高度-firstTab的高度
       this.secondTop = this.$refs.battleItems.$el.clientHeight
-      // this.thirdTop = this.$refs.thirdTab.$el.offsetTop-40
-      // console.log(this.tabControlSubTop)
     }
   }
 </script>

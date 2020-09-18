@@ -1,12 +1,12 @@
 <template>
   <div class="players-matches">
     <span>出场记录</span>
-    <match-table :players-matches="playersMatches"></match-table>
+    <appear-table :players-matches="playersMatches"></appear-table>
   </div>
 </template>
 
 <script>
-  import MatchTable from "../../table/AppearTable";
+  import AppearTable from "../../../table/AppearTable";
   export default {
     name: "PlayersMatches",
     props:{
@@ -18,7 +18,7 @@
       }
     },
     components:{
-      MatchTable
+      AppearTable
     }
   }
 </script>

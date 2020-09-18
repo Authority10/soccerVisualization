@@ -2,6 +2,7 @@
     <div class="center-info">
       <slot name="player-person-info"></slot>
       <slot name="player-person-data"></slot>
+      <slot name="player-person-appearance"></slot>
     </div>
 </template>
 

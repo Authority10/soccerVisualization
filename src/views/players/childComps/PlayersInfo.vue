@@ -25,7 +25,7 @@
   import PlayersCenter from "../../../components/content/players/centerInfo/PlayersCenter";
   import PlayerInfo from "../../../components/content/players/centerInfo/centerItems/PlayerInfo";
   import PlayerData from "../../../components/content/players/centerInfo/centerItems/PlayerData";
-  import PlayersMatches from "../../../components/content/players/centerInfo/PlayersMatches";
+  import PlayersMatches from "../../../components/content/players/centerInfo/centerItems/PlayersAppearance";
   export default {
     name: "PlayersInfo",
     props:{

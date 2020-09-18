@@ -33,9 +33,10 @@
       }
     },
     mounted() {
-      console.log(this.$refs.matchData.$el.offsetTop);
+      var matchDataTop = this.$refs.matchData.$el.offsetTop
+      var tabData = this.$refs.matchData.$refs.tab.$el.offsetTop
       //滚动条极限距离=countryData距离顶部的高度+tabControlSub距离父组件的高度
-      this.tabControlSubTop = this.$refs.matchData.$el.offsetTop +80
+      this.tabControlSubTop = matchDataTop + tabData
       console.log(this.tabControlSubTop)
     }
   }

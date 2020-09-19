@@ -8,12 +8,26 @@
         :players="players[currentPosition][playerIndex]"
       >
       </player-info>
+
       <player-data
         v-if="players[currentPosition]!==undefined"
         slot="player-person-data"
         :technical="technical"
         :event-position="sendEventsPosition">
       </player-data>
+
+      <player-info
+        v-if="players[currentPosition]!==undefined"
+        slot="second-player-person-info"
+        class="second-player"
+        :players="players[currentPosition][playerIndex]"
+      >
+      </player-info>
+
+      <players-appearance
+      slot="player-person-appearance"
+      :players-matches="players[currentPosition][playerIndex]['MatchTable']">
+      </players-appearance>
     </players-center>
 <!--    <players-matches v-if="currentPage===2" :players-matches="players[currentPosition][playerIndex]['MatchTable']"></players-matches>-->
 <!--    <img class="left-arrow" src="../../../assets/image/common/left-arrow.png" alt=""  @click="lastPage">-->
@@ -25,7 +39,7 @@
   import PlayersCenter from "../../../components/content/players/centerInfo/PlayersCenter";
   import PlayerInfo from "../../../components/content/players/centerInfo/centerItems/PlayerInfo";
   import PlayerData from "../../../components/content/players/centerInfo/centerItems/PlayerData";
-  import PlayersMatches from "../../../components/content/players/centerInfo/centerItems/PlayersAppearance";
+  import PlayersAppearance from "../../../components/content/players/centerInfo/centerItems/PlayersAppearance";
   export default {
     name: "PlayersInfo",
     props:{
@@ -63,7 +77,7 @@
       PlayerData,
       PlayersCenter,
       PlayerInfo,
-      PlayersMatches
+      PlayersAppearance
     },
     beforeCreate() {
       this.$bus.$on("sendIndex",(currActivePlayer)=>{

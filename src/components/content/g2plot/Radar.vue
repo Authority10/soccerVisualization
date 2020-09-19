@@ -118,20 +118,20 @@
           domStyles:{
             //整个tooltip信息框
             'g2-tooltip':{
-               width:"170px",
-               height:"100px",
-               fontSize:"20px",
-               fontWeight:"bold"
+              width:"170px",
+              height:"100px",
+              fontSize:"20px",
+              fontWeight:"bold"
             },
             //tooltip信息框的标题
             'g2-tooltip-title':{
-               position: 'relative',
-               bottom:"5px"
+              position: 'relative',
+              bottom:"5px"
             },
             //tooltip信息框的标记
             'g2-tooltip-marker':{
-               width: "15px",
-               height: "15px",
+              width: "15px",
+              height: "15px",
             },
             'g2-tooltip-name':{
               // color:"red"
@@ -153,7 +153,7 @@
      position:absolute;
      width: 650px;
      height: 500px;
-     top:40px;
-     left:20px ;
+     top:100px;
+     left:60px ;
    }
 </style>

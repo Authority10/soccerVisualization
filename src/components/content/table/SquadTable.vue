@@ -1,5 +1,5 @@
 <template>
-  <div class="players-table">
+  <div class="squad-table">
     <div class="title">
         <div class="nothing">Avatar</div>
         <div>Number</div>
@@ -26,8 +26,8 @@
          <div>Back</div>
          <div>{{players.Age}}</div>
          <div class="images">
-           <img v-if="players.foot==='right'" src="../../../../assets/image/foot/right-foot.png" alt="" class="foot-img">
-           <img v-else src="../../../../assets/image/foot/left-foot.png" alt="" class="foot-img">
+           <img v-if="players.foot==='right'" src="../../../assets/image/foot/right-foot.png" alt="" class="foot-img">
+           <img v-else src="../../../assets/image/foot/left-foot.png" alt="" class="foot-img">
          </div>
          <div>{{players.Height}}</div>
          <div>{{players.Match}}</div>
@@ -48,8 +48,8 @@
           <div>Center</div>
           <div>{{players.Age}}</div>
           <div>
-            <img v-if="players.foot==='right'" src="../../../../assets/image/foot/right-foot.png" alt="" class="foot-img">
-            <img v-else src="../../../../assets/image/foot/left-foot.png" alt="" class="foot-img">
+            <img v-if="players.foot==='right'" src="../../../assets/image/foot/right-foot.png" alt="" class="foot-img">
+            <img v-else src="../../../assets/image/foot/left-foot.png" alt="" class="foot-img">
           </div>
           <div>{{players.Height}}</div>
           <div>{{players.Match}}</div>
@@ -70,8 +70,8 @@
       <div>ForWard</div>
       <div>{{players.Age}}</div>
       <div>
-        <img v-if="players.foot==='right'" src="../../../../assets/image/foot/right-foot.png" alt="" class="foot-img">
-        <img v-else src="../../../../assets/image/foot/left-foot.png" alt="" class="foot-img">
+        <img v-if="players.foot==='right'" src="../../../assets/image/foot/right-foot.png" alt="" class="foot-img">
+        <img v-else src="../../../assets/image/foot/left-foot.png" alt="" class="foot-img">
       </div>
       <div>{{players.Height}}</div>
       <div>{{players.Match}}</div>
@@ -92,8 +92,8 @@
       <div>GoalKeeper</div>
       <div>{{players.Age}}</div>
       <div>
-        <img v-if="players.foot==='right'" src="../../../../assets/image/foot/right-foot.png" alt="" class="foot-img">
-        <img v-else src="../../../../assets/image/foot/left-foot.png" alt="" class="foot-img">
+        <img v-if="players.foot==='right'" src="../../../assets/image/foot/right-foot.png" alt="" class="foot-img">
+        <img v-else src="../../../assets/image/foot/left-foot.png" alt="" class="foot-img">
       </div>
       <div>{{players.Height}}</div>
       <div>{{players.Match}}</div>
@@ -147,7 +147,7 @@
 </script>
 
 <style scoped>
-  .players-table {
+  .squad-table {
     position:absolute ;
     background-color: #525252;
     border-radius: 15px;

@@ -19,14 +19,14 @@
       ref="playersTable"
       v-if="playersTable">
     </squad-table>
-<!--      <country-attack  v-if="CountryAttack"  :radar="activeCountry.Radar.attack"></country-attack>-->
-<!--      <country-defense v-if="CountryDefense" :radar="activeCountry.Radar.defense"></country-defense>-->
+    <country-attack  v-if="CountryAttack"  :radar="activeCountry.Radar.attack"></country-attack>
+    <country-defense v-if="CountryDefense" :radar="activeCountry.Radar.defense"></country-defense>
   </div>
 </template>
 
 <script>
   import TabControlSub from "../../../../common/tabControl/TabControlSub";
-  import SquadTable from "../../countryData/SquadTable";
+  import SquadTable from "../../../table/SquadTable";
   import CountryAttack from "../../countryData/CountryAttack";
   import CountryDefense from "../../countryData/CountryDefense";
   export default {

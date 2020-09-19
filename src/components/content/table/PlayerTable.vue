@@ -3,8 +3,6 @@
     <div class="players-name">
       <img v-if="isCountryImg" src="../../../assets/image/players/avatar_img.jpg" alt="" class="avatar-img">
       <img v-else :src="players.imgNumber.img.countryImg" alt="" class="avatar-img">
-      <!--    <div class="name-title">-->
-      <!--    </div>-->
       <span class="name-title">Name</span>
       <span class="first-name">{{players.firstName}}</span>
       <span class="last-name">{{players.lastName}}</span>
@@ -12,7 +10,7 @@
     <div class="detail-info">
         <div class="club box" @click="boxClick">
            <div class="title">
-              Club
+              俱乐部
            </div>
            <div class="content">
              <div>
@@ -25,7 +23,7 @@
         </div>
         <div class="foot box" @click="boxClick">
           <div class="title">
-            Strong Foot
+            惯用脚
           </div>
           <div class="content">
             <div>
@@ -39,7 +37,7 @@
         </div>
         <div class="birth-date box" @click="boxClick">
           <div class="title">
-            Birth Date
+            出生日期
           </div>
           <div class="content">
             <div>
@@ -49,7 +47,7 @@
         </div>
         <div class="age box" @click="boxClick">
           <div class="title">
-            Age
+            年龄
           </div>
           <div class="content">
             <div>
@@ -59,7 +57,7 @@
         </div>
         <div class="passport-area box" @click="boxClick">
           <div class="title">
-            Passport Area
+            国籍信息
           </div>
           <div class="content">
             <div>
@@ -72,7 +70,7 @@
         </div>
         <div class="birth-area box" @click="boxClick">
           <div class="title">
-            Birth Area
+            出生国家
           </div>
           <div class="content">
             <div>
@@ -85,7 +83,7 @@
         </div>
         <div class="height box" @click="boxClick">
           <div class="title">
-            Height
+            身高
           </div>
           <div class="content">
             <div>
@@ -95,7 +93,7 @@
         </div>
         <div class="weight box" @click="boxClick">
           <div class="title">
-            Weight
+            体重
           </div>
           <div class="content">
             <div>
@@ -152,7 +150,7 @@
   .players-name {
     position: relative;
     /*top: 20px;*/
-    width: 500px;
+    width: 300px;
     height: 180px;
     margin: 10px auto;
     border-radius: 15px;
@@ -162,7 +160,7 @@
   .name-title {
     display: block;
     margin-left: 130px;
-    width: 370px;
+    width: 170px;
     height: 40px;
     color: white;
     font-size: 25px;
@@ -174,7 +172,7 @@
     display: block;
     margin-left: 130px;
     margin-top: 15px;
-    width: 370px;
+    width: 170px;
     height: 40px;
     color: white;
     font-size: 30px;
@@ -185,7 +183,7 @@
     display: block;
     margin-left: 130px;
     margin-top: 15px;
-    width: 370px;
+    width: 170px;
     height: 40px;
     color: white;
     font-size: 30px;
@@ -193,8 +191,8 @@
     text-align: center;
   }
   .detail-info {
-    width: 500px;
-    height: 650px;
+    width: 300px;
+    height: 460px;
     margin: 13px auto;
     /*background-color: red;*/
     display: flex;
@@ -202,8 +200,8 @@
     justify-content: space-between;
   }
   .box {
-    width: 240px;
-    height: 160px;
+    width: 140px;
+    height: 100px;
     border-radius: 15px;
     border: 2px solid #555555;
     background-color: #555555;
@@ -214,27 +212,28 @@
     line-height: 40px;
     text-align: center;
     color: white;
-    font-size: 16px;
+    font-size: 18px;
     background-color: #525252;
   }
   .content {
     display: flex;
+    /*background-color: red;*/
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
-    height: 100px;
+    height: 60px;
     /*font-weight: bold;*/
-    font-size: 24px;
+    font-size: 20px;
   }
   .club-img {
-    width: 50px;
+    width: 30px;
   }
   .foot-img {
-    width: 50px;
+    width: 30px;
   }
   .flag-img {
-    width: 60px;
+    width: 30px;
   }
   /*.info-table {*/
   /*  position: absolute;*/
@@ -257,6 +256,8 @@
     left: 0;
     width: 130px;
     height: 180px;
+    /*width: 100px;*/
+    /*height: 138px;*/
   }
   /*.name-title {*/
   /*  position: absolute;*/

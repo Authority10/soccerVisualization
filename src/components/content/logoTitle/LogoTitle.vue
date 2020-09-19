@@ -34,7 +34,7 @@
      position: fixed;
      top:0;
      left:112px;
-     width: 1484px;
+     width: 1820px;
      height: 100px;
      background-color: #404040;
   }

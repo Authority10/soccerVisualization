@@ -49,13 +49,17 @@
 <style scoped>
   .player-info {
     position: absolute;
-    top:20px;
+    top:60px;
     left:25px;
-    width: 548px;
-    height: 929px;
+    width: 380px;
+    height: 750px;
     border-radius: 15px;
     overflow: hidden;
     background-color:#4f4f4f;
+  }
+  /*第二个对比球员的个人数据*/
+  .second-player {
+    left:1400px;
   }
   .box-title {
     position: relative;
@@ -77,6 +81,6 @@
   }
   span {
     color: #69c0ff;
-    font-size: 22px;
+    font-size: 24px;
   }
 </style>

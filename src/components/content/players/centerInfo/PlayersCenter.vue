@@ -1,27 +1,64 @@
 <template>
     <div class="center-info">
+      <div class="first-team">
+        广州恒大
+      </div>
+      <div class="second-team">
+        北京国安
+      </div>
+      <Cascader>
+      </Cascader>
+      <Cascader class="second-block">
+
+      </Cascader>
       <slot name="player-person-info"></slot>
       <slot name="player-person-data"></slot>
+      <slot name="second-player-person-info"></slot>
       <slot name="player-person-appearance"></slot>
     </div>
 </template>
 
 <script>
+  import Cascader from "../../element-ui/Cascader";
   export default {
-    name: "PlayersCenter"
+    name: "PlayersCenter",
+    components:{
+      Cascader
+    }
   }
 </script>
 
 <style scoped>
    .center-info {
      position: fixed;
-     width: 1484px;
+     width: 1820px;
      height: 842px;
      top:  101px;
      left: 112px;
      background-color:#404040;
-     overflow: auto;
+     overflow: scroll;
+     overflow-x:hidden ;
      /*border: 1px solid #dcdde1;*/
+   }
+   .first-team {
+     position: absolute;
+     top: 13px;
+     left: 25px;
+     width: 150px;
+     background-color:#4b4b4b;
+     color: white;
+     text-align: center;
+     font-size: 27px;
+   }
+   .second-team {
+     position: absolute;
+     top: 13px;
+     left: 1400px;
+     width: 150px;
+     background-color:#4b4b4b;
+     text-align: center;
+     color: white;
+     font-size: 27px;
    }
   .info-span {
     position: absolute;

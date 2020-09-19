@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import Radar from "../../players/g2plot/Radar";
+  import Radar from "../../g2plot/Radar";
   export default {
     name: "CountryDefense",
     props:{

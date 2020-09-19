@@ -25,7 +25,6 @@ export default {
         that.screenWidth = window.screenWidth
         console.log(that.screenWidth)
       })()
-
     }
   }
 }

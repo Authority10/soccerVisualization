@@ -1,6 +1,11 @@
 <template>
-  <div class="players-matches">
-    <span>出场记录</span>
+  <div class="players-appearance">
+    <div class="box-title">
+      <div class="appearance-status">
+        <img src="../../../../../assets/image/players/playerData.png" alt="">
+        <span>出场纪录</span>
+      </div>
+    </div>
     <appear-table :players-matches="playersMatches"></appear-table>
   </div>
 </template>
@@ -24,21 +29,37 @@
 </script>
 
 <style scoped>
- .players-matches {
-   position: fixed;
-   width: 1478px;
+ .players-appearance {
+   position: absolute;
+   width: 1755px;
    height: 835px;
-   top:  107px;
-   left: 115px;
-   background-color:#1E2E45;
-   border: 1px solid #dcdde1;
+   top:  820px;
+   left: 25px;
+   background-color:#4f4f4f;
+   overflow: hidden;
+   border-radius: 15px;
+
  }
-  span {
-    position: absolute;
-    top:17px;
-    left: 80px;
-    color:#FDFDFD;
-    font-size: 28px;
-    border-bottom: 6px solid #F7BA52;
-  }
+ .box-title {
+   position: relative;
+   width: 1755px;
+   height: 62px;
+   background-color: #4b4b4b;
+ }
+ .appearance-status {
+   position: absolute;
+   left: 20px;
+   width: 140px;
+   height: 62px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+ span {
+   color: #69c0ff;
+   font-size: 24px;
+ }
+ img {
+   width: 30px;
+ }
 </style>

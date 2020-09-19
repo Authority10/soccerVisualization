@@ -1,13 +1,17 @@
 <template>
 <div class="players">
-    <basic-public></basic-public>
-    <players-list
-      :players="getPlayers"
-    ></players-list>
+    <basic-public>
+    </basic-public>
 
     <players-info
       :players="getPlayers"
-    ></players-info>
+    >
+    </players-info>
+<!--    <players-list-->
+<!--      :players="getPlayers"-->
+<!--    >-->
+<!--    </players-list>-->
+
 </div>
 
 </template>

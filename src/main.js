@@ -3,13 +3,13 @@ import App from './App'
 import router from './router'
 import store from './store'
 import 'lib-flexible/flexible'
-import { Button,Input,Tabs,TabPane,Form,FormItem,Message} from 'element-ui';
+import {Button,Input,Tabs,TabPane,Form,FormItem,Message,Cascader} from 'element-ui';
 
 Vue.config.productionTip = false;
 Vue.prototype.$bus = new Vue();
 Vue.prototype.$message = Message;
 
-Vue.use(Button).use(Input).use(Tabs).use(TabPane).use(Form).use(FormItem);
+Vue.use(Button).use(Input).use(Tabs).use(TabPane).use(Form).use(FormItem).use(Cascader);
 
 /* eslint-disable no-foot */
 new Vue({

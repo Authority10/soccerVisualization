@@ -49,14 +49,14 @@
     position: relative;
     top:20px;
     left:20px;
-    width: 1433px;
-    height: 219px;
+    width: 380px;
+    height: 500px;
     border-radius: 15px;
     overflow: hidden;
     background-color:#4f4f4f;
   }
   .box-title {
-    width: 1433px;
+    width: 380px;
     height: 64px;
     background-color:#4b4b4b;
   }

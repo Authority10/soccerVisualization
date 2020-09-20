@@ -3,48 +3,54 @@
     <div class="list-name" slot="content-name">
       比赛列表
     </div>
+    <cascader-second
+    :matchesList="matchesList">
+
+    </cascader-second>
+
     <div class="scroll-box" @scroll="scrollEvent">
-      <tab-control
-        class="match-tab-first"
-        :titles="['A组','B组','C组','D组']"
-        @tabClick="tabClick"
-        color="#FF7875"
-      >
-      </tab-control>
 
-      <battle-items
-        ref="battleItems"
-        :battleItems="battleItems">
-      </battle-items>
+<!--      <tab-control-->
+<!--        class="match-tab-first"-->
+<!--        :titles="['A组','B组','C组','D组']"-->
+<!--        @tabClick="tabClick"-->
+<!--        color="#FF7875"-->
+<!--      >-->
+<!--      </tab-control>-->
 
-      <tab-control
-        ref="secondTab"
-        :secondFixed="secondFixed"
-        class="match-tab-second"
-        :titles="['E组','F组','G组','H组']"
-        @tabClick="groupClick"
-        color="#FF7875"
-      >
-      </tab-control>
+<!--      <battle-items-->
+<!--        ref="battleItems"-->
+<!--        :battleItems="battleItems">-->
+<!--      </battle-items>-->
 
-      <battle-items
-        class="match-group-second"
-        :battleItems="battleItems">
-      </battle-items>
+<!--      <tab-control-->
+<!--        ref="secondTab"-->
+<!--        :secondFixed="secondFixed"-->
+<!--        class="match-tab-second"-->
+<!--        :titles="['E组','F组','G组','H组']"-->
+<!--        @tabClick="groupClick"-->
+<!--        color="#FF7875"-->
+<!--      >-->
+<!--      </tab-control>-->
 
-      <tab-control
-        ref="thirdTab"
-        class="match-tab-third"
-        :titles="['1/8','1/4','半决赛','决赛']"
-        @tabClick="groupClick"
-        color="#FF7875"
-      >
-      </tab-control>
+<!--      <battle-items-->
+<!--        class="match-group-second"-->
+<!--        :battleItems="battleItems">-->
+<!--      </battle-items>-->
 
-      <battle-items
-        class="match-group-third"
-        :battleItems="knockout">
-      </battle-items>
+<!--      <tab-control-->
+<!--        ref="thirdTab"-->
+<!--        class="match-tab-third"-->
+<!--        :titles="['1/8','1/4','半决赛','决赛']"-->
+<!--        @tabClick="groupClick"-->
+<!--        color="#FF7875"-->
+<!--      >-->
+<!--      </tab-control>-->
+
+<!--      <battle-items-->
+<!--        class="match-group-third"-->
+<!--        :battleItems="knockout">-->
+<!--      </battle-items>-->
     </div>
   </div>
 </template>
@@ -52,11 +58,13 @@
 <script>
   import TabControl from "../../../components/common/tabControl/TabControl";
   import BattleItems from "../../../components/content/matches/battleItems/BattleItems";
+  import CascaderSecond from "../../../components/content/element-ui/CascaderSecond";
   export default {
     name: "MatchesList",
     components:{
       TabControl,
-      BattleItems
+      BattleItems,
+      CascaderSecond
     },
     data(){
       return{
@@ -90,6 +98,104 @@
             away:{name:'Uruguay',img:'https://bsufootball.oss-cn-beijing.aliyuncs.com/%E5%9B%BE%E7%89%87/countryLogo/Uruguay.jpg'}},
           {home:{name:'Egypt',img:'https://bsufootball.oss-cn-beijing.aliyuncs.com/%E5%9B%BE%E7%89%87/countryLogo/Egypt.jpg'},
             away:{name:'Uruguay',img:'https://bsufootball.oss-cn-beijing.aliyuncs.com/%E5%9B%BE%E7%89%87/countryLogo/Uruguay.jpg'}},
+        ],
+        matchesList:[
+          {
+            value: 'first',
+            label: '第1轮',
+          },
+          {
+            value: 'second',
+            label: '第2轮',
+          },
+          {
+            value: 'third',
+            label: '第3轮',
+          },
+          {
+            value: 'fourth',
+            label: '第4轮',
+          },
+          {
+            value: 'fifth',
+            label: '第5轮',
+          },
+          {
+            value: 'sixth',
+            label: '第6轮',
+          },
+          {
+            value: 'seventh',
+            label: '第7轮',
+          },
+          {
+            value: 'eighth',
+            label: '第9轮',
+          },
+          {
+            value: 'ninth',
+            label: '第9轮',
+          },
+          {
+            value: 'tenth',
+            label: '第10轮',
+          },
+          {
+            value: 'eleventh',
+            label: '第11轮',
+          },
+          {
+            value: 'twelfth',
+            label: '第12轮',
+          },
+          {
+            value: 'thirteenth',
+            label: '第13轮',
+          },
+          {
+            value: 'fourteenth',
+            label: '第14轮',
+          },
+          {
+            value: 'fifteenth',
+            label: '第15轮',
+          },
+          {
+            value: 'sixteenth',
+            label: '第16轮',
+          },
+          {
+            value: 'seventeenth',
+            label: '第17轮',
+          },
+          {
+            value: 'eighteenth',
+            label: '第18轮',
+          },
+          {
+            value: 'nineteenth',
+            label: '第19轮',
+          },
+          {
+            value: 'twentieth',
+            label: '第20轮',
+          },
+          {
+            value: 'twenty-first',
+            label: '第21轮',
+          },
+          {
+            value: 'twenty-second',
+            label: '第22轮',
+          },
+          {
+            value: 'twenty-third',
+            label: '第23轮',
+          },
+          {
+            value: 'twenty-fourth',
+            label: '第24轮',
+          },
         ]
       }
     },
@@ -174,7 +280,7 @@
     position: absolute;
     overflow-y:scroll;
     overflow-x:hidden;
-    top: 100px;
+    top: 142px;
     width: 335px;
     height: 835px;
     /*background-color: blue;*/

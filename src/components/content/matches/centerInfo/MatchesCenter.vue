@@ -1,10 +1,13 @@
 <template>
   <div class="center-info" @scroll="scrollEvent">
-    <Match-info></Match-info>
+    <Match-info>
+    </Match-info>
+
     <Match-data
     ref="matchData"
     :fixed="fixed">
     </Match-data>
+
   </div>
 </template>
 

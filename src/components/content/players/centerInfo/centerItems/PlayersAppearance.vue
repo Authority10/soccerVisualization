@@ -3,7 +3,7 @@
     <div class="box-title">
       <div class="appearance-status">
         <img src="../../../../../assets/image/players/playerData.png" alt="">
-        <span>出场纪录</span>
+        <span>数据对比</span>
       </div>
     </div>
     <appear-table :players-matches="playersMatches"></appear-table>

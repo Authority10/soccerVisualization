@@ -1,5 +1,5 @@
 <template>
-  <div id="container"></div>
+  <div id="radarContainer"></div>
 </template>
 
 <script>
@@ -60,7 +60,7 @@
         },
       ];
       //实例化图表对象
-      const radarPlot = new Radar(document.getElementById('container'), {
+      const radarPlot = new Radar(document.getElementById('radarContainer'), {
         data,
         forceFit:true,
         // width:300,                  //雷达图宽度
@@ -68,7 +68,7 @@
         // 表格标题
         title:{
           visible: true,            //是否显示左上角标题
-          alignTo: 'left',          //标题位置
+          alignTo: 'center',          //标题位置
           text:'个人指标雷达图',         //标题名字
           style:{
             fontSize: 30,             //标题文字大小
@@ -184,12 +184,12 @@
 </script>
 
 <style scoped>
-  #container {
+  #radarContainer {
     position:absolute;
-    width: 600px;
-    height: 500px;
-    top:30px;
-    left:150px;
+    width: 300px;
+    height: 300px;
+    top:20px;
+    left:300px;
     /*background-color: red;*/
   }
 </style>

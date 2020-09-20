@@ -6,20 +6,22 @@
         <span>比赛信息</span>
       </div>
     </div>
-    <team-table
+    <match-table
     color="#FF7875"
-    :titles="['比赛轮次','比赛时间','比赛城市','比赛场馆']"
-    :content="['小组赛第1轮','2018-6-14','Rostov-on-Don','Rostov Arena']">
-    </team-table>
+    :titles="['联赛logo','联赛级别','球队数量','球员总数','外援总数','卫冕冠军','联赛时长','亚冠球队','升班马']"
+    :content="['中超','中国国内足球顶级联赛','16','672','88','广州恒大','28年','广州恒大','天津权健']">
+    </match-table>
   </div>
 </template>
 
 <script>
   import TeamTable from "../../../table/TeamTable";
+  import MatchTable from "../../../table/MatchTable";
   export default {
     name: "MatchesInfo",
     components:{
-      TeamTable
+      TeamTable,
+      MatchTable
     }
   }
 </script>

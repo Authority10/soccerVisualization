@@ -1,0 +1,43 @@
+.first-cascader .el-cascader-node__label {
+  color:white;
+  min-width:200px;
+  text-align: center;
+}
+
+.second-cascader .el-cascader-node__label {
+  color:white;
+  min-width:260px;
+  text-align: center;
+}
+
+.first-cascader {
+  background-color: #4f4f4f;
+  border: 1px solid #69c0ff;
+}
+.second-cascader{
+  background-color: #4f4f4f;
+  border: 1px solid #ff7875;
+}
+
+.first-cascader .el-cascader-node:not(.is-disabled):focus{
+  background-color: #69c0ff;
+}
+.first-cascader .el-cascader-node:not(.is-disabled):hover {
+  background-color: #69c0ff;
+}
+.second-cascader .el-cascader-node:not(.is-disabled):focus{
+  background-color: #ff7875;
+}
+.second-cascader .el-cascader-node:not(.is-disabled):hover {
+  background-color: #ff7875;
+}
+
+.first-cascader .el-cascader-node.in-active-path,.first-cascader .el-cascader-node.is-active,.first-cascader .el-cascader-node.is-selectable.in-checked-path {
+  color: #69c0ff;
+}
+.second-cascader .el-cascader-node.in-active-path,.second-cascader .el-cascader-node.is-active,.second-cascader .el-cascader-node.is-selectable.in-checked-path {
+  color: #ff7875;
+}
+
+
+

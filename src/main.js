@@ -3,6 +3,7 @@ import App from './App'
 import router from './router'
 import store from './store'
 import 'lib-flexible/flexible'
+import './assets/css/global.css'
 import {Button,Input,Tabs,TabPane,Form,FormItem,Message,Cascader} from 'element-ui';
 
 Vue.config.productionTip = false;

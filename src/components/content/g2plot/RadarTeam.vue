@@ -1,54 +1,69 @@
 <template>
-    <div id="container"></div>
+ <div id="radarTeam">
+
+ </div>
 </template>
 
 <script>
-  import { Radar } from '@antv/g2plot';
-  export default {
-    name: "Radar",
-    props:{
-      radarData:{
-        type:Array,
-        default(){
-          return []
-        }
-      },
-      status:{
-        type:String
-      }
-    },
-    data(){
-      return{
-        chart:"",
-        newData:[],
-        newStatus:"",
-      }
-    },
-    watch: {
-      //watch的标准写法
-      //immediate才能监听到status的改变
-      status:{
-        handler(newVal,oldValue){
-          this.newStatus = newVal;
-        },
-      //进入页面就触发
-        immediate: true
-      },
-      //watch的第二种写法
-      //监听数据变化，一旦变化将新的radarData传给newData
-      radarData(newVal){
-        this.newData = newVal;
-        console.log(this.newData);
-        // console.log(this.chart);
-      //获取新数据之后重新渲染图表
-        this.chart.changeData(this.newData)
-      },
+  import {Radar} from "@antv/g2plot";
 
-    },
+  export default {
+    name: "RadarTeam",
     mounted() {
-      const data = this.radarData;
+      const data = [
+        {
+          item: '进攻',
+          score: 70,
+          user:"广州恒大"
+        },
+        {
+          item: '防守',
+          score: 60,
+          user:"广州恒大"
+        },
+        {
+          item: '组织',
+          score: 60,
+          user:"广州恒大"
+        },
+        {
+          item: '技巧',
+          score: 40,
+          user:"广州恒大"
+        },
+        {
+          item: '定位球',
+          score: 60,
+          user:"广州恒大"
+        },
+        {
+          item: '进攻',
+          score: 10,
+          user:"北京国安"
+        },
+        {
+          item: '防守',
+          score: 20,
+          user:"北京国安"
+        },
+        {
+          item: '组织',
+          score: 90,
+          user:"北京国安"
+        },
+        {
+          item: '技巧',
+          score: 50,
+          user:"北京国安"
+        },
+        {
+          item: '定位球',
+          score: 30,
+          user:"北京国安"
+        },
+      ];
       //实例化图表对象
-      const radarPlot = new Radar(document.getElementById('container'), {
+      const radarPlot = new Radar(document.getElementById('radarTeam'), {
         data,
         forceFit:true,
         // width:300,                  //雷达图宽度
@@ -57,7 +72,7 @@
         title:{
           visible: true,            //是否显示左上角标题
           alignTo: 'center',          //标题位置
-          text:this.status+" Radar",         //标题名字
+          text:'个人指标雷达图',         //标题名字
           style:{
             fontSize: 30,             //标题文字大小
             fontWeight:"bold",
@@ -75,8 +90,13 @@
           position: 'bottom',
           text:{
             style:{
-              fontSize:23,
-              fill:"#576574"
+              fontSize:30,
+              fill:"#5b8ff9",
+            }
+          },
+          marker:{
+            style:{
+              r:15,
             }
           }
         },
@@ -115,28 +135,46 @@
         tooltip:{
           visible: true,
           offset:30,
+          // fields:['item','score','user'],
+          // formatter:()=>{
+          //   return {name:'a',value:1 }
+          // },
           domStyles:{
             //整个tooltip信息框
             'g2-tooltip':{
-              width:"170px",
-              height:"100px",
-              fontSize:"20px",
+              width:"250px",
+              height:"150px",
+              fontSize:"25px",
               fontWeight:"bold"
             },
             //tooltip信息框的标题
             'g2-tooltip-title':{
               position: 'relative',
-              bottom:"5px"
+              top:"5px"
+            },
+            //tooltip信息框的列表
+            'g2-tooltip-list':{
+              position: 'relative',
+              top:"15px"
             },
             //tooltip信息框的标记
             'g2-tooltip-marker':{
-              width: "15px",
-              height: "15px",
+              position:'relative',
+              // top:'15px',
+              width: "25px",
+              height: "25px",
             },
             'g2-tooltip-name':{
+              position:'relative',
+              // top:'15px',
+              fontSize:'32px'
               // color:"red"
             },
             'g2-tooltip-value':{
+              position:'relative',
+              top:'5px',
+              left:'-20px',
+              fontSize:'29px',
               color:"#F7BA52"
             },
           }
@@ -149,11 +187,12 @@
 </script>
 
 <style scoped>
-   #container {
-     position:absolute;
-     width: 650px;
-     height: 500px;
-     top:100px;
-     left:60px ;
-   }
+  #radarTeam {
+    position:absolute;
+    width: 300px;
+    height: 300px;
+    top:20px;
+    left:40px;
+    /*background-color: red;*/
+  }
 </style>

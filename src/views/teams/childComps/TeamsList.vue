@@ -1,33 +1,35 @@
 <template>
   <div class="content-box">
-    <div class="list-name" slot="content-name">球队列表</div>
+    <div class="list-name">球队列表</div>
+    <div class="score-board">积分榜</div>
     <div class="scroll-box">
-      <tab-control
-        slot="tab-control-first"
-        :titles="['A组','B组','C组','D组']"
-        @tabClick="tabClick"
-        color="#fff566"
-      >
-      </tab-control>
+
+<!--      <tab-control-->
+<!--        slot="tab-control-first"-->
+<!--        :titles="['A组','B组','C组','D组']"-->
+<!--        @tabClick="tabClick"-->
+<!--        color="#fff566"-->
+<!--      >-->
+<!--      </tab-control>-->
       <group-items
         v-if="teamList['GroupTop']!==undefined"
         slot="content-items-first"
         :group-items="teamList['GroupTop'][currentGroupTop]">
       </group-items>
-      <tab-control
-        class="team-tab-bottom"
-        slot="tab-control-second"
-        :titles="['E组','F组','G组','H组']"
-        @tabClick="groupClick"
-        color="#fff566"
-      >
-      </tab-control>
-      <group-items
-        v-if="teamList['GroupBottom']!==undefined"
-        class="group-bottom"
-        slot="content-items-second"
-        :group-items="teamList['GroupBottom'][currentGroupBottom]">
-      </group-items>
+<!--      <tab-control-->
+<!--        class="team-tab-bottom"-->
+<!--        slot="tab-control-second"-->
+<!--        :titles="['E组','F组','G组','H组']"-->
+<!--        @tabClick="groupClick"-->
+<!--        color="#fff566"-->
+<!--      >-->
+<!--      </tab-control>-->
+<!--      <group-items-->
+<!--        v-if="teamList['GroupBottom']!==undefined"-->
+<!--        class="group-bottom"-->
+<!--        slot="content-items-second"-->
+<!--        :group-items="teamList['GroupBottom'][currentGroupBottom]">-->
+<!--      </group-items>-->
     </div>
   </div>
 </template>
@@ -123,6 +125,17 @@
     text-align: center;
     line-height: 52px;
     font-weight: bold;
+  }
+  .score-board {
+    position: absolute;
+    top: 100px;
+    width: 324px;
+    height: 40px;
+    background-color:#404040;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    font-size: 26px;
   }
   .group-bottom {
     top:500px;

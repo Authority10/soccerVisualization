@@ -6,15 +6,26 @@
       <div class="second-team">
         北京国安
       </div>
-      <Cascader>
-      </Cascader>
-      <Cascader class="second-block">
 
+      <Cascader
+        :playersList="playersList"
+      >
       </Cascader>
-      <slot name="player-person-info"></slot>
-      <slot name="player-person-data"></slot>
-      <slot name="second-player-person-info"></slot>
-      <slot name="player-person-appearance"></slot>
+
+      <Cascader
+        class="second-block"
+        :playersList="playersList">
+      </Cascader>
+
+      <slot name="player-person-info">
+      </slot>
+      <slot name="player-person-data">
+      </slot>
+      <slot name="second-player-person-info">
+      </slot>
+      <slot name="player-person-appearance">
+      </slot>
+
     </div>
 </template>
 
@@ -22,6 +33,95 @@
   import Cascader from "../../element-ui/Cascader";
   export default {
     name: "PlayersCenter",
+    data(){
+      return{
+        playersList: [
+          {
+            value: 'GoalKeeper',
+            label: '守门员',
+            children:[
+              {
+                value:'nuoyier',
+                label:'诺伊尔'
+              },
+              {
+                value:'kuertuwa',
+                label:'库尔图瓦'
+              },
+              {
+                value:'luoli',
+                label:'洛里'
+              }]
+          },
+          {
+            value: 'Defender',
+            label: '后卫',
+            children:[
+              {
+                value:'lamosi',
+                label:'拉莫斯'
+              },
+              {
+                value:'wumudidi',
+                label:'乌姆蒂蒂'
+              },
+              {
+                value:'xierwa',
+                label:'席尔瓦'
+              },
+              {
+                value:'jimuxi',
+                label:'基米希'
+              }
+            ]
+          },
+          {
+            value: 'Center',
+            label: '中场',
+            children:[
+              {
+                value:'modeliqi',
+                label:'莫德里奇'
+              },
+              {
+                value:'lajidiqi',
+                label:'拉基蒂奇'
+              },
+              {
+                value:'diyage',
+                label:'蒂亚戈'
+              },
+              {
+                value:'debulaonei',
+                label:'德布劳内'
+              }
+            ]
+          },
+          {
+            value: 'ForWard',
+            label: '前锋',
+            children:[
+              {
+                value:'meixi',
+                label:'10 梅西'
+              },
+              {
+                value:'cluo',
+                label:'7 C罗'
+              },
+              {
+                value:'neimaer',
+                label:'11 内马尔'
+              },
+              {
+                value:'yibu',
+                label:'9 伊布拉希莫维奇'
+              }
+            ]
+          }
+        ]
+      }
+    },
     components:{
       Cascader
     }

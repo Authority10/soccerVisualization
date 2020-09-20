@@ -4,6 +4,10 @@
       <team-info
         :activeCountry="activeCountry">
       </team-info>
+
+      <team-radar>
+      </team-radar>
+
       <team-data
         ref="teamData"
         :activeCountry="activeCountry"
@@ -17,6 +21,7 @@
 <script>
   import TeamData from "./centerItems/TeamData";
   import TeamInfo from "./centerItems/TeamInfo";
+  import TeamRadar from "./centerItems/TeamRadar";
   export default {
     name: "TeamsCenter",
     props:{
@@ -58,7 +63,8 @@
     },
     components:{
       TeamData,
-      TeamInfo
+      TeamInfo,
+      TeamRadar
     },
     //路由跳转之后，将固定定位取消
     // 否则重新进入路由之后会出现滚动条在顶部但出现吸顶效果的bug

@@ -1,20 +1,13 @@
 <template>
   <div class="appearance-table">
     <div class="title">
-      <div class="match">Match</div>
-      <div class="basic">
+        <div>Name</div>
         <div>Minutes</div>
         <div>Goals</div>
-        <div>XG</div>
         <div>Assists</div>
-      </div>
-      <div class="high-level">
         <div>Actions/Success</div>
         <div>Shot/On Target</div>
         <div>Pass/Accurate</div>
-        <div>Duels/Won</div>
-      </div>
-
     </div>
     <div
       v-for="(matches,index) in playersMatches"
@@ -23,7 +16,6 @@
         <div>{{matches.MatchLabel.replace(/,/g, "")}}</div>
         <div>{{matches.Time}}</div>
         <div>{{matches.Goal}}</div>
-        <div>0</div>
         <div>{{matches.Assist}}</div>
         <div>{{matches.TotalAcction}}/{{matches.TotalAccuracy}} {{parseInt((matches.TotalPercentage)*100)}}%</div>
         <div>{{matches.Shot}}/{{matches.ShotSdivaight}} {{parseInt((matches.ShotPercentage)*100)}}%</div>
@@ -103,29 +95,29 @@
     /*justify-content: flex-start;*/
     align-items: center;
   }
-  .basic {
-    background-color: blue;
-    width: 400px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  .high-level {
-    background-color: orange;
-    width: 750px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
+  /*.basic {*/
+  /*  background-color: blue;*/
+  /*  width: 400px;*/
+  /*  display: flex;*/
+  /*  justify-content: space-around;*/
+  /*  align-items: center;*/
+  /*}*/
+  /*.high-level {*/
+  /*  background-color: orange;*/
+  /*  width: 750px;*/
+  /*  display: flex;*/
+  /*  justify-content: space-around;*/
+  /*  align-items: center;*/
+  /*}*/
   .title div {
-    /*width: 140px;*/
-    /*background-color: red;*/
-  }
-  .match {
-    width: 200px;
+    width: 160px;
     background-color: red;
-    /*text-align: left;*/
   }
+  /*.match {*/
+  /*  width: 200px;*/
+  /*  background-color: red;*/
+  /*  !*text-align: left;*!*/
+  /*}*/
   .single-match {
     margin: 20px 25px;
     width: 1350px;

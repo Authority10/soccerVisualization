@@ -65,6 +65,7 @@
 </script>
 
 <style scoped>
+  /*@import "../../../src/assets/css/global.css";*/
  .players {
    position: relative;
  }

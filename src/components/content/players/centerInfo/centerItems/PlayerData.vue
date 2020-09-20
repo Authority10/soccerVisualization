@@ -3,13 +3,31 @@
     <div class="box-title">
       <div class="data-status">
         <img src="../../../../../assets/image/players/playerData.png" alt="">
-        <span>指标对比</span>
+        <span class="status-comparison">指标对比</span>
       </div>
     </div>
-
+    <span class="first-current-match">
+      本场评分
+    </span>
+    <span class="first-player-rate">
+      95.5分
+    </span>
+    <span class="second-current-match">
+      本场评分
+    </span>
+    <span class="second-player-rate">
+      98.5分
+    </span>
     <RadarStable>
 
     </RadarStable>
+
+<!--    <div class="chart">-->
+      <Chart>
+
+      </Chart>
+<!--    </div>-->
+
 <!--    <div class="technical-box">-->
 <!--      <technical-table :technical="technical"></technical-table>-->
 <!--    </div>-->
@@ -28,6 +46,7 @@
   import technicalTable from "../../../table/TechnicalTable";
   import heatMap from "../../../g2plot/HeatMap";
   import RadarStable from "../../../g2plot/RadarStable";
+  import Chart from "../../../g2/Chart";
   export default {
     name: "PlayerData",
     props:{
@@ -47,7 +66,8 @@
     components:{
       technicalTable,
       heatMap,
-      RadarStable
+      RadarStable,
+      Chart
     }
   }
 </script>
@@ -78,12 +98,46 @@
     justify-content: space-between;
     align-items: center;
   }
-  span {
+  img {
+    width: 30px;
+  }
+  .status-comparison {
     color: #69c0ff;
     font-size: 24px;
   }
-  img {
-    width: 30px;
+  .first-current-match {
+    position: absolute;
+    top: 130px;
+    left: 60px;
+    font-size: 30px;
+    color: white;
+  }
+  .first-player-rate {
+    position: absolute;
+    top: 200px;
+    left: 60px;
+    font-size: 30px;
+    color: white;
+  }
+  .second-current-match {
+    position: absolute;
+    top: 130px;
+    left: 700px;
+    font-size: 30px;
+    color: white;
+  }
+  .second-player-rate {
+    position: absolute;
+    top: 200px;
+    left: 700px;
+    font-size: 30px;
+    color: white;
+  }
+  .chart {
+    position: absolute;
+    /*background-color: red;*/
+    width: 900px;
+    height: 350px;
   }
   .heat-map {
     width: 815px;

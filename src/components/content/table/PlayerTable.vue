@@ -256,8 +256,8 @@
     left: 0;
     width: 130px;
     height: 180px;
-    /*width: 100px;*/
-    /*height: 138px;*/
+    /*width: 30px;*/
+    /*height:30px;*/
   }
   /*.name-title {*/
   /*  position: absolute;*/

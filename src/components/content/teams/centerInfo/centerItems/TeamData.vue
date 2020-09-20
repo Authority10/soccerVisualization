@@ -89,7 +89,7 @@
   .country-data {
     position: absolute;
     /*overflow: scroll;*/
-    top:260px;
+    top:580px;
     left:20px;
     width: 1433px;
     height: 2100px;

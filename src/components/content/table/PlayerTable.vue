@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="players-name">
+  <div class="players-detail">
+    <div class="players-name" @click="showDrawer">
       <img v-if="isCountryImg" src="../../../assets/image/players/avatar_img.jpg" alt="" class="avatar-img">
       <img v-else :src="players.imgNumber.img.countryImg" alt="" class="avatar-img">
       <span class="name-title">Name</span>
@@ -108,6 +108,11 @@
 <script>
   export default {
     name: "PlayerTable",
+    data(){
+      return{
+
+      }
+    },
     props:{
       players:{
         type:Object,
@@ -141,18 +146,31 @@
             this.style.border = "1px solid #69c0ff"
           };
         }
+      },
+      showDrawer(){
+        this.$emit("showDrawer")
       }
+    },
+    components:{
+
     }
   }
 </script>
 
 <style scoped>
+  .players-detail {
+    position: absolute;
+    width: 500px;
+    height: 738px;
+    /*background-color: red;*/
+  }
   .players-name {
-    position: relative;
-    /*top: 20px;*/
-    width: 300px;
+    position: absolute;
+    top: 23px;
+    left: 25px;
+    width: 450px;
     height: 180px;
-    margin: 10px auto;
+    /*margin: 10px auto;*/
     border-radius: 15px;
     background-color: #585858;
     overflow: hidden;
@@ -160,7 +178,7 @@
   .name-title {
     display: block;
     margin-left: 130px;
-    width: 170px;
+    width: 320px;
     height: 40px;
     color: white;
     font-size: 25px;
@@ -172,7 +190,7 @@
     display: block;
     margin-left: 130px;
     margin-top: 15px;
-    width: 170px;
+    width: 320px;
     height: 40px;
     color: white;
     font-size: 30px;
@@ -183,7 +201,7 @@
     display: block;
     margin-left: 130px;
     margin-top: 15px;
-    width: 170px;
+    width: 320px;
     height: 40px;
     color: white;
     font-size: 30px;
@@ -191,16 +209,18 @@
     text-align: center;
   }
   .detail-info {
-    width: 300px;
-    height: 460px;
+    position: absolute;
+    top: 205px;
+    width: 500px;
+    height: 533px;
     margin: 13px auto;
-    /*background-color: red;*/
+    /*background-color: blue;*/
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   .box {
-    width: 140px;
+    width: 220px;
     height: 100px;
     border-radius: 15px;
     border: 2px solid #555555;

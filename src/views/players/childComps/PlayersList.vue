@@ -3,7 +3,7 @@
     <div class="list-name" slot="content-name">球员列表</div>
     <div class="scroll-box">
       <tab-control
-        :titles="['FW','MF','DF','GK']"
+        :titles="['前锋','中场','后卫','门将']"
         @tabClick="tabClick"
         color="#69c0ff"
       >
@@ -21,7 +21,6 @@
   import RightList from "../../../components/content/rightList/RightList";
   import TabControl from "../../../components/common/tabControl/TabControl";
   import Items from "../../../components/content/players/items/Items";
-
   export default {
     name: "PlayersList",
     props:{
@@ -90,11 +89,11 @@
 
 <style scoped>
   .content-box {
-    position: fixed;
+    position: absolute;
     /*overflow: auto;*/
-    right: 0;
     top: 0;
-    width: 324px;
+    left: 0;
+    width: 380px;
     height: 943px;
     background-color: #4b4b4b;
     /*background-color: red;*/
@@ -116,7 +115,7 @@
   .scroll-box {
     position: absolute;
     top: 100px;
-    width: 324px;
+    width: 380px;
     height: 835px;
     /*background-color: blue;*/
   }

@@ -1,19 +1,30 @@
 <template>
   <div class="player-info">
     <div class="box-title">
+
       <div class="player-status">
         <img src="../../../../../assets/image/players/playerInfo.png" alt="">
         <span>球员资料</span>
       </div>
+
+      <div class="team-name">
+        <span>广州恒大</span>
+      </div>
+
     </div>
+
     <player-table
+      @showDrawer="firstDrawer"
       :players="players"
-    ></player-table>
+    >
+    </player-table>
+
   </div>
 </template>
 
 <script>
   import playerTable from "../../../table/PlayerTable";
+  import PlayersList from "../../../../../views/players/childComps/PlayersList";
   export default {
     name: "PlayerInfo",
     props:{
@@ -25,7 +36,8 @@
       },
     },
     components:{
-      playerTable
+      playerTable,
+      PlayersList
     },
     data(){
       return{
@@ -42,6 +54,9 @@
         // }
     },
     methods:{
+      firstDrawer(){
+        this.$emit("firstDrawer")
+      }
     }
   }
 </script>
@@ -49,10 +64,10 @@
 <style scoped>
   .player-info {
     position: absolute;
-    top:60px;
-    left:25px;
-    width: 380px;
-    height: 750px;
+    top:20px;
+    left:15px;
+    width: 500px;
+    height: 800px;
     border-radius: 15px;
     overflow: hidden;
     background-color:#4f4f4f;
@@ -63,8 +78,10 @@
   }
   .box-title {
     position: relative;
-    width: 548px;
+    width: 500px;
     height: 62px;
+    display: flex;
+    justify-content: space-around;
     background-color: #4b4b4b;
   }
   .player-status {
@@ -75,6 +92,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .team-name {
+    position: absolute;
+    left: 350px;
+    width: 140px;
+    height: 62px;
+    text-align: center;
+    line-height: 62px;
+    /*background-color: red;*/
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
   }
   img {
     width: 30px;

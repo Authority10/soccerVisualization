@@ -1,38 +1,58 @@
 <template>
     <div class="center-info">
-      <div class="first-team">
-        广州恒大
-      </div>
-      <div class="second-team">
-        北京国安
-      </div>
+<!--      <div class="first-team">-->
+<!--        广州恒大-->
+<!--      </div>-->
+<!--      <div class="second-team">-->
+<!--        北京国安-->
+<!--      </div>-->
 
-      <Cascader
-        :playersList="playersList"
+      <el-drawer
+        :visible.sync="drawer"
+        :direction="direction"
+        :modal="true"
+        style="width:58%"
       >
-      </Cascader>
+        <players-list
+        :players="players">
+        </players-list>
+      </el-drawer>
 
-      <Cascader
-        class="second-block"
-        :playersList="playersList">
-      </Cascader>
+      <first-player
+        @firstDrawer="firstDrawer"
+        :players="players[currentPosition][playerIndex]"
+      >
+      </first-player>
 
-      <slot name="player-person-info">
-      </slot>
-      <slot name="player-person-data">
-      </slot>
-      <slot name="second-player-person-info">
-      </slot>
-      <slot name="player-person-appearance">
-      </slot>
+      <player-data
+        :technical="technical"
+        :event-position="sendEventsPosition">
+      </player-data>
 
+      <second-player
+        @secondDrawer="secondDrawer"
+        :players="players[currentPosition][playerIndex]"
+      >
+      </second-player>
     </div>
 </template>
 
 <script>
-  import Cascader from "../../element-ui/Cascader";
+  import PlayersList from "../../../../views/players/childComps/PlayersList";
+  import FirstPlayer from "./centerItems/FirstPlayer";
+  import PlayerData from "./centerItems/PlayerData";
+  import SecondPlayer from "./centerItems/SecondPlayer";
+
   export default {
     name: "PlayersCenter",
+    props:{
+      players:{
+        type:Object,
+        default(){
+          return{}
+        }
+      }
+    },
     data(){
       return{
         playersList: [
@@ -119,11 +139,47 @@
               }
             ]
           }
-        ]
+        ],
+        drawer: false,
+        direction: 'ltr',
+        currentPosition:"ForWard",
+        playerIndex:"3682",
+        technical:{},
       }
     },
     components:{
-      Cascader
+      PlayersList,
+      SecondPlayer,
+      FirstPlayer,
+      PlayerData
+    },
+    computed:{
+      sendEventsPosition(){
+        if(this.players[this.currentPosition][this.playerIndex]["events"]===undefined){
+          return []
+        }else {
+          return this.players[this.currentPosition][this.playerIndex]["events"]["Pass"]["positions"]
+        }
+      }
+    },
+    beforeCreate() {
+      this.$bus.$on("sendIndex",(currActivePlayer)=>{
+        this.currentPosition = currActivePlayer.currentPosition;
+        this.playerIndex = currActivePlayer.playerIndex;
+      });
+      this.$bus.$on("sendTechnical",(technical)=>{
+        this.technical = technical;
+      })
+    },
+    methods:{
+      firstDrawer(){
+        this.drawer = true
+        this.direction = 'ltr'
+      },
+      secondDrawer(){
+        this.drawer = true
+        this.direction = 'rtl'
+      }
     }
   }
 </script>
@@ -140,26 +196,26 @@
      overflow-x:hidden ;
      /*border: 1px solid #dcdde1;*/
    }
-   .first-team {
-     position: absolute;
-     top: 13px;
-     left: 25px;
-     width: 150px;
-     background-color:#4b4b4b;
-     color: white;
-     text-align: center;
-     font-size: 27px;
-   }
-   .second-team {
-     position: absolute;
-     top: 13px;
-     left: 1400px;
-     width: 150px;
-     background-color:#4b4b4b;
-     text-align: center;
-     color: white;
-     font-size: 27px;
-   }
+   /*.first-team {*/
+   /*  position: absolute;*/
+   /*  top: 13px;*/
+   /*  left: 25px;*/
+   /*  width: 150px;*/
+   /*  background-color:#4b4b4b;*/
+   /*  color: white;*/
+   /*  text-align: center;*/
+   /*  font-size: 27px;*/
+   /*}*/
+   /*.second-team {*/
+   /*  position: absolute;*/
+   /*  top: 13px;*/
+   /*  left: 1400px;*/
+   /*  width: 150px;*/
+   /*  background-color:#4b4b4b;*/
+   /*  text-align: center;*/
+   /*  color: white;*/
+   /*  font-size: 27px;*/
+   /*}*/
   .info-span {
     position: absolute;
     top:17px;

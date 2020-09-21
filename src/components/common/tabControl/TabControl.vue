@@ -27,7 +27,7 @@
         //动态传入颜色
         personal:{
           "color":this.color,
-          "borderBottom":"2px solid "+this.color,
+          "borderBottom":"4px solid "+this.color,
           "opacity":1
         },
         unPersonal:{

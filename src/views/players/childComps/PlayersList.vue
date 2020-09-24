@@ -9,7 +9,7 @@
       >
       </tab-control>
       <items
-        :playerItems="this.showPlayers"
+        :playerItems="showPlayers"
         @infoClick="infoClick">
       </items>
     </div>
@@ -21,6 +21,7 @@
   import RightList from "../../../components/content/rightList/RightList";
   import TabControl from "../../../components/common/tabControl/TabControl";
   import Items from "../../../components/content/players/items/Items";
+  import {findPerson} from "../../../network/players"
   export default {
     name: "PlayersList",
     props:{
@@ -33,8 +34,9 @@
     },
     data(){
       return{
-        currentPosition:"ForWard",
-        currIndex:"",
+        currentPosition:"forward",
+        // currIndex:"",
+        personId:0,
       }
     },
 
@@ -52,36 +54,42 @@
       /**
        * 网络请求的方法
        */
-
       /**
        * 事件监听的方法
        */
       tabClick(index){
         switch (index) {
           case 0:
-            this.currentPosition = "ForWard";
+            this.currentPosition = "forward";
             break;
           case 1:
-            this.currentPosition = "Center";
+            this.currentPosition = "midfielder";
             break;
           case 2:
-            this.currentPosition = "Back";
+            this.currentPosition = "defender";
             break;
           case 3:
-            this.currentPosition = "GoalKeeper";
+            this.currentPosition = "goalkeeper";
             break
         }
       },
-      infoClick(index){
-        this.currIndex = index;
+      findPerson(personId){
+        findPerson(personId).then(res=>{
+          console.log(res[0]);
+
+        })
+      },
+      infoClick(personId){
+        this.personId = personId;
         // this.currMessage=aa.c
         //兄弟组件的传值，提前封装成对象
-        var currActivePlayer = {
-          currentPosition : this.currentPosition,
-          playerIndex : this.currIndex,
-        };
-        console.log(currActivePlayer);
-        this.$bus.$emit("sendIndex",currActivePlayer)
+        // var currActivePlayer = {
+        //   currentPosition : this.currentPosition,
+        //   playerIndex : this.currIndex,
+        // };
+        console.log(personId);
+        this.findPerson(personId)
+        // this.$bus.$emit("sendIndex",currActivePlayer)
       }
     }
   }
@@ -89,15 +97,13 @@
 
 <style scoped>
   .content-box {
-    position: absolute;
+    /*position: absolute;*/
     /*overflow: auto;*/
-    top: 0;
-    left: 0;
-    width: 380px;
-    height: 943px;
+    /*top: 0;*/
+    /*left: 0;*/
+    width: 340px;
+    height: 1080px;
     background-color: #4b4b4b;
-    /*background-color: red;*/
-    /*border-left:1px solid rgba(187, 187, 187, 0.5);*/
   }
   .list-name {
     position: absolute;
@@ -116,7 +122,7 @@
     position: absolute;
     top: 100px;
     width: 380px;
-    height: 835px;
+    height: 890px;
     /*background-color: blue;*/
   }
 </style>

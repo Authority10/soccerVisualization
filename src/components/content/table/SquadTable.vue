@@ -151,10 +151,10 @@
     position:absolute ;
     background-color: #525252;
     border-radius: 15px;
-    top:170px;
+    top:171px;
     left:31px;
     width: 1371px;
-    height:1900px;
+    height:500px;
     overflow: hidden;
     color: white;
     font-size: 20px;

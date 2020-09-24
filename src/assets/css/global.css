@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+}
+
+
 .first-cascader .el-cascader-node__label {
   color:white;
   min-width:200px;

@@ -8,12 +8,11 @@
     </div>
     <tab-control-sub
       ref="tab"
-      :titles="['球队阵容','球队进攻','球队防守','球队其他','球队其他']"
+      :titles="['首发阵容','球队进攻','球队防守','球队组织','球队技术','球队传球']"
       :fixed="fixed"
       @tabClick="tabClick"
       color="#ff7875">
     </tab-control-sub>
-
   </div>
 </template>
 
@@ -63,10 +62,10 @@
   .matches-data {
     position: absolute;
     /*overflow: scroll;*/
-    top:260px;
-    left:20px;
+    top:403px;
+    left:23px;
     width: 1433px;
-    height: 2100px;
+    height: 558px;
     border-radius: 15px;
     overflow: hidden;
     background-color:#4f4f4f;

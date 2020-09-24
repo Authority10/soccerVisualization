@@ -47,12 +47,15 @@
 
 <style scoped>
   .center-info {
-    position: fixed;
-    overflow: auto;
+    position: absolute;
     width: 1484px;
-    height: 842px;
-    top:  101px;
+    height: 983px;
+    top:  97px;
     left: 112px;
+    overflow: scroll;
     background-color: #404040;
+  }
+  .center-info::-webkit-scrollbar {
+    display: none;
   }
 </style>

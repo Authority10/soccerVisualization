@@ -19,6 +19,7 @@
       ref="playersTable"
       v-if="playersTable">
     </squad-table>
+
     <country-attack  v-if="CountryAttack"  :radar="activeCountry.Radar.attack"></country-attack>
     <country-defense v-if="CountryDefense" :radar="activeCountry.Radar.defense"></country-defense>
   </div>
@@ -88,18 +89,17 @@
 <style scoped>
   .country-data {
     position: absolute;
-    /*overflow: scroll;*/
-    top:580px;
-    left:20px;
-    width: 1433px;
+    top:513px;
+    left:23px;
+    width: 1423px;
     height: 2100px;
-    border-radius: 15px;
+    border-radius: 12px;
     overflow: hidden;
     background-color:#4f4f4f;
   }
   .box-title {
     width: 1433px;
-    height: 62px;
+    height: 64px;
     background-color:#4b4b4b;
   }
   .data-status {

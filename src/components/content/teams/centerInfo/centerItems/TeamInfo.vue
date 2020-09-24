@@ -46,17 +46,17 @@
 
 <style scoped>
   .country-info {
-    position: relative;
-    top:20px;
+    position: absolute;
+    top:23px;
     left:20px;
-    width: 380px;
-    height: 500px;
-    border-radius: 15px;
+    width: 468px;
+    height: 470px;
+    border-radius: 12px;
     overflow: hidden;
     background-color:#4f4f4f;
   }
   .box-title {
-    width: 380px;
+    width: 468px;
     height: 64px;
     background-color:#4b4b4b;
   }
@@ -93,8 +93,4 @@
     color: white;
     font-weight: bold;
   }
-  /*img {*/
-  /*  width: 170px;*/
-  /*  margin: 0 auto;*/
-  /*}*/
 </style>

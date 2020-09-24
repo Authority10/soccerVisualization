@@ -2,67 +2,95 @@
   <div class="match-table">
     <!--    同时传入titles和content-->
     <!--    使用v-for遍历titles同时拿到index-->
-    <div class="country box" @click="boxClick"
-         v-for="(items,index) in titles"
-    >
-      <div class="title">
-        {{items}}
+<!--    <div class="country box" @click="boxClick"-->
+<!--         v-for="(items,index) in titles"-->
+<!--    >-->
+<!--      <div class="title">-->
+<!--        {{items}}-->
+<!--      </div>-->
+<!--      &lt;!&ndash;    在content中使用index索引号遍历&ndash;&gt;-->
+<!--      <div class="content">-->
+<!--        <div>-->
+<!--          {{content[index]}}-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+    <div class="league-img">
+      <div class="league-title">
+        中国足球协会超级联赛
       </div>
-      <!--    在content中使用index索引号遍历-->
-      <div class="content">
-        <div>
-          {{content[index]}}
-        </div>
+      <div class="league-logo">
+        <img src="../../../assets/image/logo/cls.png" alt="">
       </div>
     </div>
-    <!--    <div class="coach box" @click="boxClick">-->
-    <!--      <div class="title">-->
-    <!--        主教练-->
-    <!--      </div>-->
-    <!--      <div class="content">-->
-    <!--        <div>-->
-    <!--          克洛普-->
-    <!--        </div>-->
-    <!--      </div>-->
-    <!--    </div>-->
-    <!--    <div class="birth-date box" @click="boxClick">-->
-    <!--      <div class="title">-->
-    <!--        成立时间-->
-    <!--      </div>-->
-    <!--      <div class="content">-->
-    <!--        <div>-->
-    <!--         1996-10-04-->
-    <!--        </div>-->
-    <!--      </div>-->
-    <!--    </div>-->
-    <!--    <div class="age box" @click="boxClick">-->
-    <!--      <div class="title">-->
-    <!--        年龄-->
-    <!--      </div>-->
-    <!--      <div class="content">-->
-    <!--          27.8-->
-    <!--      </div>-->
-    <!--    </div>-->
-    <!--    <div class="times box" @click="boxClick">-->
-    <!--      <div class="title">-->
-    <!--        参赛次数-->
-    <!--      </div>-->
-    <!--      <div class="content">-->
-    <!--        <div>-->
-    <!--         20-->
-    <!--        </div>-->
-    <!--      </div>-->
-    <!--    </div>-->
-    <!--    <div class="glory box" @click="boxClick">-->
-    <!--      <div class="title">-->
-    <!--        主要荣誉-->
-    <!--      </div>-->
-    <!--      <div class="content">-->
-    <!--        <div>-->
-    <!--         冠军-->
-    <!--        </div>-->
-    <!--      </div>-->
-    <!--    </div>-->
+
+    <div class="six-box league-level">
+      <div class="common-title">
+        联赛级别
+      </div>
+      <div class="content">
+        国内顶级联赛
+      </div>
+    </div>
+    <div class="six-box teams-amount">
+      <div class="common-title">
+        球队数量
+      </div>
+      <div class="content">
+        16
+      </div>
+    </div>
+    <div class="six-box players-amount">
+      <div class="common-title">
+        球员总数
+      </div>
+      <div class="content">
+        672
+      </div>
+    </div>
+    <div class="six-box foreign-amount">
+      <div class="common-title">
+        外援总数
+      </div>
+      <div class="content">
+        88
+      </div>
+    </div>
+    <div class="six-box defending-champion">
+      <div class="common-title">
+        卫冕冠军
+      </div>
+      <div class="content">
+        广州恒大
+      </div>
+    </div>
+    <div class="six-box league-duration">
+      <div class="common-title">
+        联赛时长
+      </div>
+      <div class="content">
+        28年
+      </div>
+    </div>
+
+    <div class="afc-teams">
+      <div class="uncommon-title">
+        上届亚冠球队
+      </div>
+      <div class="uncommon-content">
+        广州恒大 江苏苏宁 上海上港 山东鲁能
+      </div>
+    </div>
+    <div class="new-promoter">
+      <div class="uncommon-title">
+        本赛季升班马
+      </div>
+      <div class="uncommon-content">
+        天津权健 贵州恒丰
+      </div>
+    </div>
+
+
   </div>
 </template>
 
@@ -111,44 +139,136 @@
 <style scoped>
   .match-table {
     position: absolute;
+    top: 64px;
     width: 1433px;
-    height: 155px;
+    height: 296px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items:center;
     background-color:#4f4f4f;
-    /*background-color:red;*/
   }
-  .box {
-    width: 100px;
-    height: 100px;
-    border-radius: 15px;
-    color:white;
-    border: 1px solid #525252;
+  .league-img {
+    position: absolute;
+    top: 16px;
+    left: 31px;
+    width: 220px;
+    height: 252px;
     overflow: hidden;
+    background-color: #565656;
+    border-radius: 12px;
   }
-  .title {
+  .league-title {
+    width: 220px;
     height: 40px;
     line-height: 40px;
     text-align: center;
-    font-size: 16px;
-    background-color: #525252;
+    color: white;
+    font-size: 20px;
+    background-color:#515151;
+  }
+  .common-title {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    background-color:#515151;
+  }
+  .league-logo {
+    position: absolute;
+    top: 85px;
+    width: 220px;
+    height: 123px;
+    background-color:white;
+  }
+  .league-logo img {
+    width: 220px;
+    height: 123px;
+  }
+  .six-box {
+    position: absolute;
+    width: 200px;
+    height: 116px;
+    overflow: hidden;
+    background-color:#565656;
+    border-radius: 12px;
   }
   .content {
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
-    height: 60px;
-    line-height:60px;
+    position: absolute;
+    top:40px;
+    width: 200px;
+    height: 76px;
     text-align: center;
-    background-color:#555555;
-    /*line-height: 100px;*/
-    /*text-align: center;*/
-    /*font-weight: bold;*/
-    font-size: 24px;
+    color: white;
+    font-size: 28px;
+    line-height: 76px;
+    /*background-color: blue;*/
+  }
+  .league-level {
+    top: 16px;
+    left: 261px;
+  }
+  .teams-amount {
+    top: 16px;
+    left: 472px;
+  }
+  .players-amount {
+    top: 16px;
+    left: 683px;
+  }
+  .foreign-amount {
+    top: 152px;
+    left: 261px;
+  }
+  .defending-champion {
+    top: 152px;
+    left: 472px;
+  }
+  .league-duration {
+    top: 152px;
+    left: 684px;
+  }
+  .afc-teams {
+    position: absolute;
+    top: 16px;
+    left: 894px;
+    width: 513px;
+    height: 116px;
+    overflow: hidden;
+    background-color:#565656;
+    border-radius: 12px;
+  }
+  .new-promoter {
+    position: absolute;
+    top: 152px;
+    left: 894px;
+    width: 513px;
+    height: 116px;
+    overflow: hidden;
+    background-color: #565656;
+    border-radius: 12px;
+  }
+  .uncommon-title {
+    width: 513px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    background-color: #515151;
+  }
+  .uncommon-content {
+    position: absolute;
+    top:40px;
+    width: 513px;
+    height: 76px;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    line-height: 76px;
   }
 </style>
 

@@ -32,7 +32,7 @@
     top:20px;
     left:20px;
     width: 1433px;
-    height: 219px;
+    height: 360px;
     border-radius: 15px;
     overflow: hidden;
     background-color:#4f4f4f;

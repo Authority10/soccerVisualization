@@ -1,6 +1,9 @@
 <template>
   <div class="player-info">
     <div class="box-title">
+      <div class="team-name">
+        <span>北京国安</span>
+      </div>
       <div class="player-status">
         <img src="../../../../../assets/image/players/playerInfo.png" alt="">
         <span>球员资料</span>
@@ -40,11 +43,11 @@
 <style scoped>
   .player-info {
     position: absolute;
-    top:20px;
-    left:1285px;
+    top:25px;
+    left:1275px;
     width: 500px;
-    height: 800px;
-    border-radius: 15px;
+    height: 930px;
+    border-radius: 12px;
     overflow: hidden;
     background-color:#4f4f4f;
   }
@@ -56,12 +59,22 @@
   }
   .player-status {
     position: absolute;
-    left: 20px;
+    right: 20px;
     width: 140px;
     height: 62px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /*background-color: red;*/
+  }
+  .team-name {
+    position: absolute;
+    left: 10px;
+    width: 140px;
+    height: 62px;
+    text-align: center;
+    line-height: 62px;
+    /*background-color: red;*/
   }
   img {
     width: 30px;

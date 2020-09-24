@@ -1,11 +1,11 @@
 <template>
   <div class="players-detail">
     <div class="players-name" @click="showDrawer">
-      <img v-if="isCountryImg" src="../../../assets/image/players/avatar_img.jpg" alt="" class="avatar-img">
-      <img v-else :src="players.imgNumber.img.countryImg" alt="" class="avatar-img">
+<!--      <img v-if="isCountryImg" src="../../../assets/image/players/avatar_img.jpg" alt="" class="avatar-img">-->
+<!--      <img v-else :src="players.imgNumber.img.countryImg" alt="" class="avatar-img">-->
       <span class="name-title">Name</span>
-      <span class="first-name">{{players.firstName}}</span>
-      <span class="last-name">{{players.lastName}}</span>
+<!--      <span class="first-name">{{players.firstName}}</span>-->
+<!--      <span class="last-name">{{players.lastName}}</span>-->
     </div>
     <div class="detail-info">
         <div class="club box" @click="boxClick">
@@ -14,10 +14,10 @@
            </div>
            <div class="content">
              <div>
-               <img :src="players.imgNumber.img.clubLogo" alt="" class="club-img">
+<!--               <img :src="players.imgNumber.img.clubLogo" alt="" class="club-img">-->
              </div>
              <div>
-               {{players.currentTeam}}
+<!--               {{players.currentTeam}}-->
              </div>
            </div>
         </div>
@@ -27,11 +27,11 @@
           </div>
           <div class="content">
             <div>
-              <img v-if="isRight" src="../../../assets/image/foot/right-foot.png" alt="ddd" class="foot-img">
-              <img v-else src="../../../assets/image/foot/left-foot.png" alt="" class="foot-img">
+<!--              <img v-if="isRight" src="../../../assets/image/foot/right-foot.png" alt="ddd" class="foot-img">-->
+<!--              <img v-else src="../../../assets/image/foot/left-foot.png" alt="" class="foot-img">-->
             </div>
             <div>
-              {{players.foot}}
+<!--              {{players.foot}}-->
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@
           </div>
           <div class="content">
             <div>
-              {{players.birthDate}}
+<!--              {{players.birthDate}}-->
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@
           </div>
           <div class="content">
             <div>
-              {{getAge}}
+<!--              {{getAge}}-->
             </div>
           </div>
         </div>
@@ -61,10 +61,10 @@
           </div>
           <div class="content">
             <div>
-              <img :src="players.imgNumber.img.countryLogo" alt="" class="flag-img">
+<!--              <img :src="players.imgNumber.img.countryLogo" alt="" class="flag-img">-->
             </div>
             <div>
-              {{players.currentNationalTeam}}
+<!--              {{players.currentNationalTeam}}-->
             </div>
           </div>
         </div>
@@ -74,10 +74,10 @@
           </div>
           <div class="content">
             <div>
-              <img :src="players.imgNumber.img.birthImg" alt="" class="flag-img">
+<!--              <img :src="players.imgNumber.img.birthImg" alt="" class="flag-img">-->
             </div>
             <div>
-              {{players.birthArea.name}}
+<!--              {{players.birthArea.name}}-->
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@
           </div>
           <div class="content">
             <div>
-              {{players.height}}CM
+<!--              {{players.height}}CM-->
             </div>
           </div>
         </div>
@@ -97,7 +97,7 @@
           </div>
           <div class="content">
             <div>
-              {{players.weight}}KG
+<!--              {{players.weight}}KG-->
             </div>
           </div>
         </div>
@@ -122,16 +122,16 @@
       }
     },
     computed:{
-      getAge(){
-        //拿到出生的年份，用2020去减
-        return  2020-this.players.birthDate.substr(0,4)
-      },
-      isRight(){
-        return this.players.foot==="right"
-      },
-      isCountryImg(){
-        return this.players.imgNumber.img.countryImg==="nan"
-      }
+      // getAge(){
+      //   //拿到出生的年份，用2020去减
+      //   return  2020-this.players.birthDate.substr(0,4)
+      // },
+      // isRight(){
+      //   return this.players.foot==="right"
+      // },
+      // isCountryImg(){
+      //   return this.players.imgNumber.img.countryImg==="nan"
+      // }
     },
     methods:{
       boxClick(){
@@ -161,17 +161,16 @@
   .players-detail {
     position: absolute;
     width: 500px;
-    height: 738px;
+    height: 868px;
     /*background-color: red;*/
   }
   .players-name {
     position: absolute;
     top: 23px;
     left: 25px;
-    width: 450px;
-    height: 180px;
-    /*margin: 10px auto;*/
-    border-radius: 15px;
+    width: 451px;
+    height: 182px;
+    border-radius: 12px;
     background-color: #585858;
     overflow: hidden;
   }
@@ -210,10 +209,10 @@
   }
   .detail-info {
     position: absolute;
-    top: 205px;
+    top: 224px;
     width: 500px;
-    height: 533px;
-    margin: 13px auto;
+    height: 652px;
+    /*margin: 13px auto;*/
     /*background-color: blue;*/
     display: flex;
     flex-wrap: wrap;
@@ -221,12 +220,29 @@
   }
   .box {
     width: 220px;
-    height: 100px;
+    height: 116px;
     border-radius: 15px;
     border: 2px solid #555555;
     background-color: #555555;
     overflow: hidden;
   }
+  .club,.foot,.passport-area,.birth-area {
+    width: 220px;
+    height: 160px;
+  }
+
+  .club .content,.foot .content,.passport-area .content,.birth-area .content{
+    display: flex;
+    /*background-color: red;*/
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    height: 120px;
+    /*font-weight: bold;*/
+    font-size: 22px;
+  }
+
   .title {
     height: 40px;
     line-height: 40px;
@@ -242,18 +258,18 @@
     justify-content: center;
     align-items: center;
     color: white;
-    height: 60px;
+    height: 76px;
     /*font-weight: bold;*/
-    font-size: 20px;
+    font-size: 22px;
   }
   .club-img {
-    width: 30px;
+    width: 50px;
   }
   .foot-img {
-    width: 30px;
+    width: 50px;
   }
   .flag-img {
-    width: 30px;
+    width: 50px;
   }
   /*.info-table {*/
   /*  position: absolute;*/

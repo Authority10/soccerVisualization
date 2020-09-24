@@ -66,18 +66,18 @@
         // width:300,                  //雷达图宽度
         // height:300,                 //雷达图高度
         // 表格标题
-        title:{
-          visible: true,            //是否显示左上角标题
-          alignTo: 'center',          //标题位置
-          text:'个人指标雷达图',         //标题名字
-          style:{
-            fontSize: 30,             //标题文字大小
-            fontWeight:"bold",
-            fill: '#BBBBBB',          //标题文字颜色
-            opacity:1,
-            lineWidth:20
-          }
-        },
+        // title:{
+        //   visible: true,            //是否显示左上角标题
+        //   alignTo: 'left',          //标题位置
+        //   // text:'个人指标雷达图',         //标题名字
+        //   style:{
+        //     fontSize: 30,             //标题文字大小
+        //     fontWeight:"bold",
+        //     fill: '#BBBBBB',          //标题文字颜色
+        //     opacity:1,
+        //     lineWidth:20
+        //   }
+        // },
         angleField: 'item',
         radiusField: 'score',
         seriesField: 'user',
@@ -131,7 +131,7 @@
         // 信息提示框
         tooltip:{
           visible: true,
-          offset:30,
+          offset:-10,
           // fields:['item','score','user'],
           // formatter:()=>{
           //   return {name:'a',value:1 }
@@ -186,10 +186,10 @@
 <style scoped>
   #radarContainer {
     position:absolute;
-    width: 300px;
-    height: 300px;
-    top:20px;
-    left:300px;
+    width: 250px;
+    height: 250px;
+    top:5px;
+    left:25px;
     /*background-color: red;*/
   }
 </style>

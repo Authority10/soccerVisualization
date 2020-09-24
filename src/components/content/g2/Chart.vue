@@ -27,8 +27,6 @@
         { country: '中国', type: '2016 年耕地总面积', value: 108.4 },
         { country: '美国', type: '2016 年转基因种植面积', value: 72.9 },
         { country: '美国', type: '2016 年耕地总面积', value: 165.2 },
-        { country: '印度', type: '2016 年转基因种植面积', value: 49.1 },
-        { country: '印度', type: '2016 年耕地总面积', value: 175.4 },
       ];
 
       const chart = new Chart({
@@ -71,7 +69,7 @@
           }
           const color = (facetIndex === 0) ? '#1890ff' : '#2fc25b';
           view.interval().position('country*value').color(color)
-            .size(50)
+            .size(40)
             .label('value', (val) => {
               let offset = (facetIndex === 1) ? -4 : 4;
               let shadowBlur = 2;
@@ -105,8 +103,8 @@
 <style scoped>
  #chartContainer {
    width: 500px;
-   height: 300px;
-   margin: 30px auto;
+   height: 350px;
+   margin: 25px auto;
    /*background-color: blue;*/
  }
 </style>

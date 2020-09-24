@@ -8,6 +8,9 @@
       <team-radar>
       </team-radar>
 
+      <team-season>
+      </team-season>
+
       <team-data
         ref="teamData"
         :activeCountry="activeCountry"
@@ -22,6 +25,7 @@
   import TeamData from "./centerItems/TeamData";
   import TeamInfo from "./centerItems/TeamInfo";
   import TeamRadar from "./centerItems/TeamRadar";
+  import TeamSeason from "./centerItems/TeamSeason";
   export default {
     name: "TeamsCenter",
     props:{
@@ -64,7 +68,8 @@
     components:{
       TeamData,
       TeamInfo,
-      TeamRadar
+      TeamRadar,
+      TeamSeason
     },
     //路由跳转之后，将固定定位取消
     // 否则重新进入路由之后会出现滚动条在顶部但出现吸顶效果的bug
@@ -93,15 +98,16 @@
     position: relative;
   }
   .center-info {
-    position: fixed;
-    overflow: auto;
+    position: absolute;
     width: 1484px;
-    height: 842px;
-    top:  101px;
+    height: 983px;
+    top:  97px;
     left: 112px;
-    background-color: #404040;
-    /*background-color: red;*/
-    /*border: 1px solid #dcdde1;*/
+    background-color:#404040;
+    overflow: scroll;
+  }
+  .center-info::-webkit-scrollbar {
+    display: none;
   }
   img {
     position: absolute;

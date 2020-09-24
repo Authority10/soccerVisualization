@@ -1,26 +1,39 @@
 <template>
   <div class="match-items">
     <single-battle
-    v-for="(item,index) in battleItems"
-    :single-battle="item"
-    :key="index"></single-battle>
+      v-for="(item,index) in battleItems"
+      :single-battle="item"
+      :key="index"
+      :class="{active:currentIndex===index}"
+    @click.native="battleClick(index)">
+    </single-battle>
   </div>
 </template>
 
 <script>
-  import singleBattle from "./singleBattle";
+  import SingleBattle from "./SingleBattle";
   export default {
     name: "BattleItems",
     props:{
       battleItems:{
-        type:Array,
+        type:Object,
         default(){
-          return []
+          return {}
         }
       }
     },
+    data(){
+      return {
+        currentIndex:0
+      }
+    },
     components:{
-      singleBattle
+      SingleBattle
+    },
+    methods:{
+      battleClick(index){
+        this.currentIndex = index
+      }
     }
   }
 </script>
@@ -28,17 +41,12 @@
 <style scoped>
   .match-items {
     position: absolute;
-    top:40px;
-    left: 12px;
+    left: 31px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     /*background-color:red;*/
-    width: 280px;
-    height: 560px;
-  }
-  .match-group-second {
-    top:640px;
-  }
-  .match-group-third {
-    top: 1245px;
-    height: 400px;
+    width: 260px;
+    height: 930px;
   }
 </style>

@@ -1,7 +1,6 @@
 <template>
   <div class="content-box">
-    <div class="list-name">球队列表</div>
-    <div class="score-board">积分榜</div>
+    <div class="list-name">球队积分榜</div>
     <div class="scroll-box">
 
 <!--      <tab-control-->
@@ -108,19 +107,17 @@
     right: 0;
     top: 0;
     width: 324px;
-    height: 943px;
+    height: 1080px;
     background-color: #4b4b4b;
-    /*background-color: red;*/
-    /*border-left:1px solid rgba(187, 187, 187, 0.5);*/
   }
   .list-name {
     position: absolute;
-    width: 137px;
+    width: 180px;
     height: 52px;
-    left: 25px;
+    left: 34px;
     top:  32px;
     color:#FFF566;
-    background-color:#4b4b4b;
+    /*background-color:red;*/
     font-size: 28px;
     text-align: center;
     line-height: 52px;
@@ -131,7 +128,7 @@
     top: 100px;
     width: 324px;
     height: 40px;
-    background-color:#404040;
+    background-color:red;
     text-align: center;
     line-height: 40px;
     color: white;

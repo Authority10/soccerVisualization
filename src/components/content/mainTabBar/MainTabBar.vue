@@ -15,8 +15,6 @@
       </tab-bar-item>
 
     </div>
-
-
   </tab-bar>
 </template>
 
@@ -44,20 +42,12 @@ export default {
     display: flex;
     flex-direction:column;
     justify-content: space-between;
+    /*background-color: red;*/
   }
   img {
     position: absolute;
     left: 25px;
     width: 64px;
     height: 64px;
-  }
-  .players-text {
-    color:#537091;
-  }
-  .teams-text {
-    color:#F7BA52;
-  }
-  .matches-text {
-    color:#D57666;
   }
 </style>

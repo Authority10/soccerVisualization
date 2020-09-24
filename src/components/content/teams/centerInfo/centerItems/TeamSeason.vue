@@ -1,43 +1,46 @@
 <template>
-  <div class="country-radar">
+  <div class="team-season">
     <div class="box-title">
-      <div class="radar-status">
+      <div class="season-status">
         <img src="../../../../../assets/image/teams/teamInfo.png" alt="" class="">
-        <span>球队雷达</span>
+        <span>赛季表现</span>
       </div>
     </div>
-    <radar-team>
-    </radar-team>
+    <team-table
+      color="#FFF566"
+      :titles="['国家','主教练','成立时间','平均年龄','参赛次数','主要荣誉']"
+      :content="['俄罗斯','克洛普','1996-10-04','24','20','冠军']">
+    </team-table>
   </div>
 </template>
 
 <script>
-  import RadarTeam from "../../../g2plot/RadarTeam";
+  import TeamTable from "../../../table/TeamTable";
   export default {
-    name: "TeamRadar",
+    name: "TeamSeason",
     components:{
-      RadarTeam
+      TeamTable
     }
   }
 </script>
 
 <style scoped>
-  .country-radar {
+  .team-season {
     position: absolute;
     top:23px;
-    left:511px;
-    width: 447px;
+    left:978px;
+    width: 468px;
     height: 470px;
     border-radius: 12px;
     overflow: hidden;
     background-color:#4f4f4f;
   }
   .box-title {
-    width: 447px;
+    width: 468px;
     height: 64px;
     background-color:#4b4b4b;
   }
-  .radar-status {
+  .season-status {
     position: absolute;
     left: 20px;
     width: 140px;

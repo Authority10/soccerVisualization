@@ -28,6 +28,7 @@
         personal:{
           "color":this.color,
           "border":"1px solid "+this.color,
+          "background-color":"#828282",
           "opacity":1
         },
         unPersonal:{
@@ -54,13 +55,18 @@
     height: 80px;
     top: 80px;
     left: 31px;
-    font-size: 14px;
-    border-radius: 15px;
+    font-size: 20px;
+    border-radius: 12px;
     background-color:#555555;
     display: flex;
     justify-content: space-around;
     align-items: center;
     /*background-color: #1E2E45;*/
+  }
+  /*在player界面的球员对比的导航条需要使用更大的宽度*/
+  .player-use {
+    width: 1709px;
+    left: 26px;
   }
   .tab-control-item{
     border-radius: 15px;

@@ -1,47 +1,74 @@
 <template>
     <div class="center-info">
-<!--      <div class="first-team">-->
-<!--        广州恒大-->
-<!--      </div>-->
-<!--      <div class="second-team">-->
-<!--        北京国安-->
-<!--      </div>-->
-
       <el-drawer
-        :visible.sync="drawer"
-        :direction="direction"
+        :visible.sync="leftShow"
+        :direction="leftDrawer"
         :modal="true"
-        style="width:58%"
+        size='408px'
+        :withHeader="false"
       >
         <players-list
-        :players="players">
+        :players="homeTeam">
         </players-list>
       </el-drawer>
 
+      <el-drawer
+        :visible.sync="rightShow"
+        :direction="rightDrawer"
+        :modal="true"
+        size='408px'
+        :withHeader="false"
+      >
+        <players-list
+          :players="awayTeam">
+        </players-list>
+      </el-drawer>
+<!--      <first-player-->
+<!--        @firstDrawer="firstDrawer"-->
+<!--        :players="players[currentPosition][playerIndex]"-->
+<!--      >-->
+<!--      </first-player>-->
+
+<!--      <player-data-->
+<!--        :technical="technical"-->
+<!--        :event-position="sendEventsPosition">-->
+<!--      </player-data>-->
+
+<!--      <second-player-->
+<!--        @secondDrawer="secondDrawer"-->
+<!--        :players="players[currentPosition][playerIndex]"-->
+<!--      >-->
+<!--      </second-player>-->
       <first-player
         @firstDrawer="firstDrawer"
-        :players="players[currentPosition][playerIndex]"
       >
       </first-player>
 
       <player-data
-        :technical="technical"
-        :event-position="sendEventsPosition">
+        >
       </player-data>
 
       <second-player
-        @secondDrawer="secondDrawer"
-        :players="players[currentPosition][playerIndex]"
+      @secondDrawer="secondDrawer"
       >
       </second-player>
+
+      <players-comparison>
+      </players-comparison>
+
+      <heat-area>
+      </heat-area>
     </div>
 </template>
 
 <script>
+  import 'element-ui/lib/theme-chalk/index.css'
   import PlayersList from "../../../../views/players/childComps/PlayersList";
   import FirstPlayer from "./centerItems/FirstPlayer";
   import PlayerData from "./centerItems/PlayerData";
   import SecondPlayer from "./centerItems/SecondPlayer";
+  import PlayersComparison from "./centerItems/PlayersComparison";
+  import HeatArea from "./centerItems/HeatArea";
 
   export default {
     name: "PlayersCenter",
@@ -55,93 +82,10 @@
     },
     data(){
       return{
-        playersList: [
-          {
-            value: 'GoalKeeper',
-            label: '守门员',
-            children:[
-              {
-                value:'nuoyier',
-                label:'诺伊尔'
-              },
-              {
-                value:'kuertuwa',
-                label:'库尔图瓦'
-              },
-              {
-                value:'luoli',
-                label:'洛里'
-              }]
-          },
-          {
-            value: 'Defender',
-            label: '后卫',
-            children:[
-              {
-                value:'lamosi',
-                label:'拉莫斯'
-              },
-              {
-                value:'wumudidi',
-                label:'乌姆蒂蒂'
-              },
-              {
-                value:'xierwa',
-                label:'席尔瓦'
-              },
-              {
-                value:'jimuxi',
-                label:'基米希'
-              }
-            ]
-          },
-          {
-            value: 'Center',
-            label: '中场',
-            children:[
-              {
-                value:'modeliqi',
-                label:'莫德里奇'
-              },
-              {
-                value:'lajidiqi',
-                label:'拉基蒂奇'
-              },
-              {
-                value:'diyage',
-                label:'蒂亚戈'
-              },
-              {
-                value:'debulaonei',
-                label:'德布劳内'
-              }
-            ]
-          },
-          {
-            value: 'ForWard',
-            label: '前锋',
-            children:[
-              {
-                value:'meixi',
-                label:'10 梅西'
-              },
-              {
-                value:'cluo',
-                label:'7 C罗'
-              },
-              {
-                value:'neimaer',
-                label:'11 内马尔'
-              },
-              {
-                value:'yibu',
-                label:'9 伊布拉希莫维奇'
-              }
-            ]
-          }
-        ],
-        drawer: false,
-        direction: 'ltr',
+        leftShow: false,
+        rightShow: false,
+        leftDrawer: 'ltr',
+        rightDrawer:'rtl',
         currentPosition:"ForWard",
         playerIndex:"3682",
         technical:{},
@@ -151,93 +95,59 @@
       PlayersList,
       SecondPlayer,
       FirstPlayer,
-      PlayerData
+      PlayerData,
+      PlayersComparison,
+      HeatArea
     },
     computed:{
-      sendEventsPosition(){
-        if(this.players[this.currentPosition][this.playerIndex]["events"]===undefined){
-          return []
-        }else {
-          return this.players[this.currentPosition][this.playerIndex]["events"]["Pass"]["positions"]
-        }
-      }
+      homeTeam(){
+        return Object.values(this.players)[0]
+      },
+      awayTeam(){
+        return Object.values(this.players)[1]
+      },
+      // sendEventsPosition(){
+      //   if(this.players[this.currentPosition][this.playerIndex]["events"]===undefined){
+      //     return []
+      //   }else {
+      //     return this.players[this.currentPosition][this.playerIndex]["events"]["Pass"]["positions"]
+      //   }
+      // }
     },
     beforeCreate() {
-      this.$bus.$on("sendIndex",(currActivePlayer)=>{
-        this.currentPosition = currActivePlayer.currentPosition;
-        this.playerIndex = currActivePlayer.playerIndex;
-      });
-      this.$bus.$on("sendTechnical",(technical)=>{
-        this.technical = technical;
-      })
+      // this.$bus.$on("sendIndex",(currActivePlayer)=>{
+      //   this.currentPosition = currActivePlayer.currentPosition;
+      //   this.playerIndex = currActivePlayer.playerIndex;
+      // });
+      // this.$bus.$on("sendTechnical",(technical)=>{
+      //   this.technical = technical;
+      // })
     },
     methods:{
       firstDrawer(){
-        this.drawer = true
-        this.direction = 'ltr'
+        this.leftShow = true
       },
       secondDrawer(){
-        this.drawer = true
-        this.direction = 'rtl'
+        this.rightShow = true
       }
     }
   }
+
 </script>
 
 <style scoped>
    .center-info {
-     position: fixed;
-     width: 1820px;
-     height: 842px;
-     top:  101px;
+     position: absolute;
+     width: 1808px;
+     height: 983px;
+     top:  97px;
      left: 112px;
      background-color:#404040;
+     /*background-color:red;*/
      overflow: scroll;
-     overflow-x:hidden ;
-     /*border: 1px solid #dcdde1;*/
+     overflow-x:hidden;
    }
-   /*.first-team {*/
-   /*  position: absolute;*/
-   /*  top: 13px;*/
-   /*  left: 25px;*/
-   /*  width: 150px;*/
-   /*  background-color:#4b4b4b;*/
-   /*  color: white;*/
-   /*  text-align: center;*/
-   /*  font-size: 27px;*/
-   /*}*/
-   /*.second-team {*/
-   /*  position: absolute;*/
-   /*  top: 13px;*/
-   /*  left: 1400px;*/
-   /*  width: 150px;*/
-   /*  background-color:#4b4b4b;*/
-   /*  text-align: center;*/
-   /*  color: white;*/
-   /*  font-size: 27px;*/
-   /*}*/
-  .info-span {
-    position: absolute;
-    top:17px;
-    left: 80px;
-    color:#FF7875;
-    font-size: 28px;
-    /*border-bottom: 6px solid #F7BA52;*/
-  }
-  .hr-line {
-    position:absolute;
-    top: 0;
-    left: 640px;
-    width: 1px;
-    height: 835px;
-    background-color: #8395a7;
-  }
-  .data-span {
-    position: absolute;
-    top:17px;
-    left: 720px;
-    color:#FDFDFD;
-    font-size: 28px;
-    border-bottom: 6px solid #F7BA52;
-  }
+   .center-info::-webkit-scrollbar {
+     display: none;
+   }
 </style>

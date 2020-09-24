@@ -13,6 +13,7 @@
     </div>
 </template>
 <script>
+  import {findRounds} from "../../../network/rounds";
   export default {
     name: "CascaderSecond",
     props:{
@@ -29,8 +30,17 @@
       };
     },
     methods: {
-      handleChange(value) {
-        console.log(value);
+      /**
+       * 网络请求的方法
+       */
+      findRounds(roundId){
+        findRounds(roundId).then(res=>{
+          console.log(res[0]);
+          this.$emit("sendRound",res[0])
+        })
+      },
+      handleChange(value){
+        this.findRounds(value[0])
       }
     }
   }

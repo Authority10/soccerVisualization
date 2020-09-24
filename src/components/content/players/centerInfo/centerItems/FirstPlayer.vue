@@ -1,16 +1,13 @@
 <template>
   <div class="player-info">
     <div class="box-title">
-
       <div class="player-status">
         <img src="../../../../../assets/image/players/playerInfo.png" alt="">
         <span>球员资料</span>
       </div>
-
       <div class="team-name">
         <span>广州恒大</span>
       </div>
-
     </div>
 
     <player-table
@@ -64,11 +61,11 @@
 <style scoped>
   .player-info {
     position: absolute;
-    top:20px;
-    left:15px;
+    top:25px;
+    left:20px;
     width: 500px;
-    height: 800px;
-    border-radius: 15px;
+    height: 930px;
+    border-radius: 12px;
     overflow: hidden;
     background-color:#4f4f4f;
   }
@@ -80,8 +77,8 @@
     position: relative;
     width: 500px;
     height: 62px;
-    display: flex;
-    justify-content: space-around;
+    /*display: flex;*/
+    /*justify-content: space-around;*/
     background-color: #4b4b4b;
   }
   .player-status {
@@ -92,18 +89,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /*background-color: red;*/
   }
   .team-name {
     position: absolute;
-    left: 350px;
+    right: 10px;
     width: 140px;
     height: 62px;
     text-align: center;
     line-height: 62px;
     /*background-color: red;*/
-    /*display: flex;*/
-    /*justify-content: space-between;*/
-    /*align-items: center;*/
   }
   img {
     width: 30px;

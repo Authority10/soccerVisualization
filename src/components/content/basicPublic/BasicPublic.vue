@@ -26,7 +26,6 @@
     position: fixed;
     width: 60px;
     height: 60px;
-    /*border: 5px solid red;*/
     border-radius: 10px;
     border-color: red;
     overflow: hidden;
@@ -45,7 +44,7 @@
   .hr-line {
     position: fixed;
     /*left: 116px;*/
-    top: 100px;
+    top: 96px;
     left: 0;
     /*width: 1478px;*/
     width: 1920px;

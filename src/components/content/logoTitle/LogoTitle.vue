@@ -34,8 +34,8 @@
      position: fixed;
      top:0;
      left:112px;
-     width: 1820px;
-     height: 100px;
+     width: 1808px;
+     height: 96px;
      background-color: #404040;
   }
   .logo-text {
@@ -45,6 +45,7 @@
     justify-content: space-between;
     top:25px;
     left: 40px;
+    /*background-color: red;*/
   }
   .search {
     position: absolute;
@@ -54,6 +55,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    /*background-color: red;*/
   }
   .my-input /deep/ .el-input__inner{
     border-color: #4a4a4a;

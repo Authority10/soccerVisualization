@@ -1,22 +1,22 @@
 <template>
    <div class="single-item">
        <div class="player-img">
-         <img :src="countryImg" alt="" class="item-img">
+         <img :src="playerImg" alt="" class="item-img">
        </div>
 
-       <span class="item-name">{{shortName}}</span>
-       <span class="item-number">{{parseInt(countryNumber)}}号</span>
+       <span class="item-name">{{personName}}</span>
+       <span class="item-number">{{personNum}}号</span>
 
 <!--       <span class="item-country">国籍:</span>-->
        <div  class="country-content">
-           <img  class="country-img" :src="countryLogo" alt="" >
-           <div class="country-text">{{currentNationalTeam}}</div>
+           <img  class="country-img" :src="countryImg" alt="" >
+           <div class="country-text">中国</div>
        </div>
 
 <!--       <span class="item-club">球队:</span>-->
        <div class="club-content">
-           <img  class="club-img" :src="clubLogo" alt="" >
-           <div class="club-text">{{currentTeam}}</div>
+           <img  class="club-img" :src="clubImg" alt="" >
+           <div class="club-text">{{teamName}}</div>
        </div>
    </div>
 </template>
@@ -37,26 +37,23 @@
       },
     },
     computed:{
+      playerImg(){
+        return this.players.playerImg
+      },
+      personName(){
+        return this.players.personName
+      },
+      personNum(){
+        return this.players.personNum
+      },
       countryImg(){
-        return this.players.imgNumber.img.countryImg
+        return this.players.countryImg
       },
-      shortName(){
-        return this.players.shortName
+      clubImg(){
+        return this.players.clubImg
       },
-      countryNumber(){
-        return this.players.imgNumber.number.countryNumber
-      },
-      countryLogo(){
-        return this.players.imgNumber.img.countryLogo
-      },
-      currentNationalTeam(){
-        return this.players.currentNationalTeam
-      },
-      clubLogo(){
-        return this.players.imgNumber.img.clubLogo
-      },
-      currentTeam(){
-        return this.players.currentTeam
+      teamName(){
+        return this.players.teamName
       }
     },
     methods:{

@@ -1,5 +1,5 @@
 <template>
-  <div class="appearance-table">
+  <div class="comparison-table ">
     <div class="title">
         <div>Name</div>
         <div>Minutes</div>
@@ -22,41 +22,12 @@
         <div>{{matches.Pass}}/{{matches.PassAccuracy}} {{parseInt((matches.PassPercentage)*100)}}%</div>
         <div>{{matches.Duel}}/{{matches.DuelWin}} {{parseInt((matches.DuelPercentage)*100)}}%</div>
     </div>
-<!--    <table>-->
-<!--      <tbody>-->
-<!--      <tr class="head">-->
-<!--        <td>Match</td>-->
-<!--        <td>Minutes played</td>-->
-<!--        <td>Goals</td>-->
-<!--        <td>XG</td>-->
-<!--        <td>Assists</td>-->
-<!--        <td>Total actions/success</td>-->
-<!--        <td>Shot/on target</td>-->
-<!--        <td>Pass/accurate</td>-->
-<!--        <td>Duels/won</td>-->
-<!--      </tr>-->
-<!--      <tr-->
-<!--        v-for="(matches,index) in playersMatches"-->
-<!--        :key="index"-->
-<!--      >-->
-<!--          <td>{{matches.MatchLabel.replace(/,/g, "")}}</td>-->
-<!--          <td>{{matches.Time}}</td>-->
-<!--          <td>{{matches.Goal}}</td>-->
-<!--          <td>0</td>-->
-<!--          <td>{{matches.Assist}}</td>-->
-<!--          <td>{{matches.TotalAcction}}/{{matches.TotalAccuracy}} {{parseInt((matches.TotalPercentage)*100)}}%</td>-->
-<!--          <td>{{matches.Shot}}/{{matches.ShotStraight}} {{parseInt((matches.ShotPercentage)*100)}}%</td>-->
-<!--          <td>{{matches.Pass}}/{{matches.PassAccuracy}} {{parseInt((matches.PassPercentage)*100)}}%</td>-->
-<!--          <td>{{matches.Duel}}/{{matches.DuelWin}} {{parseInt((matches.DuelPercentage)*100)}}%</td>-->
-<!--      </tr>-->
-<!--      </tbody>-->
-<!--    </table>-->
   </div>
 </template>
 
 <script>
   export default {
-    name: "AppearTable",
+    name: "ComparisonTable",
     props:{
       playersMatches:{
         type:Array,
@@ -74,14 +45,14 @@
 </script>
 
 <style scoped>
-  .appearance-table {
+  .comparison-table {
     position: absolute;
-    width: 1705px;
-    height: 700px;
+    width: 1709px;
+    height: 206px;
     font-size: 20px;
-    top:100px;
-    left: 25px;
-    border-radius: 15px;
+    top:  195px;
+    left: 26px;
+    border-radius: 12px;
     background-color: #525252;
   }
   .title {
@@ -124,7 +95,7 @@
     height: 50px;
     color: white;
     background-color:#575757;
-    border-radius: 15px;
+    border-radius: 12px;
     text-align: center;
     display: flex;
     justify-content: space-between;

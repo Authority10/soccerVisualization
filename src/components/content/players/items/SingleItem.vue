@@ -10,7 +10,7 @@
 <!--       <span class="item-country">国籍:</span>-->
        <div  class="country-content">
            <img  class="country-img" :src="countryImg" alt="" >
-           <div class="country-text">中国</div>
+           <div class="country-text">{{players.countryName}}</div>
        </div>
 
 <!--       <span class="item-club">球队:</span>-->

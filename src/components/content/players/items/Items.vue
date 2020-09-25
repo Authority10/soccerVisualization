@@ -54,38 +54,11 @@
       playerClick(players,index){
         this.currentIndex = index
         this.personId = players.personId
-        this.$emit("infoClick",this.personId);
-          // axios({
-          //   //url:"http://localhost:3001/test",
-          //   url:"http://backend2.bsufootballvs.fun/test",
-          //   method:"post",
-          //   data:{
-          //      playerID:parseInt(this.currentIndex)
-          //   }
-          // }).then((res)=>{
-          //   console.log(res.data);
-          //   console.log(typeof res.data);
-          //   this.message =res.data;
-          //   this.technicalData = res.data.split(",")
-          //    this.technical.goal = this.technicalData[0]
-          //     this.technical.assist = this.technicalData[1]
-          //      this.technical.pass = this.technicalData[2]
-          //       this.technical.accuratePass = this.technicalData[3]
-          //        this.technical.keyPass= this.technicalData[4]
-          //         this.technical. smartPass= this.technicalData[5]
-          //          this.technical.shot= this.technicalData[6]
-          //           this.technical.shotOnTarget = this.technicalData[7]
-          //            this.technical.fouls= this.technicalData[8]
-          //             this.technical.yellowCard = this.technicalData[9]
-          //              this.technical.redCard= this.technicalData[10]
-
-            // console.log(this.technicalData)
-          // }).catch(err=>{
-          //   console.log(err)
-          // });
-          // this.$emit("infoClick",index);
-          // this.$bus.$emit("sendTechnical",this.technical)
-          }
+        var data = {}
+        data.currentIndex = index
+        data.personId = players.personId
+        this.$emit("infoClick",data);
+        }
       },
     components: {
       SingleItem

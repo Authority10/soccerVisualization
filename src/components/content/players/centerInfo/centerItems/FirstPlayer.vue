@@ -6,7 +6,7 @@
         <span>球员资料</span>
       </div>
       <div class="team-name">
-        <span>广州恒大</span>
+        <span>{{players.teamName}}</span>
       </div>
     </div>
 
@@ -21,7 +21,7 @@
 
 <script>
   import playerTable from "../../../table/PlayerTable";
-  import PlayersList from "../../../../../views/players/childComps/PlayersList";
+  import PlayersList from "../../../../../views/players/childComps/HomePlayers";
   export default {
     name: "PlayerInfo",
     props:{
@@ -94,7 +94,7 @@
   .team-name {
     position: absolute;
     right: 10px;
-    width: 140px;
+    width: 160px;
     height: 62px;
     text-align: center;
     line-height: 62px;

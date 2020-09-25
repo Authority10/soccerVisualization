@@ -2,7 +2,7 @@
   <div class="player-info">
     <div class="box-title">
       <div class="team-name">
-        <span>北京国安</span>
+        <span>{{players.teamName}}</span>
       </div>
       <div class="player-status">
         <img src="../../../../../assets/image/players/playerInfo.png" alt="">
@@ -70,7 +70,7 @@
   .team-name {
     position: absolute;
     left: 10px;
-    width: 140px;
+    width: 160px;
     height: 62px;
     text-align: center;
     line-height: 62px;

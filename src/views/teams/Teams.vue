@@ -29,7 +29,7 @@
       }
     },
     created(){
-      this.showAllTeam()
+      // this.showAllTeam()
     },
     methods:{
       showAllTeam(){
@@ -47,7 +47,6 @@
         })
       }
     },
-
   }
 </script>
 

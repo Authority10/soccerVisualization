@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import PlayersList from "./childComps/PlayersList";
+  import PlayersList from "./childComps/HomePlayers";
   import PlayersInfo from "./childComps/PlayersInfo";
   import BasicPublic from "../../components/content/basicPublic/BasicPublic";
   // import {findPerson} from "../../network/players";
@@ -30,10 +30,10 @@
       BasicPublic
     },
     created(){
-      this.$bus.$on("sendTeams",(teams)=>{
-        console.log(teams)
-        this.teams = teams
-      })
+      // this.$bus.$on("sendTeams",(teams)=>{
+      //   console.log(teams)
+      //   this.teams = teams
+      // })
     },
     // created() {
     //   this.findTeam(2463)

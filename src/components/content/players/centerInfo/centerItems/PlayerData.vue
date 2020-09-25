@@ -6,7 +6,6 @@
         <span class="status-comparison">比赛表现对比</span>
       </div>
     </div>
-
     <div class="home-player">
       <div class="home-title">
             主队球员
@@ -15,16 +14,16 @@
             评分
       </div>
       <div class="home-text">
+        <span>综合</span>
         <span>进攻</span>
         <span>防守</span>
-        <span>传球</span>
+        <span>技巧</span>
         <span>组织</span>
-        <span>综合</span>
       </div>
       <div class="rate-ui">
-          <div v-for="(value,index) in values">
+          <div v-for="(value,index) in homeRate">
             <el-rate
-              v-model="values[index]"
+              v-model="homeRate[index]"
               disabled
               :colors="['#6894b4','#6894b4','#6894b4']"
               void-color='#F7BA2A'
@@ -33,7 +32,7 @@
           </div>
       </div>
       <div class="home-rate">
-             95.7
+             {{homePlayer}}
        </div>
     </div>
     <div class="radar">
@@ -44,7 +43,6 @@
         </RadarStable>
       </div>
     </div>
-
     <div class="away-player">
       <div class="away-title">
            客队球员
@@ -53,16 +51,16 @@
             评分
       </div>
       <div class="away-text">
+        <span>综合</span>
         <span>进攻</span>
         <span>防守</span>
-        <span>传球</span>
+        <span>技巧</span>
         <span>组织</span>
-        <span>综合</span>
       </div>
       <div class="rate-ui">
-        <div v-for="(value,index) in values" >
+        <div v-for="(value,index) in awayRate" >
           <el-rate
-            v-model="values[index]"
+            v-model="awayRate[index]"
             disabled
             :colors="['#6d9d52','#6d9d52','#6d9d52']"
             void-color='#F7BA2A'
@@ -71,10 +69,9 @@
         </div>
       </div>
       <div class="away-rate">
-           98.3
+        {{awayPlayers}}
       </div>
     </div>
-
     <div class="group-chart">
       <div class="chart-title">
           数据对比
@@ -90,26 +87,99 @@
 <script>
   import RadarStable from "../../../g2plot/RadarStable";
   import Chart from "../../../g2/Chart"
+
   export default {
     name: "PlayerData",
     props:{
-      technical:{
-        type:Object,
-        default(){
-          return {}
-        }
-      },
-      eventPosition:{
-        type:Array,
-        default() {
-          return []
-        }
-      }
+       players:{
+         type:Object,
+         default(){
+           return {
+
+           }
+         }
+       },
     },
     data(){
       return {
-        values:[2.3,4,5,3,4.1]
+        what:{},
+        values:[2.32,4.55,3.26,3.69,4.11],
+        // homePosition:"forward",
+        // awayPosition:"forward",
+        // homeIndex:0,
+        // awayIndex:0,
       }
+    },
+    watch:{
+
+    },
+    computed:{
+      home(){
+        return this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]
+      },
+      away(){
+        return this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]
+      },
+      homePlayer(){
+        return this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]['all_rate']
+      },
+      awayPlayers(){
+        return this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]['all_rate']
+      },
+      homeRate(){
+        let rateArray = [];
+        let currPlayer =  this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]
+        rateArray.push(parseFloat(currPlayer['all_rate']));
+        rateArray.push(parseFloat(currPlayer['attacking_rate']));
+        rateArray.push(parseFloat(currPlayer['defending_rate']));
+        rateArray.push(parseFloat(currPlayer['skill_rate']));
+        rateArray.push(parseFloat(currPlayer['orgnizing_rate']));
+        for (var i=0;i<rateArray.length;i++)
+        {
+          rateArray[i] = parseFloat((rateArray[i] /2).toFixed(2))
+        }
+        return rateArray
+      },
+      awayRate(){
+        let rateArray = [];
+        let currPlayer = this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]
+        rateArray.push(parseFloat(currPlayer['all_rate']));
+        rateArray.push(parseFloat(currPlayer['attacking_rate']));
+        rateArray.push(parseFloat(currPlayer['defending_rate']));
+        rateArray.push(parseFloat(currPlayer['skill_rate']));
+        rateArray.push(parseFloat(currPlayer['orgnizing_rate']));
+        for (var i=0;i<rateArray.length;i++)
+        {
+          rateArray[i] = parseFloat((rateArray[i] /2).toFixed(2))
+        }
+        return rateArray
+      },
+    },
+    created() {
+      // this.$store.state.homeCurrPosition = this.homePosition;
+      // this.$store.state.homeCurrIndex = this.homeIndex;
+      // this.$bus.$on("sendHome",(currPlayer)=>{
+      //   this.homeIndex = currPlayer.currentIndex;
+      //   this.homePosition = currPlayer.position;
+      // });
+      // this.$bus.$on("sendAway",(currPlayer)=>{
+      //   this.awayIndex = currPlayer.currentIndex;
+      //   this.awayPosition = currPlayer.position;
+      // })
+      // this.what = this.$store.state.teams
+      // this.$bus.$on("sendHome",(currPlayer)=>{
+      //   this.homeIndex = currPlayer.currentIndex
+      //   this.homePosition = currPlayer.position
+      // })
+      // this.$bus.$on("sendAway",(currPlayer)=>{
+      //   this.awayIndex = currPlayer.currentIndex
+      //   this.awayPosition = currPlayer.position
+      // })
+    },
+    updated() {
+      // this.$store.state.homeCurrPosition = this.homePosition;
+      // this.$store.state.homeCurrIndex = this.homeIndex;
+      // this.what = this.$store.state.teams
     },
     components:{
       RadarStable,

@@ -1,11 +1,10 @@
 <template>
   <div class="players-detail">
     <div class="players-name" @click="showDrawer">
-<!--      <img v-if="isCountryImg" src="../../../assets/image/players/avatar_img.jpg" alt="" class="avatar-img">-->
-<!--      <img v-else :src="players.imgNumber.img.countryImg" alt="" class="avatar-img">-->
+      <img :src="players.playerImg" alt="" class="avatar-img">
       <span class="name-title">Name</span>
-<!--      <span class="first-name">{{players.firstName}}</span>-->
-<!--      <span class="last-name">{{players.lastName}}</span>-->
+      <span class="first-name">{{players.personName}}</span>
+      <span class="last-name">{{players.personNameEn}}</span>
     </div>
     <div class="detail-info">
         <div class="club box" @click="boxClick">
@@ -14,24 +13,20 @@
            </div>
            <div class="content">
              <div>
-<!--               <img :src="players.imgNumber.img.clubLogo" alt="" class="club-img">-->
+               <img :src="players.clubImg" alt="" class="club-img">
              </div>
              <div>
-<!--               {{players.currentTeam}}-->
+               {{players.teamName}}
              </div>
            </div>
         </div>
         <div class="foot box" @click="boxClick">
           <div class="title">
-            惯用脚
+            球场位置
           </div>
           <div class="content">
             <div>
-<!--              <img v-if="isRight" src="../../../assets/image/foot/right-foot.png" alt="ddd" class="foot-img">-->
-<!--              <img v-else src="../../../assets/image/foot/left-foot.png" alt="" class="foot-img">-->
-            </div>
-            <div>
-<!--              {{players.foot}}-->
+              {{players.personPosition}}
             </div>
           </div>
         </div>
@@ -41,7 +36,7 @@
           </div>
           <div class="content">
             <div>
-<!--              {{players.birthDate}}-->
+              {{players.birth}}
             </div>
           </div>
         </div>
@@ -51,7 +46,7 @@
           </div>
           <div class="content">
             <div>
-<!--              {{getAge}}-->
+              {{parseInt(players.age)}}
             </div>
           </div>
         </div>
@@ -61,10 +56,10 @@
           </div>
           <div class="content">
             <div>
-<!--              <img :src="players.imgNumber.img.countryLogo" alt="" class="flag-img">-->
+              <img :src="players.countryImg" alt="" class="flag-img">
             </div>
             <div>
-<!--              {{players.currentNationalTeam}}-->
+              {{players.countryName}}
             </div>
           </div>
         </div>
@@ -74,10 +69,10 @@
           </div>
           <div class="content">
             <div>
-<!--              <img :src="players.imgNumber.img.birthImg" alt="" class="flag-img">-->
+              <img :src="players.countryImg" alt="" class="flag-img">
             </div>
             <div>
-<!--              {{players.birthArea.name}}-->
+              {{players.countryName}}
             </div>
           </div>
         </div>
@@ -87,7 +82,7 @@
           </div>
           <div class="content">
             <div>
-<!--              {{players.height}}CM-->
+              {{players.height}}CM
             </div>
           </div>
         </div>
@@ -97,7 +92,7 @@
           </div>
           <div class="content">
             <div>
-<!--              {{players.weight}}KG-->
+              {{players.weight}}KG
             </div>
           </div>
         </div>

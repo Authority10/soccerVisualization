@@ -40,6 +40,7 @@
         })
       },
       handleChange(value){
+        console.log(value)
         this.findRounds(value[0])
       }
     }

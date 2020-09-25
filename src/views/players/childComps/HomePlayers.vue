@@ -23,7 +23,7 @@
   import Items from "../../../components/content/players/items/Items";
   import {findPerson} from "../../../network/players"
   export default {
-    name: "PlayersList",
+    name: "HomePlayers",
     props:{
       players:{
         type:Object,
@@ -37,6 +37,7 @@
         currentPosition:"forward",
         // currIndex:"",
         personId:0,
+        currentIndex:0
       }
     },
 
@@ -76,20 +77,19 @@
       findPerson(personId){
         findPerson(personId).then(res=>{
           console.log(res[0]);
-
+          this.$bus.$emit("homePlayers",res[0])
+          var currPlayer = {};
+          currPlayer.position = this.currentPosition;
+          currPlayer.currentIndex = this.currentIndex;
+          // this.$bus.$emit("sendHome",currPlayer)
+          this.$store.commit("changeHomePosition",currPlayer)
         })
       },
-      infoClick(personId){
-        this.personId = personId;
-        // this.currMessage=aa.c
-        //兄弟组件的传值，提前封装成对象
-        // var currActivePlayer = {
-        //   currentPosition : this.currentPosition,
-        //   playerIndex : this.currIndex,
-        // };
-        console.log(personId);
-        this.findPerson(personId)
-        // this.$bus.$emit("sendIndex",currActivePlayer)
+      infoClick(data){
+        this.personId = data.personId;
+        this.currentIndex = data.currentIndex;
+        console.log(data);
+        this.findPerson(this.personId)
       }
     }
   }
@@ -97,10 +97,6 @@
 
 <style scoped>
   .content-box {
-    /*position: absolute;*/
-    /*overflow: auto;*/
-    /*top: 0;*/
-    /*left: 0;*/
     width: 340px;
     height: 1080px;
     background-color: #4b4b4b;
@@ -123,6 +119,5 @@
     top: 100px;
     width: 380px;
     height: 890px;
-    /*background-color: blue;*/
   }
 </style>

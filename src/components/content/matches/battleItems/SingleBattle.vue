@@ -40,8 +40,9 @@
     methods:{
       findMatches(matchId){
         findMatches(matchId).then(res=>{
-          console.log(res[0])
-          this.$bus.$emit("sendTeams",res[0]["teams"])
+          console.log(res[0]);
+          this.$bus.$emit("sendTeams",res[0]["teams"]);
+          console.log("aaa")
         })
       },
       changeMatch(){

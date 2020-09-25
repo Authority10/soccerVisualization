@@ -9,54 +9,109 @@
     <tab-control-sub
       class="player-use"
       ref="tab"
-      :titles="['进攻数据','防守数据','组织数据','传球数据']"
+      :titles="['综合数据','进攻数据','防守数据','传球数据']"
       :fixed="fixed"
       @tabClick="tabClick"
       color="#69c0ff">
     </tab-control-sub>
-
-    <comparison-table :players-matches="playersMatches">
-    </comparison-table>
-
+    <all-table
+      v-if="currPage===0"
+      :home-all="homeAll"
+      :away-all="awayAll"
+      :quota-title="['','助攻','控球时间','犯规','进球','传球准确率','传球','射门','射正']">
+    </all-table>
+    <attack-table
+      v-if="currPage===1"
+      :home-attack="homeAttack"
+      :away-attack="awayAttack"
+      :quota-title="['','传中','接球','传中','被犯规','关键传球','越位']">
+    </attack-table>
+    <defend-table
+      v-if="currPage===2"
+      :home-defense="homeDefense"
+      :away-defense="awayDefense"
+      :quota-title="['','封堵传球','封堵射门','解围','拦截','抢断','扑救','黄牌','红牌',]">
+    </defend-table>
+    <pass-table
+      v-if="currPage===3"
+      :home-pass="homePass"
+      :away-pass="awayPass"
+      :quota-title="['','向后传球占比','斜向传球占比','横向传球占比','直传占比','长传','短传','长传成功率','短传成功率',]">
+    </pass-table>
   </div>
 </template>
 
 <script>
-  import ComparisonTable from "../../../table/ComparisonTable";
   import TabControlSub from "../../../../common/tabControl/TabControlSub";
+
+  import AllTable from "../../../table/Comparison/AllTable";
+  import AttackTable from "../../../table/Comparison/AttackTable";
+  import DefendTable from "../../../table/Comparison/DefendTable";
+  import PassTable from "../../../table/Comparison/PassTable";
   export default {
     name: "PlayersComparison",
     props:{
-      playersMatches:{
-        type:Array,
+      players:{
+        type:Object,
         default(){
-          return[]
+          return{}
         }
       }
     },
     data(){
       return {
-        fixed:false
+        fixed:false,
+        currPage:0
       }
     },
+    computed:{
+      homeAll(){
+        let homeAll = this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]["All"]
+        homeAll.name = this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]["personName"]
+      },
+      awayAll(){
+        return this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]["All"]
+      },
+      homeAttack(){
+        return this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]["Attack"]
+      },
+      awayAttack(){
+        return this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]["Attack"]
+      },
+      homeDefense(){
+        return this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]["Denfense"]
+      },
+      awayDefense(){
+        return this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]["Denfense"]
+      },
+      homePass(){
+        return this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]["Pass"]
+      },
+      awayPass(){
+        return this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]["Pass"]
+      },
+    },
     components:{
-      ComparisonTable,
-      TabControlSub
+      TabControlSub,
+      AllTable,
+      AttackTable,
+      DefendTable,
+      PassTable
     },
     methods:{
       tabClick(index){
         switch (index) {
           case 0:
-            console.log(0)
+            this.currPage = 0
             break;
           case 1:
-            console.log(1)
+            this.currPage = 1
             break;
           case 2:
-            console.log(2)
+            this.currPage = 2
             break;
           case 3:
-            console.log(3)
+            this.currPage = 3
             break
         }
       },

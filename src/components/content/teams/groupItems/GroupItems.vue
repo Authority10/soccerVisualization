@@ -4,7 +4,8 @@
           v-for="(teamItem,index) in teamList"
           :key="index"
           :single-items="teamItem"
-          @click.native="countryClick(teamItem)"
+          :class="{active:currIndex===index}"
+          @click.native="countryClick(index)"
           >
         </single-country>
   </div>
@@ -24,6 +25,7 @@
     },
     data(){
       return{
+        currIndex:0
       }
     },
     watch:{
@@ -35,8 +37,9 @@
       singleCountry
     },
     methods:{
-      countryClick(teamItem){
-        console.log(teamItem)
+      countryClick(index){
+       this.currIndex = index
+        console.log(this.currIndex)
       },
     },
     created(){

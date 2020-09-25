@@ -6,26 +6,62 @@
       </div>
     </div>
     <div class="home-player">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div>
+        {{homeDefense['name']}}
+      </div>
+      <div>
+        {{homeDefense['blockPasses']}}
+      </div>
+      <div>
+        {{homeDefense['blockShots']}}
+      </div>
+      <div>
+        {{homeDefense['clearances']}}
+      </div>
+      <div>
+        {{homeDefense['interceptions']}}
+      </div>
+      <div>
+        {{homeDefense['tackles']}}
+      </div>
+      <div>
+        {{homeDefense['saves']}}
+      </div>
+      <div>
+        {{homeDefense['yellowCard']}}
+      </div>
+      <div>
+        {{homeDefense['redCard']}}
+      </div>
     </div>
     <div class="away-player">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div>
+        {{awayDefense['name']}}
+      </div>
+      <div>
+        {{awayDefense['blockPasses']}}
+      </div>
+      <div>
+        {{awayDefense['blockShots']}}
+      </div>
+      <div>
+        {{awayDefense['clearances']}}
+      </div>
+      <div>
+        {{awayDefense['interceptions']}}
+      </div>
+      <div>
+        {{awayDefense['tackles']}}
+      </div>
+      <div>
+        {{awayDefense['saves']}}
+      </div>
+      <div>
+        {{awayDefense['yellowCard']}}
+      </div>
+      <div>
+        {{awayDefense['redCard']}}
+      </div>
     </div>
   </div>
 </template>
@@ -71,7 +107,7 @@
     margin: 10px auto;
     width: 1470px;
     height: 50px;
-    background-color:red;
+    /*background-color:red;*/
     text-align: center;
     color: white;
     display: flex;
@@ -80,7 +116,7 @@
   }
   .title div {
     text-align: center;
-    background-color: blue;
+    /*background-color: blue;*/
     width: 120px;
     /*background-color: red;*/
   }
@@ -91,7 +127,7 @@
     width: 1470px;
     height: 50px;
     color: white;
-    background-color:red;
+    background-color:#5e5e5e;
     border-radius: 12px;
     text-align: center;
     display: flex;
@@ -99,9 +135,12 @@
     align-items: center;
   }
   .home-player div {
-    width:120px;
-    height: 40px;
-    background-color: yellow;
+    line-height: 50px;
+    text-align: center;
+    /*background-color: blue;*/
+    width: 120px;
+    height: 50px;
+    /*background-color: red;*/
   }
   .away-player {
     position: absolute;
@@ -110,7 +149,7 @@
     width: 1470px;
     height: 50px;
     color: white;
-    background-color:red;
+    background-color:#5e5e5e;
     border-radius: 12px;
     text-align: center;
     display: flex;
@@ -118,8 +157,10 @@
     align-items: center;
   }
   .away-player div {
-    width:120px;
-    height: 40px;
-    background-color: yellow;
+    line-height: 50px;
+    text-align: center;
+    /*background-color: blue;*/
+    width: 120px;
+    height: 50px;
   }
 </style>

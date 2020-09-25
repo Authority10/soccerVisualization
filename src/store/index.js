@@ -19,7 +19,6 @@ const store = new Vuex.Store({
     awayCurrIndex:0,
   },
   mutations:{
-
     sendPlayers(state,payload){
      state.teams = payload
     },

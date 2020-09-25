@@ -1,11 +1,19 @@
 <template>
-  <div class="single-country">
-      <img :src="singleItems.img" alt="" class="national-img">
-      <div class="countryName">
-        {{singleItems.countryName}}
-        <img v-if="isActive" src="../../../../assets/image/teams/yes.png" alt="" class="little-img">
-        <img v-else src="../../../../assets/image/teams/no.png" alt=""  class="little-img">
-      </div>
+  <div class="single-team">
+     <div class="title">
+       {{singleItems.teamName}}
+     </div>
+     <div class="team-logo">
+       <img :src="singleItems.teamLogo" alt="" class="logo">
+     </div>
+     <div class="score">
+       <div class="rank">
+         {{singleItems.rank}}
+       </div>
+       <div class="results">
+         {{singleItems.results}}
+       </div>
+     </div>
   </div>
 </template>
 
@@ -19,12 +27,6 @@
           return{}
         }
       },
-      currentCountry:{
-        type:String,
-        default() {
-          return "";
-        }
-      }
     },
     data(){
       return{
@@ -39,46 +41,56 @@
 </script>
 
 <style scoped>
-  .single-country {
+  .single-team {
     position: relative;
     margin: 10px auto;
-    width: 280px;
-    height: 80px;
-    background-color:#565656;
+    width: 260px;
+    height: 126px;
+    background-color:#606060;
     border-radius: 12px;
-    border: 1px solid #565656;
+    border: 1px solid #606060;
     overflow: hidden;
   }
-  .national-img {
-    position: absolute;
-    width: 110px;
-    height: 80px;
-  }
-  .countryName {
-    position: absolute;
-    left: 110px;
-    width: 170px;
-    height: 80px;
+  .title {
     text-align: center;
-    /*行高等于父元素高度可以居中*/
-    line-height: 80px;
-    font-size: 27px;
-    color:#FDFDFD;
-    /*background-color: red;*/
+    width: 260px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 24px;
+    background-color:#565656;
   }
-  .little-img {
+  .team-logo {
     position: absolute;
-    right: 10px;
-    top: 5px;
-    width: 20px;
+    left: 0;
+    top: 36px;
+    width: 90px;
+    height: 90px;
+    /*background-color: blue;*/
   }
-  /*span {*/
-  /*  !*text-align: center;*!*/
-  /*  !*行高等于父元素高度可以居中*!*/
-  /*  line-height: 80px;*/
-  /*  font-size: 27px;*/
-  /*  color:#FDFDFD*/
-  /*}*/
+  .logo {
+    width: 90px;
+    height: 90px;
+  }
+  .score {
+    position: absolute;
+    top: 36px;
+    left: 90px;
+    width: 170px;
+    height: 90px;
+  }
+  .score div {
+    text-align: center;
+    width: 170px;
+    font-size: 24px;
+    line-height: 45px;
+    height: 45px;
+  }
+  .rank {
+    background-color: red;
+  }
+  .results {
+    background-color: blue;
+  }
   .active {
     border: 1px solid #FFF566;
   }

@@ -1,12 +1,10 @@
 <template>
   <div class="group-items">
         <single-country
-          v-for="(countryItems) in groupItems"
-          :key="countryItems.key"
-          :single-items="countryItems"
-          :currentCountry="currentCountry"
-          :class="{active:currentCountry===countryItems.countryName}"
-          @click.native="countryClick(countryItems)"
+          v-for="(teamItem,index) in teamList"
+          :key="index"
+          :single-items="teamItem"
+          @click.native="countryClick(teamItem)"
           >
         </single-country>
   </div>
@@ -17,7 +15,7 @@
   export default {
     name: "groupItems",
     props:{
-      groupItems:{
+      teamList:{
         type:Object,
         default(){
           return{}
@@ -26,7 +24,6 @@
     },
     data(){
       return{
-        currentCountry:"Russia"
       }
     },
     watch:{
@@ -38,15 +35,12 @@
       singleCountry
     },
     methods:{
-      countryClick(countryItems){
-        // console.log(window.screen.width);
-        // console.log(window.screen.height);
-        this.currentCountry = countryItems.countryName;
-        this.$bus.$emit("sendCountry",countryItems);
+      countryClick(teamItem){
+        console.log(teamItem)
       },
     },
     created(){
-      this.currentIndex = Object.keys(this.groupItems)[0];
+      // this.currentIndex = Object.keys(this.groupItems)[0];
     }
   }
 </script>
@@ -54,13 +48,10 @@
 <style scoped>
  .group-items {
    position: absolute;
-   top:40px;
-   left: 12px;
+   top:10px;
+   left: 32px;
    /*background-color: red;*/
-   width: 300px;
-   height: 380px;
+   width: 260px;
  }
-  .group-bottom {
-    top:460px
-  }
+
 </style>

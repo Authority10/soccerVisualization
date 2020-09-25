@@ -127,6 +127,34 @@
             value: 24,
             label: '第24轮',
           },
+          {
+            value: 25,
+            label: '第25轮',
+          },
+          {
+            value: 26,
+            label: '第26轮',
+          },
+          {
+            value: 26,
+            label: '第26轮',
+          },
+          {
+            value: 27,
+            label: '第27轮',
+          },
+          {
+            value: 28,
+            label: '第28轮',
+          },
+          {
+            value: 29,
+            label: '第29轮',
+          },
+          {
+            value: 30,
+            label: '第30轮',
+          },
         ]
       }
     },

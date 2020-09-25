@@ -46,7 +46,6 @@
         })
       },
       changeMatch(){
-        // console.log(this.singleBattle.matchId)
         this.findMatches(this.singleBattle.matchId)
       }
     }

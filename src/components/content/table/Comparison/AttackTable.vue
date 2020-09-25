@@ -5,24 +5,55 @@
         {{quotaTitle[index]}}
       </div>
     </div>
+
     <div class="home-player">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div>
+        {{homeAttack['name']}}
+      </div>
+      <div>
+        {{homeAttack['breakThrows']}}
+      </div>
+      <div>
+        {{homeAttack['catchBall']}}
+      </div>
+      <div>
+        {{homeAttack['center']}}
+      </div>
+      <div>
+        {{homeAttack['foulsConceded']}}
+      </div>
+      <div>
+        {{homeAttack['keyPass']}}
+      </div>
+      <div>
+        {{homeAttack['offsides']}}
+      </div>
     </div>
+
     <div class="away-player">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div>
+        {{awayAttack['name']}}
+      </div>
+      <div>
+        {{awayAttack['breakThrows']}}
+      </div>
+      <div>
+        {{awayAttack['catchBall']}}
+      </div>
+      <div>
+        {{awayAttack['center']}}
+      </div>
+      <div>
+        {{awayAttack['foulsConceded']}}
+      </div>
+      <div>
+        {{awayAttack['keyPass']}}
+      </div>
+      <div>
+        {{awayAttack['offsides']}}
+      </div>
     </div>
+
   </div>
 </template>
 
@@ -67,7 +98,7 @@
     margin: 10px auto;
     width: 1470px;
     height: 50px;
-    background-color:red;
+    /*background-color:red;*/
     text-align: center;
     color: white;
     display: flex;
@@ -76,7 +107,7 @@
   }
   .title div {
     text-align: center;
-    background-color: blue;
+    /*background-color: blue;*/
     width: 120px;
     /*background-color: red;*/
   }
@@ -87,7 +118,7 @@
     width: 1470px;
     height: 50px;
     color: white;
-    background-color:red;
+    background-color:#5e5e5e;
     border-radius: 12px;
     text-align: center;
     display: flex;
@@ -95,9 +126,12 @@
     align-items: center;
   }
   .home-player div {
-    width:120px;
-    height: 40px;
-    background-color: yellow;
+    line-height: 50px;
+    text-align: center;
+    /*background-color: blue;*/
+    width: 120px;
+    height: 50px;
+    /*background-color: red;*/
   }
   .away-player {
     position: absolute;
@@ -106,7 +140,7 @@
     width: 1470px;
     height: 50px;
     color: white;
-    background-color:red;
+    background-color:#5e5e5e;
     border-radius: 12px;
     text-align: center;
     display: flex;
@@ -114,8 +148,10 @@
     align-items: center;
   }
   .away-player div {
-    width:120px;
-    height: 40px;
-    background-color: yellow;
+    line-height: 50px;
+    text-align: center;
+    /*background-color: blue;*/
+    width: 120px;
+    height: 50px;
   }
 </style>

@@ -5,27 +5,65 @@
         {{quotaTitle[index]}}
       </div>
     </div>
+
     <div class="home-player">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div>
+          {{homeAll['name']}}
+        </div>
+        <div>
+          {{homeAll['assists']}}
+        </div>
+        <div>
+          {{homeAll['ballPossession']}}
+        </div>
+        <div>
+          {{homeAll['fouls']}}
+        </div>
+        <div>
+          {{homeAll['goals']}}
+        </div>
+        <div>
+          {{homeAccuracy}}
+        </div>
+        <div>
+          {{homeAll['passes']}}
+        </div>
+        <div>
+          {{homeAll['shots']}}
+        </div>
+        <div>
+          {{homeAll['shotsOnTarget']}}
+        </div>
     </div>
     <div class="away-player">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+      <div>
+        {{awayAll['name']}}
+      </div>
+      <div>
+        {{awayAll['assists']}}
+      </div>
+      <div>
+        {{awayAll['ballPossession']}}
+      </div>
+      <div>
+        {{awayAll['fouls']}}
+      </div>
+      <div>
+        {{awayAll['goals']}}
+      </div>
+      <div>
+        {{awayAccuracy}}
+      </div>
+      <div>
+        {{awayAll['passes']}}
+      </div>
+      <div>
+        {{awayAll['shots']}}
+      </div>
+      <div>
+        {{awayAll['shotsOnTarget']}}
+      </div>
+
     </div>
   </div>
 </template>
@@ -53,6 +91,15 @@
         }
       },
     },
+    computed:{
+      //传球成功率四舍五入
+      homeAccuracy(){
+        return Math.round(this.homeAll["passAcurracy"] * 100) / 100
+      },
+      awayAccuracy(){
+        return Math.round(this.awayAll["passAcurracy"] * 100) / 100
+      }
+    }
   }
 </script>
 
@@ -71,7 +118,7 @@
     margin: 10px auto;
     width: 1470px;
     height: 50px;
-    background-color:red;
+    /*background-color:red;*/
     text-align: center;
     color: white;
     display: flex;
@@ -79,15 +126,11 @@
     align-items: center;
   }
   .title div {
+    line-height: 50px;
     text-align: center;
-    background-color: blue;
+    /*background-color: blue;*/
     width: 120px;
-    /*background-color: red;*/
-  }
-  .title div {
-    text-align: center;
-    background-color: blue;
-    width: 120px;
+    height: 50px;
     /*background-color: red;*/
   }
   .home-player {
@@ -97,7 +140,7 @@
     width: 1470px;
     height: 50px;
     color: white;
-    background-color:red;
+    background-color:#5e5e5e;
     border-radius: 12px;
     text-align: center;
     display: flex;
@@ -105,9 +148,12 @@
     align-items: center;
   }
   .home-player div {
-    width:120px;
-    height: 40px;
-    background-color: yellow;
+    line-height: 50px;
+    text-align: center;
+    /*background-color: blue;*/
+    width: 120px;
+    height: 50px;
+    /*background-color: red;*/
   }
   .away-player {
     position: absolute;
@@ -116,7 +162,7 @@
     width: 1470px;
     height: 50px;
     color: white;
-    background-color:red;
+    background-color:#5e5e5e;
     border-radius: 12px;
     text-align: center;
     display: flex;
@@ -124,8 +170,10 @@
     align-items: center;
   }
   .away-player div {
-    width:120px;
-    height: 40px;
-    background-color: yellow;
+    line-height: 50px;
+    text-align: center;
+    /*background-color: blue;*/
+    width: 120px;
+    height: 50px;
   }
 </style>

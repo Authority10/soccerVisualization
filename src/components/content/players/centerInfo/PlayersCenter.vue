@@ -64,7 +64,6 @@
         type:Object,
         default(){
           return {
-
           }
         }
       }
@@ -134,6 +133,7 @@
       console.log("dfd")
     },
     methods:{
+      //打开左右侧抽屉
       firstDrawer(){
         this.leftShow = true
       },

@@ -1,7 +1,7 @@
 <template>
   <div class="teams">
     <basic-public></basic-public>
-    <teams-list :team-list="teams"></teams-list>
+    <teams-list :team-list="teamList"></teams-list>
     <teams-info :team-info="defaultTeam"></teams-info>
   </div>
 </template>
@@ -10,7 +10,7 @@
   import TeamsList from "./childComps/TeamsList";
   import TeamsInfo from "./childComps/TeamsInfo";
   import BasicPublic from "../../components/content/basicPublic/BasicPublic";
-  import {showAllTeam,Top,Bottom} from "../../network/teams";
+  import {showAllTeam} from "../../network/teams";
 
   export default {
     name: "teams",
@@ -21,27 +21,20 @@
     },
     data(){
       return{
-        teams:{
-          GroupTop:{},
-          GroupBottom:{}
-        },
+        teamList:{},
         defaultTeam:{}
       }
     },
     created(){
-      // this.showAllTeam()
+      this.showAllTeam()
     },
     methods:{
       showAllTeam(){
         showAllTeam()
           .then((res)=>{
-          console.log(res);
-          //按照上下半区切割数组，放入提前定义好的类
-          // 数组对象转化成纯对象
-          // this.teams.GroupTop=new Top(res.slice(0,4));
-          // this.teams.GroupBottom=new Bottom(res.slice(4,8));
-          // this.defaultTeam = res[0].GroupA.Russia
-          // console.log(this.teams)
+          console.log(res[0]);
+          this.teamList = res[0]
+          delete this.teamList._id
         }).catch((err)=>{
           console.log(err)
         })

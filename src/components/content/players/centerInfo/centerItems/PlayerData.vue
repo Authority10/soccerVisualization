@@ -39,7 +39,8 @@
       <div class="radar-title">
       </div>
       <div class="radar-img">
-        <RadarStable>
+        <RadarStable
+        :radar-data="radarData">
         </RadarStable>
       </div>
     </div>
@@ -102,12 +103,6 @@
     },
     data(){
       return {
-        what:{},
-        values:[2.32,4.55,3.26,3.69,4.11],
-        // homePosition:"forward",
-        // awayPosition:"forward",
-        // homeIndex:0,
-        // awayIndex:0,
       }
     },
     watch:{
@@ -153,6 +148,76 @@
           rateArray[i] = parseFloat((rateArray[i] /2).toFixed(2))
         }
         return rateArray
+      },
+      radarData(){
+        let currHome = this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]
+        let currAway = this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]
+        let radarData = [];
+        let homeAll = {};
+        let homeAttack = {};
+        let homeDefense = {};
+        let homeOrganize = {};
+        let homeSkill = {};
+        let awayAll = {};
+        let awayAttack = {};
+        let awayDefense = {};
+        let awayOrganize = {}
+        let awaySkill = {}
+
+
+
+        homeAll.item = "综合";
+        homeAll.score = currHome['all_rate'];
+        homeAll.user = currHome['personName'];
+        radarData.push(homeAll);
+
+        homeAttack.item = "进攻";
+        homeAttack.score = currHome['attacking_rate'];
+        homeAttack.user = currHome['personName'];
+        radarData.push(homeAttack);
+
+        homeDefense.item = "防守";
+        homeDefense.score = currHome['defending_rate'];
+        homeDefense.user = currHome['personName'];
+        radarData.push(homeDefense);
+
+        homeOrganize.item = "组织";
+        homeOrganize.score = currHome['orgnizing_rate'];
+        homeOrganize.user = currHome['personName'];
+        radarData.push(homeOrganize);
+
+        homeSkill.item = "技巧";
+        homeSkill.score = currHome['skill_rate'];
+        homeSkill.user = currHome['personName'];
+        radarData.push(homeSkill);
+
+        awayAll.item = "综合";
+        awayAll.score = currAway['all_rate'];
+        awayAll.user = currAway['personName'];
+        radarData.push(awayAll);
+
+        awayAttack.item = "进攻";
+        awayAttack.score = currAway['attacking_rate'];
+        awayAttack.user = currAway['personName'];
+        radarData.push(awayAttack);
+
+        awayDefense.item = "防守";
+        awayDefense.score = currAway['defending_rate'];
+        awayDefense.user = currAway['personName'];
+        radarData.push(awayDefense);
+
+        awayOrganize.item = "组织";
+        awayOrganize.score = currAway['orgnizing_rate'];
+        awayOrganize.user = currAway['personName'];
+        radarData.push(awayOrganize);
+
+        awaySkill.item = "技巧";
+        awaySkill.score = currAway['skill_rate'];
+        awaySkill.user = currAway['personName'];
+        radarData.push(awaySkill);
+
+        console.log(radarData)
+        return radarData
       },
     },
     created() {

@@ -34,8 +34,6 @@ export default {
       console.log(teams);
       this.$store.commit("sendPlayers",teams)
     });
-
-
   }
 }
 </script>

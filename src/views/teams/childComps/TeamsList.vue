@@ -2,33 +2,9 @@
   <div class="content-box">
     <div class="list-name">球队积分榜</div>
     <div class="scroll-box">
-
-<!--      <tab-control-->
-<!--        slot="tab-control-first"-->
-<!--        :titles="['A组','B组','C组','D组']"-->
-<!--        @tabClick="tabClick"-->
-<!--        color="#fff566"-->
-<!--      >-->
-<!--      </tab-control>-->
       <group-items
-        v-if="teamList['GroupTop']!==undefined"
-        slot="content-items-first"
-        :group-items="teamList['GroupTop'][currentGroupTop]">
+      :teamList="teamList">
       </group-items>
-<!--      <tab-control-->
-<!--        class="team-tab-bottom"-->
-<!--        slot="tab-control-second"-->
-<!--        :titles="['E组','F组','G组','H组']"-->
-<!--        @tabClick="groupClick"-->
-<!--        color="#fff566"-->
-<!--      >-->
-<!--      </tab-control>-->
-<!--      <group-items-->
-<!--        v-if="teamList['GroupBottom']!==undefined"-->
-<!--        class="group-bottom"-->
-<!--        slot="content-items-second"-->
-<!--        :group-items="teamList['GroupBottom'][currentGroupBottom]">-->
-<!--      </group-items>-->
     </div>
   </div>
 </template>
@@ -51,9 +27,11 @@
     },
     data(){
       return{
-        currentGroupTop:"GroupA",
-        currentGroupBottom:"GroupE"
+
       }
+    },
+    created() {
+
     },
     computed:{
     },
@@ -64,38 +42,6 @@
       groupItems
     },
     methods:{
-      tabClick(index){
-        switch (index) {
-          case 0:
-            this.currentGroupTop = "GroupA";
-            break;
-          case 1:
-            this.currentGroupTop = "GroupB";
-            break;
-          case 2:
-            this.currentGroupTop = "GroupC";
-            break;
-          case 3:
-            this.currentGroupTop = "GroupD";
-            break
-        }
-      },
-      groupClick(index){
-        switch (index) {
-          case 0:
-            this.currentGroupBottom = "GroupE";
-            break;
-          case 1:
-            this.currentGroupBottom = "GroupF";
-            break;
-          case 2:
-            this.currentGroupBottom = "GroupG";
-            break;
-          case 3:
-            this.currentGroupBottom = "GroupH";
-            break
-        }
-      }
     }
   }
 </script>
@@ -123,25 +69,16 @@
     line-height: 52px;
     font-weight: bold;
   }
-  .score-board {
-    position: absolute;
-    top: 100px;
-    width: 324px;
-    height: 40px;
-    background-color:red;
-    text-align: center;
-    line-height: 40px;
-    color: white;
-    font-size: 26px;
-  }
-  .group-bottom {
-    top:500px;
-  }
   .scroll-box {
     position: absolute;
     top: 100px;
     width: 324px;
-    height: 835px;
+    height: 980px;
     /*background-color: blue;*/
+    overflow: scroll;
   }
+  .scroll-box::-webkit-scrollbar {
+    display: none;
+  }
+
 </style>

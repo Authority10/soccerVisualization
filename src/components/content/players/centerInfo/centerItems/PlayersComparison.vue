@@ -65,30 +65,47 @@
       }
     },
     computed:{
+      //4项指标的处理，额外还需要往对象中添加球员名字
       homeAll(){
-        let homeAll = this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]["All"]
-        homeAll.name = this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]["personName"]
+        let homeAll = this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]["All"];
+        homeAll.name = this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]["personName"];
+        console.log(homeAll)
+        return homeAll
       },
       awayAll(){
-        return this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]["All"]
+        let awayAll = this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]["All"];
+        awayAll.name = this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]["personName"];
+        return awayAll
       },
       homeAttack(){
-        return this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]["Attack"]
+        let homeAttack = this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]["Attack"];
+        homeAttack.name = this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]["personName"];
+        return homeAttack
       },
       awayAttack(){
-        return this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]["Attack"]
+        let awayAttack = this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]["Attack"];
+        awayAttack.name = this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]["personName"];
+        return awayAttack
       },
       homeDefense(){
-        return this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]["Denfense"]
+        let homeDefense = this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]["Denfense"];
+        homeDefense.name = this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]["personName"];
+        return homeDefense
       },
       awayDefense(){
-        return this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]["Denfense"]
+        let awayDefense = this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]["Denfense"];
+        awayDefense.name = this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]["personName"];
+        return awayDefense
       },
       homePass(){
-        return this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]["Pass"]
+        let homePass = this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]["Pass"];
+        homePass.name = this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]["personName"];
+        return homePass
       },
       awayPass(){
-        return this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]["Pass"]
+        let awayPass = this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]["Pass"];
+        awayPass.name = this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]["personName"];
+        return awayPass
       },
     },
     components:{

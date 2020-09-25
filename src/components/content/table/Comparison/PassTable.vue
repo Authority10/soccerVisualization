@@ -6,26 +6,62 @@
       </div>
     </div>
     <div class="home-player">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div>
+        {{homePass['name']}}
+      </div>
+      <div>
+        {{homeBack}}
+      </div>
+      <div>
+        {{homeDiagonal}}
+      </div>
+      <div>
+        {{homeLateral}}
+      </div>
+      <div>
+        {{homeThrough}}
+      </div>
+      <div>
+        {{homePass['passLong']}}
+      </div>
+      <div>
+        {{homePass['passShorts']}}
+      </div>
+      <div>
+        {{homeLongAcc}}
+      </div>
+      <div>
+        {{homeShortAcc}}
+      </div>
     </div>
     <div class="away-player">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <div>
+        {{awayPass['name']}}
+      </div>
+      <div>
+        {{awayBack}}
+      </div>
+      <div>
+        {{awayDiagonal}}
+      </div>
+      <div>
+        {{awayLateral}}
+      </div>
+      <div>
+        {{awayThrough}}
+      </div>
+      <div>
+        {{awayPass['passLong']}}
+      </div>
+      <div>
+        {{awayPass['passShorts']}}
+      </div>
+      <div>
+        {{awayLongAcc}}
+      </div>
+      <div>
+        {{awayShortAcc}}
+      </div>
     </div>
   </div>
 </template>
@@ -53,6 +89,44 @@
         }
       },
     },
+    computed:{
+      homeBack(){
+        return Math.round(this.homePass["PassBackRate"] * 100) / 100
+      },
+      awayBack(){
+        return Math.round(this.awayPass["PassBackRate"] * 100) / 100
+      },
+      homeDiagonal(){
+        return Math.round(this.homePass["PassDiagonalRate"] * 100) / 100
+      },
+      awayDiagonal(){
+        return Math.round(this.awayPass["PassDiagonalRate"] * 100) / 100
+      },
+      homeLateral(){
+        return Math.round(this.homePass["PassLateralRate"] * 100) / 100
+      },
+      awayLateral(){
+        return Math.round(this.awayPass["PassLateralRate"] * 100) / 100
+      },
+      homeThrough(){
+        return Math.round(this.homePass["PassThroughRate"] * 100) / 100
+      },
+      awayThrough(){
+        return Math.round(this.awayPass["PassThroughRate"] * 100) / 100
+      },
+      homeLongAcc(){
+        return Math.round(this.homePass["passesLongAcc"] * 100) / 100
+      },
+      awayLongAcc(){
+        return Math.round(this.awayPass["passesLongAcc"] * 100) / 100
+      },
+      homeShortAcc(){
+        return Math.round(this.homePass["passesShortsAcc"] * 100) / 100
+      },
+      awayShortAcc(){
+        return Math.round(this.awayPass["passesShortsAcc"] * 100) / 100
+      },
+    }
   }
 </script>
 
@@ -71,7 +145,7 @@
     margin: 10px auto;
     width: 1470px;
     height: 50px;
-    background-color:red;
+    /*background-color:red;*/
     text-align: center;
     color: white;
     display: flex;
@@ -80,7 +154,7 @@
   }
   .title div {
     text-align: center;
-    background-color: blue;
+    /*background-color: blue;*/
     width: 120px;
     /*background-color: red;*/
   }
@@ -91,7 +165,7 @@
     width: 1470px;
     height: 50px;
     color: white;
-    background-color:red;
+    background-color:#5e5e5e;
     border-radius: 12px;
     text-align: center;
     display: flex;
@@ -99,9 +173,12 @@
     align-items: center;
   }
   .home-player div {
-    width:120px;
-    height: 40px;
-    background-color: yellow;
+    line-height: 50px;
+    text-align: center;
+    /*background-color: blue;*/
+    width: 120px;
+    height: 50px;
+    /*background-color: red;*/
   }
   .away-player {
     position: absolute;
@@ -110,7 +187,7 @@
     width: 1470px;
     height: 50px;
     color: white;
-    background-color:red;
+    background-color:#5e5e5e;
     border-radius: 12px;
     text-align: center;
     display: flex;
@@ -118,8 +195,10 @@
     align-items: center;
   }
   .away-player div {
-    width:120px;
-    height: 40px;
-    background-color: yellow;
+    line-height: 50px;
+    text-align: center;
+    /*background-color: blue;*/
+    width: 120px;
+    height: 50px;
   }
 </style>

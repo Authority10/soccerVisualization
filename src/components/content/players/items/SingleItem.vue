@@ -115,23 +115,34 @@
     }
     .country-content {
       position: absolute;
-      display: flex;
+      /*display: flex;*/
       /*background-color: red;*/
-      justify-content: space-between;
-      align-items: center;
-      width: 100px;
+      /*justify-content: space-between;*/
+      /*align-items: center;*/
+      width: 200px;
+      height: 24px;
       left: 100px;
       top:  45px;
+      /*background-color: yellow;*/
     }
-    .country-content div {
-      display: inline;
-    }
+    /*.country-content div {*/
+    /*  display: inline;*/
+    /*}*/
     .country-img {
+      position: absolute;
+      top:4px;
+      width: 24px;
       height: 16px;
     }
     .country-text {
-      line-height: 16px;
+      position: absolute;
+      left: 30px;
+      width: 150px;
+      height: 24px;
+      line-height: 22px;
       font-size: 16px;
+      text-align: left;
+      /*background-color: red;*/
     }
     .item-club {
       position: absolute;

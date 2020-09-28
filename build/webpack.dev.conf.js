@@ -38,11 +38,16 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       ? { warnings: false, errors: true }
       : false,
     publicPath: config.dev.assetsPublicPath,
-    proxy: config.dev.proxyTable,
+    proxy: [{
+      context: ['/footgroud.png'],
+      target: "https://bsufootball.oss-cn-beijing.aliyuncs.com/",
+      changeOrigin: true
+    }],
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll,
-    }
+    },
+
   },
   plugins: [
     new webpack.DefinePlugin({

@@ -1,5 +1,5 @@
 <template>
-  <div class="single-team">
+  <div class="single-team" @click="changeTeam">
      <div class="title">
        {{singleItems.teamName}}
      </div>
@@ -18,6 +18,9 @@
 </template>
 
 <script>
+  import {findTeam} from "../../../../network/teams";
+  import {findSquad} from "../../../../network/squad";
+
   export default {
     name: "singleCountry",
     props:{
@@ -30,6 +33,32 @@
     },
     data(){
       return{
+      }
+    },
+    methods:{
+      //对于teams界面右侧的球队列表，点击之后根据teamId寻找单个球队信息
+      findTeam(teamId){
+        findTeam(teamId).then((res)=>{
+          console.log(res[0]);
+          this.$bus.$emit("singleTeam",res[0])
+        }).catch((err)=>{
+          console.log(err)
+        })
+      },
+      //对于teams界面右侧的球队列表，点击之后根据teamId寻找所有符合teamId的球员
+      //也就是寻找单个球队的球队大名单球员
+      findSquad(teamId){
+        findSquad(teamId).then((res)=>{
+          console.log(res);
+          this.$bus.$emit("TeamSquad",res)
+        }).catch((err)=>{
+          console.log(err)
+        })
+      },
+
+      changeTeam(){
+        this.findTeam(this.singleItems.teamId);
+        this.findSquad(this.singleItems.teamId);
       }
     },
     computed:{
@@ -86,10 +115,10 @@
     height: 45px;
   }
   .rank {
-    background-color: red;
+    /*background-color: red;*/
   }
   .results {
-    background-color: blue;
+    /*background-color: blue;*/
   }
   .active {
     border: 1px solid #FFF566;

@@ -17,9 +17,9 @@
     name: "groupItems",
     props:{
       teamList:{
-        type:Object,
+        type:Array,
         default(){
-          return{}
+          return []
         }
       }
     },
@@ -38,7 +38,7 @@
     },
     methods:{
       countryClick(index){
-       this.currIndex = index
+        this.currIndex = index ;
         console.log(this.currIndex)
       },
     },

@@ -39,9 +39,9 @@
       <div class="radar-title">
       </div>
       <div class="radar-img">
-        <RadarStable
+        <radar-player
         :radar-data="radarData">
-        </RadarStable>
+        </radar-player>
       </div>
     </div>
     <div class="away-player">
@@ -77,17 +77,20 @@
       <div class="chart-title">
           数据对比
       </div>
-      <div>
-        <Chart>
-        </Chart>
+      <div class="butter">
+        <Butterfly
+        :behavior0="home.All"
+        :behavior1="away.All"
+        :size="20">
+        </Butterfly>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  import RadarStable from "../../../g2plot/RadarStable";
-  import Chart from "../../../g2/Chart"
+  import RadarPlayer from "../../../g2plot/RadarPlayer";
+  import Butterfly from "../../../g2plot/Butterfly";
 
   export default {
     name: "PlayerData",
@@ -115,6 +118,7 @@
       away(){
         return this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]
       },
+
       homePlayer(){
         return this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]['all_rate']
       },
@@ -150,8 +154,8 @@
         return rateArray
       },
       radarData(){
-        let currHome = this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex]
-        let currAway = this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex]
+        let currHome = this.players['homeTeam'][this.$store.state.homeCurrPosition][this.$store.state.homeCurrIndex];
+        let currAway = this.players['awayTeam'][this.$store.state.awayCurrPosition][this.$store.state.awayCurrIndex];
         let radarData = [];
         let homeAll = {};
         let homeAttack = {};
@@ -161,62 +165,60 @@
         let awayAll = {};
         let awayAttack = {};
         let awayDefense = {};
-        let awayOrganize = {}
-        let awaySkill = {}
-
-
+        let awayOrganize = {};
+        let awaySkill = {};
 
         homeAll.item = "综合";
-        homeAll.score = currHome['all_rate'];
+        homeAll.score = currHome['all_rate']*1;
         homeAll.user = currHome['personName'];
         radarData.push(homeAll);
 
         homeAttack.item = "进攻";
-        homeAttack.score = currHome['attacking_rate'];
+        homeAttack.score = currHome['attacking_rate']*1;
         homeAttack.user = currHome['personName'];
         radarData.push(homeAttack);
 
         homeDefense.item = "防守";
-        homeDefense.score = currHome['defending_rate'];
+        homeDefense.score = currHome['defending_rate']*1;
         homeDefense.user = currHome['personName'];
         radarData.push(homeDefense);
 
         homeOrganize.item = "组织";
-        homeOrganize.score = currHome['orgnizing_rate'];
+        homeOrganize.score = currHome['orgnizing_rate']*1;
         homeOrganize.user = currHome['personName'];
         radarData.push(homeOrganize);
 
         homeSkill.item = "技巧";
-        homeSkill.score = currHome['skill_rate'];
+        homeSkill.score = currHome['skill_rate']*1;
         homeSkill.user = currHome['personName'];
         radarData.push(homeSkill);
 
         awayAll.item = "综合";
-        awayAll.score = currAway['all_rate'];
+        awayAll.score = currAway['all_rate']*1;
         awayAll.user = currAway['personName'];
         radarData.push(awayAll);
 
         awayAttack.item = "进攻";
-        awayAttack.score = currAway['attacking_rate'];
+        awayAttack.score = currAway['attacking_rate']*1;
         awayAttack.user = currAway['personName'];
         radarData.push(awayAttack);
 
         awayDefense.item = "防守";
-        awayDefense.score = currAway['defending_rate'];
+        awayDefense.score = currAway['defending_rate']*1;
         awayDefense.user = currAway['personName'];
         radarData.push(awayDefense);
 
         awayOrganize.item = "组织";
-        awayOrganize.score = currAway['orgnizing_rate'];
+        awayOrganize.score = currAway['orgnizing_rate']*1;
         awayOrganize.user = currAway['personName'];
         radarData.push(awayOrganize);
 
         awaySkill.item = "技巧";
-        awaySkill.score = currAway['skill_rate'];
+        awaySkill.score = currAway['skill_rate']*1;
         awaySkill.user = currAway['personName'];
         radarData.push(awaySkill);
 
-        console.log(radarData)
+        console.log(radarData);
         return radarData
       },
     },
@@ -247,8 +249,8 @@
       // this.what = this.$store.state.teams
     },
     components:{
-      RadarStable,
-      Chart
+      RadarPlayer,
+      Butterfly
     }
   }
 </script>
@@ -341,6 +343,11 @@
     width: 303px;
     height: 40px;
     background-color:#595959;
+  }
+  .radar-img {
+    width: 303px;
+    height: 292px;
+    /*background-color: blue;*/
   }
   .home-rate {
     position: absolute;
@@ -461,5 +468,11 @@
     border-radius: 12px;
     background-color: #525252;
     margin: 0 auto;
+  }
+  .butter {
+    padding-left:25px;
+    /*background-color: red;*/
+    width: 666px;
+    height: 395px;
   }
 </style>

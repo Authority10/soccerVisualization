@@ -8,14 +8,9 @@
     </div>
     <team-table
     color="#FFF566"
-    :titles="['国家','主教练','成立时间','平均年龄','参赛次数','主要荣誉']"
-    :content="['俄罗斯','克洛普','1996-10-04','24','20','冠军']">
+    :titles="['球队名称','主教练','球场名称','所在城市','成立时间','参赛次数']"
+    :content="teamInfo">
     </team-table>
-<!--    <div class="img-name">-->
-<!--      <img :src="activeCountry.img" alt="">-->
-<!--      <span class="country-name">{{activeCountry.countryName}}</span>-->
-<!--    </div>-->
-<!--    <country-table></country-table>-->
   </div>
 </template>
 
@@ -24,7 +19,7 @@
   export default {
     name: "CountryInfo",
     props:{
-      activeCountry:{
+      activeTeam:{
         type:Object,
         default(){
           return{}
@@ -34,6 +29,18 @@
     data(){
       return{
 
+      }
+    },
+    computed:{
+      teamInfo(){
+        let teamInfo = []
+        teamInfo.push(this.activeTeam['TEAM_NAME_EN'])
+        teamInfo.push(this.activeTeam['Coach'])
+        teamInfo.push(this.activeTeam['CourtName'])
+        teamInfo.push(this.activeTeam['City'])
+        teamInfo.push(this.activeTeam['FoundDate'])
+        teamInfo.push(this.activeTeam['TopLeagueCount'])
+        return teamInfo
       }
     },
     components:{

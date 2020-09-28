@@ -10,17 +10,17 @@
       </div>
     </div>
 
-    <player-table
+    <left-table
       @showDrawer="firstDrawer"
       :players="players"
     >
-    </player-table>
+    </left-table>
 
   </div>
 </template>
 
 <script>
-  import playerTable from "../../../table/PlayerTable";
+  import LeftTable from "../../../table/LeftTable";
   import PlayersList from "../../../../../views/players/childComps/HomePlayers";
   export default {
     name: "PlayerInfo",
@@ -33,7 +33,7 @@
       },
     },
     components:{
-      playerTable,
+      LeftTable,
       PlayersList
     },
     data(){

@@ -1,7 +1,5 @@
 <template>
- <teams-center
-    :currCountry="teamInfo"
- >
+ <teams-center>
  </teams-center>
 </template>
 
@@ -11,14 +9,6 @@
   import CountryData from "../../../components/content/teams/centerInfo/centerItems/TeamData";
   export default {
     name: "TeamsInfo",
-    props:{
-      teamInfo:{
-        type:Object,
-        default(){
-          return{}
-        }
-      }
-    },
     data(){
       return{
       }

@@ -6,7 +6,8 @@
         <span>球队雷达</span>
       </div>
     </div>
-    <radar-team>
+    <radar-team
+    :team-radar="teamRadar">
     </radar-team>
   </div>
 </template>
@@ -15,6 +16,11 @@
   import RadarTeam from "../../../g2plot/RadarTeam";
   export default {
     name: "TeamRadar",
+    props:{
+      teamRadar:{
+        type:Array
+      }
+    },
     components:{
       RadarTeam
     }

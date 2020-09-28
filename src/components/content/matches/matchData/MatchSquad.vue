@@ -2,11 +2,11 @@
   <div class="match-squad">
 
      <div>
-       <img :src="homeImg" alt="">
+       <img :src="homeImg" alt="" class="squad">
      </div>
 
      <div>
-       <img :src="awayImg" alt="">
+       <img :src="awayImg" alt="" class="squad">
      </div>
 
   </div>
@@ -32,11 +32,15 @@
     top: 171px;
     left: 31px;
     width: 1371px;
-    height: 372px;
+    height: 364px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     border-radius: 12px;
     background-color: #555555;
+  }
+  .squad {
+    width:380px;
+    height: 240px;
   }
 </style>

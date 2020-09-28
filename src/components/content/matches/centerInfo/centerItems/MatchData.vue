@@ -8,26 +8,48 @@
     </div>
     <tab-control-sub
       ref="tab"
-      :titles="['首发阵容','球队数据','球队传球']"
+      :titles="['首发阵容','球队进攻','球队防守','球队组织','球队技术','球队传球']"
       :fixed="fixed"
       @tabClick="tabClick"
       color="#ff7875">
     </tab-control-sub>
 
-
     <match-squad
-     v-if="currPage===0"
+    v-if="currPage===0"
     :homeImg="teams['homeTeam']['formationImg']"
     :awayImg="teams['awayTeam']['formationImg']"
     >
     </match-squad>
 
-    <match-radar
-      v-if="currPage===1">
-    </match-radar>
+    <match-attack
+      v-if="currPage===1"
+      :home-attack="homeAttack"
+      :away-attack="awayAttack">
+    </match-attack>
+
+    <match-defense
+      v-if="currPage===2"
+    :home-defense="homeDefense"
+    :away-defense="awayDefense">
+    </match-defense>
+
+    <match-organize
+      v-if="currPage===3"
+      :home-organize="homeOrganize"
+      :away-organize="awayOrganize"
+    >
+
+    </match-organize>
+
+    <match-skill
+      v-if="currPage===4"
+    :home-skill="homeSkill"
+    :away-skill="awaySkill">
+
+    </match-skill>
 
     <match-pass
-      v-if="currPage===2"
+      v-if="currPage===5"
       :home-pass="teams['homeTeam']['networkImg']"
       :away-pass="teams['awayTeam']['networkImg']">
     </match-pass>
@@ -38,7 +60,10 @@
 <script>
   import TabControlSub from "../../../../common/tabControl/TabControlSub";
   import MatchSquad from "../../matchData/MatchSquad";
-  import MatchRadar from "../../matchData/MatchRadar";
+  import MatchAttack from "../../matchData/MatchAttack";
+  import MatchDefense from "../../matchData/MatchDefense";
+  import MatchOrganize from "../../matchData/MatchOrganize";
+  import MatchSkill from "../../matchData/MatchSkill";
   import MatchPass from "../../matchData/MatchPass";
   export default {
     name: "MatchesData",
@@ -55,6 +80,63 @@
         },
       }
     },
+    computed:{
+      homeAttack(){
+        let homeAttack = this.teams['homeTeam']['attacking'];
+        homeAttack.name = this.teams['homeTeam']['TEAM_NAME_EN'];
+        homeAttack.Img = this.teams['homeTeam']['clubImg'];
+        return homeAttack
+      },
+      awayAttack(){
+        let awayAttack = this.teams['awayTeam']['attacking'];
+        awayAttack.name = this.teams['awayTeam']['TEAM_NAME_EN'];
+        awayAttack.Img = this.teams['awayTeam']['clubImg'];
+        return awayAttack
+      },
+
+      homeDefense(){
+        let homeDefense = this.teams['homeTeam']['defending'];
+        homeDefense.name = this.teams['homeTeam']['TEAM_NAME_EN'];
+        homeDefense.Img = this.teams['homeTeam']['clubImg'];
+        return homeDefense
+      },
+
+      awayDefense(){
+        let awayDefense = this.teams['awayTeam']['defending'];
+        awayDefense.name = this.teams['awayTeam']['TEAM_NAME_EN'];
+        awayDefense.Img = this.teams['awayTeam']['clubImg'];
+        return awayDefense
+      },
+
+      homeOrganize(){
+        let homeOrganize = this.teams['homeTeam']['organizing'];
+        homeOrganize.name = this.teams['homeTeam']['TEAM_NAME_EN'];
+        homeOrganize.Img = this.teams['homeTeam']['clubImg'];
+        return homeOrganize
+      },
+
+      awayOrganize(){
+        let awayOrganize = this.teams['awayTeam']['organizing'];
+        awayOrganize.name = this.teams['awayTeam']['TEAM_NAME_EN'];
+        awayOrganize.Img = this.teams['awayTeam']['clubImg'];
+        return awayOrganize
+      },
+
+      homeSkill(){
+        let homeSkill = this.teams['homeTeam']['skill'];
+        homeSkill.name = this.teams['homeTeam']['TEAM_NAME_EN'];
+        homeSkill.Img = this.teams['homeTeam']['clubImg'];
+        return homeSkill
+      },
+
+      awaySkill(){
+        let awaySkill = this.teams['awayTeam']['skill'];
+        awaySkill.name = this.teams['awayTeam']['TEAM_NAME_EN'];
+        awaySkill.Img = this.teams['awayTeam']['clubImg'];
+        return awaySkill
+      },
+
+    },
     watch:{
 
     },
@@ -67,12 +149,16 @@
     mounted() {
       this.$store.subscribe((mutation, state) => {
          this.teams = state.teams
+         console.log(this.teams)
       })
     },
     components:{
       TabControlSub,
       MatchSquad,
-      MatchRadar,
+      MatchAttack,
+      MatchDefense,
+      MatchOrganize,
+      MatchSkill,
       MatchPass
     },
     methods:{
@@ -86,6 +172,15 @@
              break;
           case 2:
             this.currPage = 2;
+            break;
+          case 3:
+            this.currPage = 3;
+            break;
+          case 4:
+            this.currPage = 4;
+            break;
+          case 5:
+            this.currPage = 5;
             break;
         }
       },

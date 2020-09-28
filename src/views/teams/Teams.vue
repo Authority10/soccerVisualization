@@ -2,7 +2,7 @@
   <div class="teams">
     <basic-public></basic-public>
     <teams-list :team-list="teamList"></teams-list>
-    <teams-info :team-info="defaultTeam"></teams-info>
+    <teams-info ></teams-info>
   </div>
 </template>
 
@@ -10,7 +10,7 @@
   import TeamsList from "./childComps/TeamsList";
   import TeamsInfo from "./childComps/TeamsInfo";
   import BasicPublic from "../../components/content/basicPublic/BasicPublic";
-  import {showAllTeam} from "../../network/teams";
+  import {showAllTeam} from "../../network/teamlist";
 
   export default {
     name: "teams",
@@ -21,7 +21,7 @@
     },
     data(){
       return{
-        teamList:{},
+        teamList:[],
         defaultTeam:{}
       }
     },
@@ -29,12 +29,13 @@
       this.showAllTeam()
     },
     methods:{
+      //获取右侧球队积分榜
       showAllTeam(){
         showAllTeam()
           .then((res)=>{
-          console.log(res[0]);
-          this.teamList = res[0]
-          delete this.teamList._id
+          console.log(res);
+          this.teamList = res;
+          delete this.teamList._id;
         }).catch((err)=>{
           console.log(err)
         })

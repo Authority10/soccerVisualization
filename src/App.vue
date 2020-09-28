@@ -29,10 +29,20 @@ export default {
     //     console.log(that.screenWidth)
     //   })()
     // };
-
-    this.$bus.$on("sendTeams",(teams)=>{
+    //接受matches中单场比赛的两只队伍信息
+    this.$bus.$on("twoTeams",(teams)=>{
       console.log(teams);
       this.$store.commit("sendPlayers",teams)
+    });
+    //接受teams中单个球队信息
+    this.$bus.$on("singleTeam",(singleTeam)=>{
+      console.log(singleTeam);
+      this.$store.commit("sendTeam",singleTeam)
+    });
+    //接受单个球队的阵容
+    this.$bus.$on("TeamSquad",(TeamSquad)=>{
+      console.log(TeamSquad);
+      this.$store.commit("sendSquad",TeamSquad)
     });
   }
 }

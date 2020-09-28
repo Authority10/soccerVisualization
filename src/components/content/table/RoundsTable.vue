@@ -1,34 +1,44 @@
 <template>
-  <div class="squad-table">
+  <div class="rounds-table">
 
     <div class="title">
-        <div>姓名</div>
-        <div>号码</div>
-        <div>位置</div>
-        <div>国籍</div>
-        <div>身高</div>
-        <div>体重</div>
-        <div>上场时间</div>
-        <div>进球</div>
-        <div>助攻</div>
-        <div>红/黄牌</div>
+        <div class="rounds">联赛轮次</div>
+        <div class="battle">对阵双方</div>
+        <div class="label">
+          <div>对阵比分</div>
+          <div>进球</div>
+          <div>助攻</div>
+          <div>射门</div>
+          <div>传球/准确率</div>
+          <div>红/黄牌</div>
+          <div>犯规</div>
+          <div>控球率</div>
+        </div>
     </div>
 
     <div class="thirty-matches">
-      <div v-for="(singlePlayer,index) in squad"
+      <div v-for="(singleMatch,index) in teamMatch"
            :key="index"
            class="single-player"
            @click="boxClick">
-        <div>{{singlePlayer.personName}}</div>
-        <div>{{singlePlayer.personNum}}</div>
-        <div>{{singlePlayer.personPosition}}</div>
-        <div>{{singlePlayer.countryName}}</div>
-        <div>{{singlePlayer.height}}</div>
-        <div>{{singlePlayer.weight}}</div>
-        <div>{{parseInt(singlePlayer.minutesPlayed)}}</div>
-        <div>{{parseInt(singlePlayer.goals)}}</div>
-        <div>{{parseInt(singlePlayer.assists)}}</div>
-        <div>{{parseInt(singlePlayer.yellowCard)}}</div>
+
+        <div class="rounds-data">{{index+1}}</div>
+        <div class="battle-data">
+          {{singleMatch.homeTeam.slice(0,4)}}VS{{singleMatch.awayTeam.slice(0,4)}}
+        </div>
+
+        <div class="label">
+          <div>{{singleMatch.score}}</div>
+          <div>{{singleMatch.goals}}</div>
+          <div>{{singleMatch.assists}}</div>
+          <div>{{singleMatch.shots}}</div>
+          <div>{{singleMatch.passes}}</div>
+          <div>{{singleMatch.yellowCard}}</div>
+          <div>{{singleMatch.fouls}}</div>
+          <div>{{parseFloat(singleMatch.ballPossession.toFixed(2))}}</div>
+        </div>
+
+
       </div>
     </div>
   </div>
@@ -36,9 +46,9 @@
 
 <script>
   export default {
-    name: "SquadTable",
+    name: "RoundsTable",
     props:{
-      squad:{
+      teamMatch:{
         type:Array,
         default(){
           return []
@@ -71,7 +81,7 @@
 </script>
 
 <style scoped>
-  .squad-table {
+  .rounds-table {
     position:absolute ;
     background-color: #525252;
     border-radius: 15px;
@@ -92,17 +102,24 @@
     top: 5px;
     width: 1350px;
     height: 50px;
-    display: flex;
-    justify-content: space-around;
-    /*background-color:orange;*/
+    /*background-color:blue;*/
     text-align: center;
   }
-  .title div {
+  .rounds {
+    position: absolute;
+    left: 10px;
     width: 100px;
     height: 50px;
     line-height: 50px;
-    text-align: center;
-    /*background-color: blue;*/
+    /*background-color: red;*/
+  }
+  .battle {
+    position: absolute;
+    left: 225px;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    /*background-color: red;*/
   }
   .label {
     position: absolute;
@@ -114,10 +131,10 @@
     /*background-color: greenyellow;*/
     justify-content: space-between;
   }
-  /*.label div {*/
-  /*  width: 80px;*/
-  /*  !*background-color: red;*!*/
-  /*}*/
+  .label div {
+    width: 80px;
+    /*background-color: red;*/
+  }
 
 
   .rounds-data {
@@ -158,13 +175,7 @@
     justify-content: space-between;
     align-items: center;
   }
-  .single-player div {
-    width: 120px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    /*background-color: brown;*/
-  }
+
 
   .foot-img {
     /*margin-top: 0;*/

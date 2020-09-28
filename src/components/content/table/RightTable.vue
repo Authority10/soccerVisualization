@@ -102,7 +102,7 @@
 
 <script>
   export default {
-    name: "PlayerTable",
+    name: "RightTable",
     data(){
       return{
 
@@ -205,19 +205,20 @@
   .detail-info {
     position: absolute;
     top: 224px;
-    width: 500px;
+    left: 25px;
+    width: 451px;
     height: 652px;
     /*margin: 13px auto;*/
     /*background-color: blue;*/
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   .box {
     width: 220px;
     height: 116px;
     border-radius: 15px;
-    border: 2px solid #555555;
+    border: 1px solid #555555;
     background-color: #555555;
     overflow: hidden;
   }

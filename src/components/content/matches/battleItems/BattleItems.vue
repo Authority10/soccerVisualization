@@ -5,7 +5,7 @@
       :single-battle="item"
       :key="index"
       :class="{active:currentIndex===index}"
-    @click.native="battleClick(index)">
+      @click.native="battleClick(index)">
     </single-battle>
   </div>
 </template>

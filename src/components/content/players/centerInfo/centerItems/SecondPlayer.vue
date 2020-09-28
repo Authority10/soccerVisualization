@@ -9,16 +9,16 @@
         <span>球员资料</span>
       </div>
     </div>
-    <player-table
+    <right-table
       @showDrawer="secondDrawer"
      :players="players"
     >
-    </player-table>
+    </right-table>
   </div>
 </template>
 
 <script>
-  import PlayerTable from "../../../table/PlayerTable";
+  import RightTable from "../../../table/RightTable";
   export default {
     name: "SecondPlayer",
     props:{
@@ -30,7 +30,7 @@
       },
     },
     components:{
-      PlayerTable
+      RightTable
     },
     methods:{
       secondDrawer(){

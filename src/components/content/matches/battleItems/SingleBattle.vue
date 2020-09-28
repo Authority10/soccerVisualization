@@ -2,10 +2,10 @@
   <div class="single-battle" @click="changeMatch">
     <div class="teams-names">
       <div class="home-name">
-        <span>{{singleBattle.HomeTeam}}</span>
+        <span>{{homeTeam}}</span>
       </div>
       <div class="away-name">
-        <span>{{singleBattle.AwayTeam}}</span>
+        <span>{{awayTeam}}</span>
       </div>
     </div>
     <div class="home-img">
@@ -36,13 +36,21 @@
       }
     },
     computed:{
+      homeTeam(){
+        return this.singleBattle.HomeTeam.slice(0,4)
+      },
+      awayTeam(){
+        return this.singleBattle.AwayTeam.slice(0,4)
+      },
     },
     methods:{
       findMatches(matchId){
-        findMatches(matchId).then(res=>{
+        findMatches(matchId).then((res)=>{
           console.log(res[0]);
-          this.$bus.$emit("sendTeams",res[0]["teams"]);
+          this.$bus.$emit("twoTeams",res[0]["teams"]);
           console.log("aaa")
+        }).catch((err)=>{
+          console.log(err)
         })
       },
       changeMatch(){

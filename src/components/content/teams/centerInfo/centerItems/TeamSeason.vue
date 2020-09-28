@@ -8,8 +8,8 @@
     </div>
     <team-table
       color="#FFF566"
-      :titles="['国家','主教练','成立时间','平均年龄','参赛次数','主要荣誉']"
-      :content="['俄罗斯','克洛普','1996-10-04','24','20','冠军']">
+      :titles="['总进球','总丢球','射手王','助攻王','场均传球','场均控球']"
+      :content="seasonInfo">
     </team-table>
   </div>
 </template>
@@ -18,8 +18,28 @@
   import TeamTable from "../../../table/TeamTable";
   export default {
     name: "TeamSeason",
+    props:{
+      activeTeam:{
+        type:Object,
+        default(){
+          return{}
+        }
+      }
+    },
     components:{
       TeamTable
+    },
+    computed:{
+      seasonInfo(){
+        let seasonInfo = []
+        seasonInfo.push(parseInt(this.activeTeam['goals']))
+        seasonInfo.push(parseInt(this.activeTeam['loseGoals']))
+        seasonInfo.push(this.activeTeam['mostGoalsPlayer'])
+        seasonInfo.push(this.activeTeam['mostAssistsPlayer'])
+        seasonInfo.push(this.activeTeam['avePasses'])
+        seasonInfo.push(this.activeTeam['ballPossession'])
+        return seasonInfo
+      }
     }
   }
 </script>

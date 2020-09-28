@@ -1,8 +1,8 @@
 import {request} from "./request";
 
-export function findTeam(teamId) {
+export function findSquad(teamId) {
   return request({
-    url:"/team",
+    url:"/teamplayer",
     params:{
       teamId
     }

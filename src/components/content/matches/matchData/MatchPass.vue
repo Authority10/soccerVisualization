@@ -1,11 +1,11 @@
 <template>
   <div class="match-pass">
     <div>
-      <img :src="homePass" alt="">
+      <img :src="homePass" alt="" class="pass">
     </div>
 
     <div>
-      <img :src="awayPass" alt="">
+      <img :src="awayPass" alt="" class="pass">
     </div>
   </div>
 </template>
@@ -30,11 +30,15 @@
    top: 171px;
    left: 31px;
    width: 1371px;
-   height: 372px;
+   height: 364px;
    display: flex;
    justify-content: space-around;
    align-items: center;
    border-radius: 12px;
    background-color: #555555;
+ }
+ .pass {
+   width:380px;
+   height: 240px;
  }
 </style>

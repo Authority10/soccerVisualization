@@ -17,13 +17,11 @@
     data(){
       return{
         chart:"",
-        newData:[]
       }
     },
     watch: {
-      eventPosition(newVal, oldVal) {
-        this.newData = newVal;
-        this.chart.changeData(this.newData)
+      eventPosition(newVal) {
+        this.chart.changeData(newVal)
       }
     },
     mounted() {
@@ -39,10 +37,10 @@
         // width:775,
         // height:217,
         // height:500,
-        xField: 'x',
-        yField: 'y',
-        colorField: 'tmp',
-        color: ['#295599', '#3e94c0', '#78c6d0', '#b4d9e4', '#fffef0', '#f9cdac', '#ec7d92', '#bc448c'],
+        xField: 'X',
+        yField: 'Y',
+        colorField: 'Count',
+        color: ['#F51D27', '#FA541C', '#FF8C12', '#FFC838', '#FAFFA8', '#80FF73', '#12CCCC', '#1890FF'],
         meta: {
           x: {
             alias: '球场横坐标',
@@ -110,14 +108,13 @@
           },
           fields:["x","y"]
         },
-        radius: 4,
+        radius: 45,
         pixelRatio:3,
         intensity: 2,
         background:{
           visible: true,
           type: 'image',
-          src: 'https://outin-6a24895c919711eab60900163e1c8dba.oss-cn-shanghai.aliyuncs.com/image/default/9BA55CA952C943EBB2B22BF2E6290E15-6-2.jpg',
-          // value: '#262626'
+          src: '/footgroud.png',
         },
       });
       this.chart = heatMapPlot;
@@ -133,13 +130,11 @@
 
 <style scoped>
   #abc{
-    width:815px;
-    /*width:764px;*/
-    height:420px;
-    /*height:337px;*/
+    width:1300px;
+    height:500px;
     position: absolute;
-    top: -20px;
-    /*left: -30px;*/
-    left: 0;
+    /*background-color: red;*/
+    top: 61px;
+    left: 200px;
   }
 </style>

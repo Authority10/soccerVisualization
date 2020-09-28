@@ -97,11 +97,10 @@
       HeatArea,
     },
     computed:{
-      // homeRate(){
-      //   console.log(this.teams);
-      //   if (this.teams['homeTeam']){
-      //     return this.teams['homeTeam'][this.homePosition][this.homeIndex];
-      //   }
+      // homeHeat(){
+      //   let homeHeat = [];
+      //   homeHeat.push(this.teams['homeTeam']["team_events_area"]['短传'])
+      //   return homeHeat
       // }
     },
     created() {

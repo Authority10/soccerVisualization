@@ -19,9 +19,9 @@
     name: "TeamsList",
     props:{
       teamList:{
-        type:Object,
+        type:Array,
         default(){
-          return{}
+          return []
         }
       }
     },

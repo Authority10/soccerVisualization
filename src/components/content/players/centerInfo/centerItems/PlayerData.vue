@@ -89,8 +89,8 @@
 </template>
 
 <script>
-  import RadarPlayer from "../../../g2plot/RadarPlayer";
-  import Butterfly from "../../../g2plot/Butterfly";
+  import RadarPlayer from "../../../g2plot/radar/RadarPlayer";
+  import Butterfly from "../../../g2plot/butter/Butterfly";
 
   export default {
     name: "PlayerData",

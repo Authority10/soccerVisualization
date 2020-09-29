@@ -55,7 +55,7 @@
             visible: true,
             offset:8,
             style:{
-              fill:"#ff7875"
+              fill:"white"
             },
             autoRotate: true,
             autoHide: true

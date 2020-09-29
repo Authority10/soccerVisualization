@@ -94,10 +94,10 @@
     computed:{
       //传球成功率四舍五入
       homeAccuracy(){
-        return Math.round(this.homeAll["passAcurracy"] * 100) / 100
+        return Math.round(this.homeAll["passAcurracy"] * 1000) / 10 + "%"
       },
       awayAccuracy(){
-        return Math.round(this.awayAll["passAcurracy"] * 100) / 100
+        return Math.round(this.awayAll["passAcurracy"] * 1000) / 10 + "%"
       }
     }
   }
@@ -129,7 +129,7 @@
     line-height: 50px;
     text-align: center;
     /*background-color: blue;*/
-    width: 120px;
+    width: 140px;
     height: 50px;
     /*background-color: red;*/
   }
@@ -151,7 +151,7 @@
     line-height: 50px;
     text-align: center;
     /*background-color: blue;*/
-    width: 120px;
+    width: 140px;
     height: 50px;
     /*background-color: red;*/
   }
@@ -173,7 +173,7 @@
     line-height: 50px;
     text-align: center;
     /*background-color: blue;*/
-    width: 120px;
+    width: 140px;
     height: 50px;
   }
 </style>

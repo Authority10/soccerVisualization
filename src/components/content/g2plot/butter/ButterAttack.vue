@@ -11,6 +11,7 @@
           <div class='butterfly-sublabel butterfly-sublabel-r'>r</div>
         </div>
       </div>
+
       <div class='swing' id="butterfly-right">
       </div>
     </div>
@@ -19,17 +20,21 @@
 
 <script>
   import { Chart } from '@antv/g2';
-  const X_AXIS = [ "passShorts", "passesShortsAcc", "passLong", "passesLongAcc", "PassThroughRate", "PassBackRate", "PassDiagonalRate", "PassLateralRate"];
+  const X_AXIS = [ "goals", "assists", "shots", "shotsOnTarget", "passes", "passesAccuracy", "keyPass", "center", "Possession","insideBoxShots","outsideBoxShots" ];
   const LABEL_NAME = {
-    "passShorts": "短&nbsp;&nbsp;&nbsp;&nbsp;传",
-    "passesShortsAcc": "短传精度",
-    "passLong": "长&nbsp;&nbsp;&nbsp;&nbsp;传",
-    "passesLongAcc": "长传精度",
-    "PassBackRate": "后传占比",
-    "PassDiagonalRate": "斜传占比",
-    "PassLateralRate":"横穿占比",
+    "goals": "进&nbsp;&nbsp;&nbsp;&nbsp;球",
+    "assists": "助&nbsp;&nbsp;&nbsp;&nbsp;攻",
+    "shots": "射&nbsp;&nbsp;&nbsp;&nbsp;门",
+    "shotsOnTarget": "射&nbsp;&nbsp;&nbsp;&nbsp;正",
+    "passes": "传&nbsp;&nbsp;&nbsp;&nbsp;球",
+    "passesAccuracy": "传球成功率",
+    "keyPass":"关键传球",
+    "center":"传&nbsp;&nbsp;&nbsp;&nbsp;中",
+    "Possession":"控球率",
+    "insideBoxShots":"禁区射门",
+    "outsideBoxShots":"禁区外射门",
   };
-  const X_SCALE = { "passShorts": 607, "passesShortsAcc": 1, "passLong": 83, "passesLongAcc": 1, "PassThroughRate": 1, "PassBackRate": 1, "PassDiagonalRate": 1, "PassLateralRate": 1};
+  const X_SCALE = { "goals": 8, "assists": 7, "shots": 30, "shotsOnTarget": 16, "passes": 665, "passesAccuracy": 1, "keyPass": 21, "center": 38, "Possession": 1,"insideBoxShots":22,"outsideBoxShots":17};
 
   function changeData(chart, behavior)
   {
@@ -44,7 +49,7 @@
   }
 
   export default {
-    name: 'ButterOrganize',
+    name: 'ButterAttack',
     props: {
       behavior0: { type: Object, require: true, },
       behavior1: { type: Object, require: true, },
@@ -83,8 +88,8 @@
               value1 = (Math.round(value1*1000)/10) + '%';
               break;
             case 'Possession':
-              value0 = (Math.round(value0*10)/10);
-              value1 = (Math.round(value1*10)/10);
+              value0 = (Math.round(value0*1000)/10) + '%';
+              value1 = (Math.round(value1*1000)/10) + '%';
               break;
           }
           this.createALabel(LABEL_NAME[attr], value0,  value1);

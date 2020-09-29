@@ -44,8 +44,8 @@
 </template>
 
 <script>
-  import RadarMatch from "../../g2plot/RadarMatch";
-  import ButterDefense from "../../g2plot/ButterDefense";
+  import RadarMatch from "../../g2plot/radar/RadarMatch";
+  import ButterDefense from "../../g2plot/butter/ButterDefense";
   export default {
     name: "MatchDefense",
     props:{

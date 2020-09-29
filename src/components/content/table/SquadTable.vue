@@ -159,7 +159,7 @@
     align-items: center;
   }
   .single-player div {
-    width: 120px;
+    width: 130px;
     height: 50px;
     line-height: 50px;
     text-align: center;

@@ -39,7 +39,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       : false,
     publicPath: config.dev.assetsPublicPath,
     proxy: [{
-      context: ['/footgroud.png'],
+      context: ['/football_ground.png'],
       target: "https://bsufootball.oss-cn-beijing.aliyuncs.com/",
       changeOrigin: true
     }],

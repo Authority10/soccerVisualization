@@ -32,13 +32,18 @@
       </div>
     </div>
     <div class="butter">
-
+      <butter-skill
+        :behavior0="homeSkill.skillButter"
+        :behavior1="awaySkill.skillButter"
+        :size="45">
+      </butter-skill>
     </div>
   </div>
 </template>
 
 <script>
-  import RadarMatch from "../../g2plot/RadarMatch";
+  import RadarMatch from "../../g2plot/radar/RadarMatch";
+  import ButterSkill from "../../g2plot/butter/ButterSkill";
   export default {
     name: "matchSkill",
     props:{
@@ -80,89 +85,13 @@
           obj.user = away;
           radarData.push(obj)
         }
-
-
-        // let possession = {};
-        // let assists = {};
-        // let center = {};
-        // let goals = {};
-        // let insideShot = {};
-        // let keyPass = {};
-        // let outsideShot = {};
-        // let passAccuracy = {};
-        // let passes = {};
-        // let shots = {};
-        // let shotsOnTarget = {};
-        // possession.item = "控球率";
-        // possession.score = this.homeAttack.attackingRadar.PossessionZscores;
-        // possession.user = "主队";
-        // radarData.push(possession);
-        //
-        // goals.item = "进球";
-        // goals.score = this.homeAttack.attackingRadar.goalsZscores;
-        // goals.user = "主队";
-        // radarData.push(goals);
-        //
-        // assists.item = "助攻";
-        // assists.score = this.homeAttack.attackingRadar.assistsZscores;
-        // assists.user = "主队";
-        // radarData.push(assists);
-        //
-        // center.item = "传中";
-        // center.score = this.homeAttack.attackingRadar.centerZscores;
-        // center.user = "主队";
-        // radarData.push(center);
-        //
-        // passes.item = "传球";
-        // passes.score = this.homeAttack.attackingRadar.passesZscores;
-        // passes.user = "主队";
-        // radarData.push(passes);
-        //
-        //
-        // passAccuracy.item = "传球准确率";
-        // passAccuracy.score = this.homeAttack.attackingRadar.passesAccuracyZscores;
-        // passAccuracy.user = "主队";
-        // radarData.push(passAccuracy);
-        //
-        // keyPass.item = "关键传球";
-        // keyPass.score = this.homeAttack.attackingRadar.keyPassZscores;
-        // keyPass.user = "主队";
-        // radarData.push(keyPass);
-        //
-        //
-        // shots.item = "射门";
-        // shots.score = this.homeAttack.attackingRadar.shotsZscores;
-        // shots.user = "主队";
-        // radarData.push(shots);
-        //
-        // shotsOnTarget.item = "射正";
-        // shotsOnTarget.score = this.homeAttack.attackingRadar.shotsOnTargetZscores;
-        // shotsOnTarget.user = "主队";
-        // radarData.push(shotsOnTarget);
-        //
-        //
-        // insideShot.item = "禁区内射门";
-        // insideShot.score = this.homeAttack.attackingRadar.insideBoxShotsZscores;
-        // insideShot.user = "主队";
-        // radarData.push(insideShot);
-        //
-        //
-        // outsideShot.item = "禁区外射门";
-        // outsideShot.score = this.homeAttack.attackingRadar.outsideBoxShotsZscores;
-        // outsideShot.user = "主队";
-        // radarData.push(outsideShot);
-
-
-
-
-
-
         return radarData
 
       }
     },
     components:{
-      RadarMatch
+      RadarMatch,
+      ButterSkill
     }
   }
 </script>

@@ -5,38 +5,42 @@
         <img src="../../../../../assets/image/players/playerData.png" alt="" >
         <span class="status-heat">活动区域</span>
       </div>
+    </div>
 
-<!--      <HeatMap-->
-<!--      :eventPosition="heat">-->
-<!--      </HeatMap>-->
+    <div class="heat-left">
+      <heat-left
+        :heat-left="heatLeft">
+      </heat-left>
     </div>
-    <div style="text-align: center">
-      <img src="../../../../../assets/image/heat/heat.png" alt="" class="heat">
+
+    <div class="heat-right">
+      <heat-right
+        :heat-right="heatRight">
+      </heat-right>
     </div>
+
 
   </div>
 </template>
 
 <script>
-  import HeatMap from "../../../g2plot/HeatMap";
+  import HeatLeft from "../../../g2plot/heatMap/HeatLeft";
+  import HeatRight from "../../../g2plot/heatMap/HeatRight";
   export default {
     name: "HeatArea",
     props:{
-      heatData:{
+      heatLeft:{
         type:Array
-      }
+      },
+      heatRight:{
+        type:Array
+      },
     },
     components:{
-      HeatMap
+      HeatLeft,
+      HeatRight
     },
     computed:{
-      heat(){
-        let arr = []
-        for (let item of Object.keys(this.heatData[0])){
-          arr.push(this.heatData[0][item])
-        }
-        return arr
-      }
     }
   }
 </script>
@@ -45,7 +49,7 @@
  .heat-area {
    position: absolute;
    width: 1758px;
-   height: 542px;
+   height: 700px;
    top:  1430px;
    left: 20px;
    background-color:#4f4f4f;
@@ -74,8 +78,23 @@
    color: #69c0ff;
    font-size: 24px;
  }
-  .heat {
-    width: 600px;
-    height: 400px;
-  }
+ .heat-left {
+   position: absolute;
+   top: 100px;
+   left: 50px;
+   width:777px;
+   height:500px;
+   /*background-color: red;*/
+ }
+ .heat-right {
+   position: absolute;
+   top: 100px;
+   left: 900px;
+   width:777px;
+   height:500px;
+   /*background-color: blue;*/
+ }
+
+
+
 </style>

@@ -117,7 +117,7 @@
   .title div {
     text-align: center;
     /*background-color: blue;*/
-    width: 120px;
+    width: 140px;
     /*background-color: red;*/
   }
   .home-player {
@@ -138,7 +138,7 @@
     line-height: 50px;
     text-align: center;
     /*background-color: blue;*/
-    width: 120px;
+    width: 140px;
     height: 50px;
     /*background-color: red;*/
   }
@@ -160,7 +160,7 @@
     line-height: 50px;
     text-align: center;
     /*background-color: blue;*/
-    width: 120px;
+    width: 140px;
     height: 50px;
   }
 </style>

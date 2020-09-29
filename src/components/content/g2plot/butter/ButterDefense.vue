@@ -20,21 +20,18 @@
 
 <script>
   import { Chart } from '@antv/g2';
-  const X_AXIS = [ "goals", "assists", "shots", "shotsOnTarget", "passes", "passesAccuracy", "keyPass", "center", "Possession","insideBoxShots","outsideBoxShots" ];
+  const X_AXIS = [ "interceptions", "clearances", "tackles", "fouls", "blocksShots", "blocksPasses", "yellowCard", "redCard"];
   const LABEL_NAME = {
-    "goals": "进&nbsp;&nbsp;&nbsp;&nbsp;球",
-    "assists": "助&nbsp;&nbsp;&nbsp;&nbsp;攻",
-    "shots": "射&nbsp;&nbsp;&nbsp;&nbsp;门",
-    "shotsOnTarget": "射&nbsp;&nbsp;&nbsp;&nbsp;正",
-    "passes": "传&nbsp;&nbsp;&nbsp;&nbsp;球",
-    "passesAccuracy": "传球成功率",
-    "keyPass":"关键传球",
-    "center":"传&nbsp;&nbsp;&nbsp;&nbsp;中",
-    "Possession":"控球率",
-    "insideBoxShots":"禁区射门",
-    "outsideBoxShots":"禁区外射门",
+    "interceptions": "拦&nbsp;&nbsp;&nbsp;&nbsp;截",
+    "clearances": "解&nbsp;&nbsp;&nbsp;&nbsp;围攻",
+    "tackles": "抢&nbsp;&nbsp;&nbsp;&nbsp;断",
+    "fouls": "犯&nbsp;&nbsp;&nbsp;&nbsp;规矩",
+    "blocksShots": "封堵射门",
+    "blocksPasses": "封堵传球",
+    "yellowCard":"黄&nbsp;&nbsp;&nbsp;&nbsp;牌",
+    "redCard":"红&nbsp;&nbsp;&nbsp;&nbsp;牌",
   };
-  const X_SCALE = { "goals": 8, "assists": 6, "shots": 20, "shotsOnTarget": 10, "passes": 600, "passesAccuracy": 1, "keyPass": 30, "center": 30, "Possession": 1,"insideBoxShots":10,"outsideBoxShots":10};
+  const X_SCALE = { "interceptions": 30, "clearances": 45, "tackles": 31, "fouls": 33, "blocksShots": 13, "blocksPasses": 22, "yellowCard": 6, "redCard": 2};
 
   function changeData(chart, behavior)
   {
@@ -49,7 +46,7 @@
   }
 
   export default {
-    name: 'ButterAttack',
+    name: 'ButterDefense',
     props: {
       behavior0: { type: Object, require: true, },
       behavior1: { type: Object, require: true, },

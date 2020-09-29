@@ -30,7 +30,7 @@ const LABEL_NAME = {
     "ballPossession":"控球时间",
     "minutesPlayed":"出场时间",
 };
-const X_SCALE = { "goals": 5, "assists": 5, "shots": 5, "shotsOnTarget": 5, "passes": 35, "passAcurracy": 1, "fouls": 5, "ballPossession": 10, "minutesPlayed": 90, };
+const X_SCALE = { "goals": 4, "assists": 3, "shots": 11, "shotsOnTarget": 8, "passes": 117, "passAcurracy": 1, "fouls": 8, "ballPossession": 6.72, "minutesPlayed": 90, };
 
 function changeData(chart, behavior)
 {

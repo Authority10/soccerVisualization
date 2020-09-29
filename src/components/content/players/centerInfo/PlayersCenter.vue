@@ -43,7 +43,9 @@
       :players="teams">
       </players-comparison>
 
-      <heat-area>
+      <heat-area
+      :heat-left="homeHeat"
+      :heat-right="awayHeat">
       </heat-area>
     </div>
 </template>
@@ -97,11 +99,12 @@
       HeatArea,
     },
     computed:{
-      // homeHeat(){
-      //   let homeHeat = [];
-      //   homeHeat.push(this.teams['homeTeam']["team_events_area"]['短传'])
-      //   return homeHeat
-      // }
+      homeHeat(){
+        return this.teams['homeTeam']["team_events"]
+      },
+      awayHeat(){
+        return this.teams['awayTeam']["team_events"]
+      }
     },
     created() {
       // this.$bus.$on("sendTeams",(teams)=>{

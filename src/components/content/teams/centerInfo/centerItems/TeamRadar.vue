@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import RadarTeam from "../../../g2plot/RadarTeam";
+  import RadarTeam from "../../../g2plot/radar/RadarTeam";
   export default {
     name: "TeamRadar",
     props:{

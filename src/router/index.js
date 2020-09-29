@@ -8,6 +8,8 @@ const Try = () =>import("../components/content/box/LoginBox");
 const Welcome = () =>import("../views/welcome/Welcome");
 const Login = () =>import("../views/welcome/Login");
 const Register = () =>import("../views/welcome/Register");
+const Home = () =>import("../views/home/Home");
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -24,14 +26,17 @@ const routes = [
     component: Welcome,
   },
   {
+    path:"/home",
+    component: Home,
+  },
+  {
     path:"/players",
     component: Players,
   },
-  {
-    path:"/players:teamID",
-    component: Players,
-
-  },
+  // {
+  //   path:"/players:teamID",
+  //   component: Players,
+  // },
   {
     path: '/teams',
     component: Teams,

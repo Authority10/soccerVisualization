@@ -91,40 +91,40 @@
     },
     computed:{
       homeBack(){
-        return Math.round(this.homePass["PassBackRate"] * 100) / 100
+        return Math.round(this.homePass["PassBackRate"] * 1000) / 10 + "%"
       },
       awayBack(){
-        return Math.round(this.awayPass["PassBackRate"] * 100) / 100
+        return Math.round(this.awayPass["PassBackRate"] * 1000) / 10 + "%"
       },
       homeDiagonal(){
-        return Math.round(this.homePass["PassDiagonalRate"] * 100) / 100
+        return Math.round(this.homePass["PassDiagonalRate"] * 1000) / 10 + "%"
       },
       awayDiagonal(){
-        return Math.round(this.awayPass["PassDiagonalRate"] * 100) / 100
+        return Math.round(this.awayPass["PassDiagonalRate"] * 1000) / 10 + "%"
       },
       homeLateral(){
-        return Math.round(this.homePass["PassLateralRate"] * 100) / 100
+        return Math.round(this.homePass["PassLateralRate"] * 1000) / 10 + "%"
       },
       awayLateral(){
-        return Math.round(this.awayPass["PassLateralRate"] * 100) / 100
+        return Math.round(this.awayPass["PassLateralRate"] * 1000) / 10 + "%"
       },
       homeThrough(){
-        return Math.round(this.homePass["PassThroughRate"] * 100) / 100
+        return Math.round(this.homePass["PassThroughRate"] * 1000) / 10 + "%"
       },
       awayThrough(){
-        return Math.round(this.awayPass["PassThroughRate"] * 100) / 100
+        return Math.round(this.awayPass["PassThroughRate"] * 1000) / 10 + "%"
       },
       homeLongAcc(){
-        return Math.round(this.homePass["passesLongAcc"] * 100) / 100
+        return Math.round(this.homePass["passesLongAcc"] * 1000) / 10 + "%"
       },
       awayLongAcc(){
-        return Math.round(this.awayPass["passesLongAcc"] * 100) / 100
+        return Math.round(this.awayPass["passesLongAcc"] * 1000) / 10 + "%"
       },
       homeShortAcc(){
-        return Math.round(this.homePass["passesShortsAcc"] * 100) / 100
+        return Math.round(this.homePass["passesShortsAcc"] * 1000) / 10 + "%"
       },
       awayShortAcc(){
-        return Math.round(this.awayPass["passesShortsAcc"] * 100) / 100
+        return Math.round(this.awayPass["passesShortsAcc"] * 1000) / 10 + "%"
       },
     }
   }
@@ -155,7 +155,7 @@
   .title div {
     text-align: center;
     /*background-color: blue;*/
-    width: 120px;
+    width: 140px;
     /*background-color: red;*/
   }
   .home-player {
@@ -176,7 +176,7 @@
     line-height: 50px;
     text-align: center;
     /*background-color: blue;*/
-    width: 120px;
+    width: 140px;
     height: 50px;
     /*background-color: red;*/
   }
@@ -198,7 +198,7 @@
     line-height: 50px;
     text-align: center;
     /*background-color: blue;*/
-    width: 120px;
+    width: 140px;
     height: 50px;
   }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="single-team" @click="changeTeam">
      <div class="title">
-       {{singleItems.teamName}}
+       {{teamName}}
      </div>
      <div class="team-logo">
        <img :src="singleItems.teamLogo" alt="" class="logo">
@@ -62,8 +62,8 @@
       }
     },
     computed:{
-      isActive(){
-        return this.currentCountry===this.singleItems.countryName
+      teamName(){
+        return this.singleItems.teamName.slice(0,4)
       }
     }
   }

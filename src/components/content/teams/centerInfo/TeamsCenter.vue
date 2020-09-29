@@ -42,37 +42,56 @@
     },
     computed:{
       teamRadar(){
+        let labels = ['综合','进攻','防守','组织','技巧'];
+        let homeTeam = this.singleTeam['TEAM_NAME_EN'].slice(0,4);
+        let scoreArray = [];
+
+        scoreArray.push(this.singleTeam['all_rate']*1);
+        scoreArray.push(this.singleTeam['attacking_rate']*1);
+        scoreArray.push(this.singleTeam['defending_rate']*1);
+        scoreArray.push(this.singleTeam['orgnizing_rate']*1);
+        scoreArray.push(this.singleTeam['skill_rate']*1);
+
         let teamRadar = [];
-        let teamAll = {};
-        let teamAttack = {};
-        let teamDefense = {};
-        let teamPass = {};
-        let teamSkill = {};
+        for(let index = 0; index < labels.length;index++) {
+          let obj = {};
+          obj.item = labels[index];
+          obj.score = scoreArray[index];
+          obj.user = homeTeam;
+          teamRadar.push(obj)
+        }
 
-        teamAll.item = "综合";
-        teamAll.score = this.singleTeam['all_rate']*1;
-        teamAll.user = this.singleTeam['TEAM_NAME_EN'];
-        teamRadar.push(teamAll);
+        // let teamAll = {};
+        // let teamAttack = {};
+        // let teamDefense = {};
+        // let teamPass = {};
+        // let teamSkill = {};
+        //
+        // teamAll.item = "综合";
+        // teamAll.score = this.singleTeam['all_rate']*1;
+        // teamAll.user = this.singleTeam['TEAM_NAME_EN'];
+        // teamRadar.push(teamAll);
+        //
+        // teamAttack.item = "进攻";
+        // teamAttack.score = this.singleTeam['attacking_rate']*1;
+        // teamAttack.user = this.singleTeam['TEAM_NAME_EN'];
+        // teamRadar.push(teamAttack);
+        //
+        // teamDefense.item = "防守";
+        // teamDefense.score = this.singleTeam['defending_rate']*1;
+        // teamDefense.user = this.singleTeam['TEAM_NAME_EN'];
+        // teamRadar.push(teamDefense);
+        //
+        // teamPass.item = "组织";
+        // teamPass.score = this.singleTeam['orgnizing_rate']*1;
+        // teamPass.user = this.singleTeam['TEAM_NAME_EN'];
+        // teamRadar.push(teamPass);
+        //
+        // teamSkill.item = "技巧";
+        // teamSkill.score = this.singleTeam['skill_rate']*1;
+        // teamSkill.user = this.singleTeam['TEAM_NAME_EN'];
+        // teamRadar.push(teamSkill);
 
-        teamAttack.item = "进攻";
-        teamAttack.score = this.singleTeam['attacking_rate']*1;
-        teamAttack.user = this.singleTeam['TEAM_NAME_EN'];
-        teamRadar.push(teamAttack);
-
-        teamDefense.item = "防守";
-        teamDefense.score = this.singleTeam['defending_rate']*1;
-        teamDefense.user = this.singleTeam['TEAM_NAME_EN'];
-        teamRadar.push(teamDefense);
-
-        teamPass.item = "组织";
-        teamPass.score = this.singleTeam['orgnizing_rate']*1;
-        teamPass.user = this.singleTeam['TEAM_NAME_EN'];
-        teamRadar.push(teamPass);
-
-        teamSkill.item = "技巧";
-        teamSkill.score = this.singleTeam['skill_rate']*1;
-        teamSkill.user = this.singleTeam['TEAM_NAME_EN'];
-        teamRadar.push(teamSkill);
         return teamRadar
       },
       teamMatches(){

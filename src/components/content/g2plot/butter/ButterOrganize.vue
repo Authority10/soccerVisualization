@@ -11,7 +11,6 @@
           <div class='butterfly-sublabel butterfly-sublabel-r'>r</div>
         </div>
       </div>
-
       <div class='swing' id="butterfly-right">
       </div>
     </div>
@@ -20,18 +19,18 @@
 
 <script>
   import { Chart } from '@antv/g2';
-  const X_AXIS = [ "interceptions", "clearances", "tackles", "fouls", "blocksShots", "blocksPasses", "yellowCard", "redCard"];
+  const X_AXIS = [ "passShorts", "passesShortsAcc", "passLong", "passesLongAcc", "PassThroughRate", "PassBackRate", "PassDiagonalRate", "PassLateralRate"];
   const LABEL_NAME = {
-    "interceptions": "拦&nbsp;&nbsp;&nbsp;&nbsp;截",
-    "clearances": "解&nbsp;&nbsp;&nbsp;&nbsp;围攻",
-    "tackles": "抢&nbsp;&nbsp;&nbsp;&nbsp;断",
-    "fouls": "犯&nbsp;&nbsp;&nbsp;&nbsp;规矩",
-    "blocksShots": "封堵射门",
-    "blocksPasses": "封堵传球",
-    "yellowCard":"黄&nbsp;&nbsp;&nbsp;&nbsp;牌",
-    "redCard":"红&nbsp;&nbsp;&nbsp;&nbsp;牌",
+    "passShorts": "短&nbsp;&nbsp;&nbsp;&nbsp;传",
+    "passesShortsAcc": "短传精度",
+    "passLong": "长&nbsp;&nbsp;&nbsp;&nbsp;传",
+    "passesLongAcc": "长传精度",
+    "PassThroughRate":"直塞占比",
+    "PassBackRate": "后传占比",
+    "PassDiagonalRate": "斜传占比",
+    "PassLateralRate":"横穿占比",
   };
-  const X_SCALE = { "interceptions": 6, "clearances": 6, "tackles": 20, "fouls": 10, "blocksShots": 600, "blocksPasses": 1, "yellowCard": 30, "redCard": 30};
+  const X_SCALE = { "passShorts": 607, "passesShortsAcc": 1, "passLong": 83, "passesLongAcc": 1, "PassThroughRate": 1, "PassBackRate": 1, "PassDiagonalRate": 1, "PassLateralRate": 1};
 
   function changeData(chart, behavior)
   {
@@ -46,7 +45,7 @@
   }
 
   export default {
-    name: 'ButterDefense',
+    name: 'ButterOrganize',
     props: {
       behavior0: { type: Object, require: true, },
       behavior1: { type: Object, require: true, },
@@ -80,15 +79,33 @@
           let value0 = +behavior0[attr] || 0;
           let value1 = +behavior1[attr] || 0;
           switch(attr) {
-            case 'passesAccuracy':
+            case 'passesShortsAcc':
               value0 = (Math.round(value0*1000)/10) + '%';
               value1 = (Math.round(value1*1000)/10) + '%';
               break;
-            case 'Possession':
-              value0 = (Math.round(value0*10)/10);
-              value1 = (Math.round(value1*10)/10);
+            case 'passesLongAcc':
+              value0 = (Math.round(value0*1000)/10) + '%';
+              value1 = (Math.round(value1*1000)/10) + '%';
+              break;
+            case 'PassThroughRate':
+              value0 = (Math.round(value0*1000)/10) + '%';
+              value1 = (Math.round(value1*1000)/10) + '%';
+              break;
+            case 'PassBackRate':
+              value0 = (Math.round(value0*1000)/10) + '%';
+              value1 = (Math.round(value1*1000)/10) + '%';
+              break;
+            case 'PassDiagonalRate':
+              value0 = (Math.round(value0*1000)/10) + '%';
+              value1 = (Math.round(value1*1000)/10) + '%';
+              break;
+            case 'PassLateralRate':
+              value0 = (Math.round(value0*1000)/10) + '%';
+              value1 = (Math.round(value1*1000)/10) + '%';
               break;
           }
+
+
           this.createALabel(LABEL_NAME[attr], value0,  value1);
         }
         changeData(this.chart0, behavior0);

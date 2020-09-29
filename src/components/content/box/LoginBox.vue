@@ -29,6 +29,12 @@
             @click="submitForm('ruleForm')"
           >登录</el-button>
         </el-form-item>
+        <el-form-item>
+          <el-button
+            type="primary"
+            @click="toHome"
+          >返回</el-button>
+        </el-form-item>
       </el-form>
   </div>
 </template>
@@ -86,6 +92,9 @@
           }
         });
       },
+      toHome(){
+        this.$router.push("/home")
+      }
     }
   }
 </script>

@@ -32,12 +32,16 @@
     computed:{
       seasonInfo(){
         let seasonInfo = []
-        seasonInfo.push(parseInt(this.activeTeam['goals']))
-        seasonInfo.push(parseInt(this.activeTeam['loseGoals']))
-        seasonInfo.push(this.activeTeam['mostGoalsPlayer'])
-        seasonInfo.push(this.activeTeam['mostAssistsPlayer'])
-        seasonInfo.push(this.activeTeam['avePasses'])
-        seasonInfo.push(this.activeTeam['ballPossession'])
+        seasonInfo.push(parseInt(this.activeTeam['goals']));
+        seasonInfo.push(parseInt(this.activeTeam['loseGoals']));
+        seasonInfo.push(this.activeTeam['mostGoalsPlayer']);
+        seasonInfo.push(this.activeTeam['mostAssistsPlayer']);
+        seasonInfo.push(this.activeTeam['avePasses']);
+
+        let possession = this.activeTeam['ballPossession']*100
+
+        let ballPossession = parseInt(possession) + "%";
+        seasonInfo.push(ballPossession);
         return seasonInfo
       }
     }

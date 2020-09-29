@@ -32,13 +32,18 @@
       </div>
     </div>
     <div class="butter">
-
+      <butter-organize
+        :behavior0="homeOrganize.organizingButter"
+        :behavior1="awayOrganize.organizingButter"
+        :size="18">
+      </butter-organize>
     </div>
   </div>
 </template>
 
 <script>
-  import RadarMatch from "../../g2plot/RadarMatch";
+  import RadarMatch from "../../g2plot/radar/RadarMatch";
+  import ButterOrganize from "../../g2plot/butter/ButterOrganize";
   export default {
     name: "matchOrganize",
     props:{
@@ -52,7 +57,7 @@
     computed:{
       radarData(){
         let radarData =[];
-        let labels = ["短传",'短传精度','长传','长传精度','直塞','直塞占比','后传占比','斜传占比','横穿占比'];
+        let labels = ["短传",'短传精度','长传','长传精度','直塞','直塞占比','后传占比','斜传占比','横传占比'];
         //遍历进攻雷达的所有数据，利用map四舍五入
         let homeScore = (Object.values(this.homeOrganize.organizingRadar)).map((v)=>{
           return parseInt(v)
@@ -86,7 +91,8 @@
       }
     },
     components:{
-      RadarMatch
+      RadarMatch,
+      ButterOrganize
     }
 
   }

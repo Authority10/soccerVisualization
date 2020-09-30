@@ -1,6 +1,6 @@
 <template>
     <players-center
-    :players="players">
+    >
     </players-center>
 </template>
 
@@ -8,14 +8,14 @@
   import PlayersCenter from "../../../components/content/players/centerInfo/PlayersCenter";
   export default {
     name: "PlayersInfo",
-    props:{
-      players:{
-        type:Object,
-        default(){
-          return{}
-        }
-      }
-    },
+    // props:{
+    //   players:{
+    //     type:Object,
+    //     default(){
+    //       return{}
+    //     }
+    //   }
+    // },
     data(){
       return{
         // currentPosition:"",

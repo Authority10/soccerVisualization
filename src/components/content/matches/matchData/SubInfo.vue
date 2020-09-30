@@ -1,18 +1,24 @@
 <template>
   <div class="sub-info">
     <div  v-for="(singleSub,index) in newSub"  class="single-sub">
-      <div>
-        <el-tooltip class="item" effect="dark" :content="singleSub.subTime" placement="top-start">
-        <span>{{singleSub.subInPlayer}}</span>
-        </el-tooltip>
-      </div>
-      <div>
-        <span>{{singleSub.subOutPlayer}}</span>
-      </div>
+      <el-tooltip class="item" effect="dark" :content="singleSub.subTime" placement="top-start">
+        <div>
+          <div>
+            <span>{{singleSub.subInPlayer}}</span>
+          </div>
+          <div>
+            <span>{{singleSub.subOutPlayer}}</span>
+          </div>
+        </div>
+      </el-tooltip>
+
       <div class="up-down">
         <img src="../../../../assets/image/sub/sub.png" alt="">
       </div>
+
     </div>
+
+
   </div>
 </template>
 

@@ -50,7 +50,6 @@ export default {
         behavior0: { type: Object, require: true, },
         behavior1: { type: Object, require: true, },
         size: { type:Number, default: 45 },
-
     },
     data() {
         return {

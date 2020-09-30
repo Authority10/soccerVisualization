@@ -4,10 +4,10 @@
       src="../../assets/image/welcome/loginMove.gif"
       alt=""
       class="login-img">
-    <img
-      src="../../assets/image/welcome/bsu.jpg"
-      alt=""
-      class="bsu-img">
+<!--    <img-->
+<!--      src="../../assets/image/welcome/bsu.jpg"-->
+<!--      alt=""-->
+<!--      class="bsu-img">-->
     <div class="logo">
       <img
         src="../../assets/image/welcome/loginSub.png"
@@ -16,6 +16,8 @@
     </div>
     <p class="text">足球数据系统</p>
     <login-box></login-box>
+
+
   </div>
 </template>
 
@@ -32,10 +34,17 @@
 <style scoped>
   .login {
     position: relative;
+    width: 1920px;
+    height: 1080px;
+    background-color: #5a5a5a;
+    scrollbar-width: none;
   }
+  /*.login {*/
+  /*  scrollbar-width: none;*/
+  /*}*/
   .login-img {
     width: 1400px;
-    height: 920px;
+    height: 1080px;
     /*width: 800px;*/
     /*height: 600px;*/
   }

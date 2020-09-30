@@ -61,15 +61,15 @@
   import HeatArea from "./centerItems/HeatArea";
   export default {
     name: "PlayersCenter",
-    props:{
-      players:{
-        type:Object,
-        default(){
-          return {
-          }
-        }
-      }
-    },
+    // props:{
+    //   players:{
+    //     type:Object,
+    //     default(){
+    //       return {
+    //       }
+    //     }
+    //   }
+    // },
     data(){
       return{
         teams:{
@@ -107,11 +107,6 @@
       }
     },
     created() {
-      // this.$bus.$on("sendTeams",(teams)=>{
-      //   console.log(teams);
-      //   this.teams = teams
-      // });
-
       //利用personId寻找到球员之后传递个人信息过来
       this.$bus.$on("homePlayers",(homePlayers)=>{
         this.homePlayers = homePlayers
@@ -119,16 +114,6 @@
       this.$bus.$on("awayPlayers",(awayPlayers)=>{
         this.awayPlayers = awayPlayers
       });
-      //
-      // this.$bus.$on("sendHome",(currPlayer)=>{
-      //   this.homeIndex = currPlayer.currentIndex;
-      //   this.homePosition = currPlayer.position;
-      // });
-      //
-      // this.$bus.$on("sendAway",(currPlayer)=>{
-      //   this.awayIndex = currPlayer.currentIndex;
-      //   this.awayPosition = currPlayer.position;
-      // })
     },
     updated(){
       this.teams = this.$store.state.teams;
@@ -158,6 +143,7 @@
      /*background-color:red;*/
      overflow: scroll;
      overflow-x:hidden;
+     scrollbar-width: none;
    }
    .center-info::-webkit-scrollbar {
      display: none;

@@ -70,4 +70,8 @@
   .el-cascader-node__label {
     color: red;
   }
+  /*.block /deep/ .el-cascader__dropdown{*/
+  /*  background: red !important;*/
+  /*}*/
+
 </style>

@@ -4,7 +4,6 @@
     </basic-public>
 
     <players-info
-      :players="teams"
     >
     </players-info>
 
@@ -21,7 +20,7 @@
     name: "Players",
     data(){
       return{
-        teams:{}
+        // teams:{}
       }
     },
     components: {

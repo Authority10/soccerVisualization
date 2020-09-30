@@ -19,7 +19,7 @@ const routes = [
   // },
   {
     path: '/',
-    redirect:"/welcome"
+    redirect:"/home"
   },
   {
     path:"/welcome",

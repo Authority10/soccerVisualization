@@ -76,6 +76,7 @@
     height: 980px;
     /*background-color: blue;*/
     overflow: scroll;
+    scrollbar-width: none;
   }
   .scroll-box::-webkit-scrollbar {
     display: none;

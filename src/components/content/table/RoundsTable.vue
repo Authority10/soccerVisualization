@@ -32,10 +32,15 @@
           <div>{{singleMatch.goals}}</div>
           <div>{{singleMatch.assists}}</div>
           <div>{{singleMatch.shots}}</div>
-          <div>{{singleMatch.passes}}</div>
-          <div>{{singleMatch.yellowCard}}</div>
+          <div>
+            {{singleMatch.passes}}/{{passAcurracy[index]}}
+          </div>
+          <div>
+            {{singleMatch.redCard}}/{{singleMatch.yellowCard}}
+          </div>
           <div>{{singleMatch.fouls}}</div>
-          <div>{{parseFloat(singleMatch.ballPossession.toFixed(2))}}</div>
+<!--          <div>{{parseFloat(singleMatch.ballPossession.toFixed(2))}}</div>-->
+          <div>{{ballPossession[index]}}</div>
         </div>
 
 
@@ -61,6 +66,16 @@
       }
     },
     computed:{
+      passAcurracy(){
+        return this.teamMatch.map((item) => {
+           return item.passAcurracy = Math.round(item.passAcurracy*1000) / 10 + "%"
+         })
+      },
+      ballPossession(){
+        return this.teamMatch.map((item) => {
+          return item.ballPossession = Math.round(item.ballPossession*1000) / 10 + "%"
+        })
+      },
     },
     methods:{
       boxClick(){
@@ -88,7 +103,7 @@
     top:171px;
     left:31px;
     width: 1371px;
-    height:1800px;
+    height:1900px;
     overflow: hidden;
     color: white;
     font-size: 20px;
@@ -123,8 +138,8 @@
   }
   .label {
     position: absolute;
-    left: 440px;
-    width: 900px;
+    left: 400px;
+    width: 940px;
     height: 50px;
     line-height: 50px;
     display: flex;
@@ -132,7 +147,7 @@
     justify-content: space-between;
   }
   .label div {
-    width: 80px;
+    width: 110px;
     /*background-color: red;*/
   }
 

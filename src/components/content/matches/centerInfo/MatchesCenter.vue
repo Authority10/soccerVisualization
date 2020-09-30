@@ -54,7 +54,9 @@
     left: 112px;
     overflow: scroll;
     background-color: #404040;
+    scrollbar-width: none;
   }
+
   .center-info::-webkit-scrollbar {
     display: none;
   }

@@ -136,10 +136,6 @@
             label: '第26轮',
           },
           {
-            value: 26,
-            label: '第26轮',
-          },
-          {
             value: 27,
             label: '第27轮',
           },
@@ -155,7 +151,24 @@
             value: 30,
             label: '第30轮',
           },
+          {
+            value: 100,
+            label: '北体大轮次',
+          },
         ]
+      }
+    },
+    computed:{
+      //生成轮次的序列表
+      lists(){
+        let arr = [];
+        for(let i =1;i<31;i++){
+          let obj = {};
+          obj.value = i;
+          obj.label = "第" + i + "轮"
+          arr.push(obj)
+        }
+        return arr
       }
     },
     methods:{
@@ -201,8 +214,10 @@
     height: 930px;
     overflow: scroll;
     /*background-color: orange;*/
+    scrollbar-width: none;
   }
   .scroll-box::-webkit-scrollbar {
     display: none;
   }
+
 </style>

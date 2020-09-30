@@ -1,10 +1,10 @@
 <template>
   <div class="register">
     <img src="../../assets/image/welcome/register.jpg" alt="" class="register-img">
-    <img
-      src="../../assets/image/welcome/bsu.jpg"
-      alt=""
-      class="bsu-img">
+<!--    <img-->
+<!--      src="../../assets/image/welcome/bsu.jpg"-->
+<!--      alt=""-->
+<!--      class="bsu-img">-->
     <div class="logo">
       <img
         src="../../assets/image/welcome/loginSub.png"
@@ -29,12 +29,15 @@
 <style scoped>
   .register {
     position: relative;
+    width: 1920px;
+    height: 1080px;
+    background-color: #5a5a5a;
   }
  .register-img {
    position: absolute;
    right: 0;
    width: 1400px;
-   height: 920px;
+   height: 1080px;
  }
   .bsu-img {
     position: absolute;

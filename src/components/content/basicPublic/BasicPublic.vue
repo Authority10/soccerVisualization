@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="img-box">
-      <img src="../../../assets/image/logo/soccerLogo.png" alt="" class="logo">
+      <img src="../../../assets/image/logo/soccerLogo.png" alt="" class="logo" @click="toHome">
     </div>
     <div class="hr-line"></div>
     <logo-title></logo-title>
@@ -17,6 +17,11 @@
     components:{
       LogoTitle,
       MainTabBar
+    },
+    methods:{
+      toHome(){
+        this.$router.push("/home")
+      }
     }
   }
 </script>

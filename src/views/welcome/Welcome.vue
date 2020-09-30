@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div>
+      <img src="../../assets/image/welcome/back.png" alt="" class="back" @click="toHome">
+    </div>
     <div class="welcome">
       <div class="login">
         <img
@@ -31,6 +34,9 @@
     //   document.querySelector('body').setAttribute('style', 'background-color:#FFFFFF')
     // },
     methods:{
+      toHome(){
+        this.$router.push("/home")
+      },
       login(){
         this.$router.push('/login')
       },
@@ -46,6 +52,13 @@
    position: absolute;
    top: 200px;
    left: 460px;
+ }
+ .back {
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   width: 36px;
+   height: 36px;
  }
  .login {
    display: inline-block;

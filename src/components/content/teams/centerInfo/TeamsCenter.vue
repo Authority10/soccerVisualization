@@ -150,6 +150,7 @@
 <style scoped>
   .show-team {
     position: relative;
+    scrollbar-width: none;
   }
   .center-info {
     position: absolute;
@@ -159,7 +160,10 @@
     left: 112px;
     background-color:#404040;
     overflow: scroll;
+    scrollbar-width: none;
   }
+
+
   .center-info::-webkit-scrollbar {
     display: none;
   }

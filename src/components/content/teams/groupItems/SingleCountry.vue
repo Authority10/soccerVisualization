@@ -75,6 +75,7 @@
     margin: 10px auto;
     width: 260px;
     height: 126px;
+    color:white;
     background-color:#606060;
     border-radius: 12px;
     border: 1px solid #606060;

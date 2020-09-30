@@ -175,15 +175,17 @@
     top: 60px;
     width: 1350px;
     height: 1800px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: space-around;*/
     /*background-color: red;*/
   }
   .single-player {
     width: 1350px;
     height: 50px;
     background-color:#575757;
+    margin-top: 10px;
     border-radius: 15px;
     text-align: center;
     display: flex;

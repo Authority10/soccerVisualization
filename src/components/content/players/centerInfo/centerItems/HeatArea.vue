@@ -18,7 +18,12 @@
         :heat-right="heatRight">
       </heat-right>
     </div>
-
+    <div class="arrow-left">
+      <img src="../../../../../assets/image/heatArrow/right.png" alt="" class="first-arrow">
+    </div>
+    <div class="arrow-right">
+      <img src="../../../../../assets/image/heatArrow/right.png" alt="" class="second-arrow">
+    </div>
 
   </div>
 </template>
@@ -94,7 +99,32 @@
    height:500px;
    /*background-color: blue;*/
  }
-
-
+ .arrow-left {
+   position: absolute;
+   top: 580px;
+   left: 80px;
+   width: 300px;
+   height: 100px;
+   /*background-color: red;*/
+ }
+ .first-arrow {
+   width: 150px;
+   height: 50px;
+ }
+  .arrow-right {
+    position: absolute;
+    top: 580px;
+    right: 110px;
+    width: 300px;
+    height: 100px;
+    /*background-color: red;*/
+  }
+ .second-arrow {
+   position: absolute;
+   right: 0;
+   width: 150px;
+   height: 50px;
+   transform:rotate(180deg);
+ }
 
 </style>
